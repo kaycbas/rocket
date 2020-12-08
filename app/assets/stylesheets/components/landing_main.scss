@@ -2,7 +2,7 @@
     display: block;
     height: 600px;
     background-color: $sky-blue;
-    background: url('dancer.jpg') center no-repeat;
+    background: image-url('dancer.jpg') center no-repeat;
     background-size: 100%;
 }
 
@@ -70,7 +70,7 @@
     width: 530px;
     height: 380px;
     display: block;
-    background: url('ipad.png') center no-repeat;
+    background: image-url('ipad.png') center no-repeat;
     background-size: 100%;
 }
 
@@ -106,7 +106,7 @@
     width: 530px;
     height: 380px;
     display: block;
-    background: url('mac.png') center no-repeat;
+    background: image-url('mac.png') center no-repeat;
     background-size: 100%;
 }
 
@@ -114,7 +114,7 @@
     display: block;
     height: 517px;
     background-color: $sky-blue;
-    background: url('gardener.png') center no-repeat;
+    background: image-url('gardener.png') center no-repeat;
     background-size: 100%;
 }
 
