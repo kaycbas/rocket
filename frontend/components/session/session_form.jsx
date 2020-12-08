@@ -54,12 +54,9 @@ class SessionForm extends Component {
     render() {
         return (
             <div>
-                <Link to='/'>Rocket 🚀</Link>
                 <form onSubmit={this.handleSubmit}>
                     <h2>{this.props.formType}</h2>
-                    <br />
                     {this.renderErrors()}
-                    <br />
                     <label>Username:
                         <input type="text"
                             value={this.state.username}
