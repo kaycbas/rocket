@@ -1,0 +1,72 @@
+.landing-main-container {
+    display: block;
+    height: 600px;
+    background-color: $sky-blue;
+}
+
+.landing-panel {
+    
+    padding: 230px 0;
+    margin: 0 auto;
+    max-width: 900px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.landing-panel-content {
+  h2 {
+      color: $white;
+      max-width: 240px;
+      font-size: 32px;
+      line-height: 1.25;
+      font-weight: bold;
+      margin-bottom: 17px;
+  }
+}
+
+.email-signup-btn {
+    height: 48px;
+    width: 300px;
+    background-color: $pocket-red;
+    color: $white;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.landing-main-container-2 {
+    display: block;
+    height: 600px;
+    background-color: $mid-grey;
+}
+
+.landing-panel-2 {
+    max-width: 900px;
+    padding: 110px 0;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.landing-panel-content-2 {
+    max-width: 300px;
+    h2 {
+        color: $off-black;
+        max-width: 240px;
+        font-size: 32px;
+        line-height: 1.25;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+}
+
+.img-placeholder {
+    width: 530px;
+    height: 380px;
+    display: block;
+    background-color: $off-black;
+}
