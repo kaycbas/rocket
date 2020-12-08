@@ -2,6 +2,8 @@
     display: block;
     height: 600px;
     background-color: $sky-blue;
+    background: url('dancer.jpg') center no-repeat;
+    background-size: 100%;
 }
 
 .landing-panel {
@@ -29,7 +31,7 @@
 .email-signup-btn {
     height: 48px;
     width: 300px;
-    background-color: $pocket-red;
+    background-color: $sky-blue;
     color: $white;
     font-size: 16px;
     line-height: 24px;
@@ -39,13 +41,13 @@
 
 .landing-main-container-2 {
     display: block;
-    height: 600px;
+    height: 517px;
     background-color: $mid-grey;
 }
 
 .landing-panel-2 {
     max-width: 900px;
-    padding: 110px 0;
+    padding: 70px 0;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -64,9 +66,119 @@
     }
 }
 
-.img-placeholder {
+.ipad {
     width: 530px;
     height: 380px;
     display: block;
-    background-color: $off-black;
+    background: url('ipad.png') center no-repeat;
+    background-size: 100%;
+}
+
+
+.landing-main-container-3 {
+    display: block;
+    height: 517px;
+    background-color: $white;
+}
+
+.landing-panel-3 {
+    max-width: 900px;
+    padding: 70px 0;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.landing-panel-content-3 {
+    max-width: 300px;
+    h2 {
+        color: $off-black;
+        max-width: 240px;
+        font-size: 32px;
+        line-height: 1.25;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+}
+
+.mac {
+    width: 530px;
+    height: 380px;
+    display: block;
+    background: url('mac.png') center no-repeat;
+    background-size: 100%;
+}
+
+.landing-main-container-4 {
+    display: block;
+    height: 517px;
+    background-color: $sky-blue;
+    background: url('gardener.png') center no-repeat;
+    background-size: 100%;
+}
+
+.landing-panel-4 {
+    
+    padding: 185px 0;
+    margin: 0 auto;
+    max-width: 900px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.landing-panel-content-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  h2 {
+      color: $white;
+      max-width: 240px;
+      font-size: 32px;
+      line-height: 1.25;
+      font-weight: bold;
+      margin-bottom: 17px;
+      text-align: center;
+  }
+
+  .signup-btn {
+      height: 48px;
+      width: 300px;
+      background-color: $sky-blue;
+      color: $white;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center;
+      border-radius: 4px;
+  }
+}
+
+.landing-main-container-5 {
+    display: block;
+    height: 417px;
+    background-color: $deep-green;
+    color: $white;
+}
+
+.landing-panel-5 {
+    max-width: 900px;
+    padding: 70px 0;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.landing-panel-content-5 {
+    max-width: 300px;
+    h2 {
+        max-width: 240px;
+        font-size: 32px;
+        line-height: 1.25;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
 }
