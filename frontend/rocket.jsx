@@ -1,15 +1,37 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Root from './components/root';
 
 // TESTING
 import * as SessionApiUtil from './util/session_api_util';
+import * as SessionActions from './actions/session_actions';
+import configureStore from './store/store';
+//
 
 document.addEventListener("DOMContentLoaded", () => {
+    let store;
+    if (window.currentUser) {
+        const preloadedState = {
+            session: { currentUser: window.currentUser }
+        };
+        store = configureStore(preloadedState);
+        delete window.currentUser;
+    } else {
+        store = configureStore();
+    }
+
     // TESTING
-    window.signUp = SessionApiUtil.signUp;
-    window.signIn = SessionApiUtil.signIn;
-    window.signOut = SessionApiUtil.signOut;
+    // window.signUp = SessionApiUtil.signUp;
+    // window.signIn = SessionApiUtil.signIn;
+    // window.signOut = SessionApiUtil.signOut;
+    window.signUp = SessionActions.signUp;
+    window.signIn = SessionActions.signIn;
+    window.signOut = SessionActions.signOut;
+    window.store = store;
+    window.dispatch = store.dispatch;
+    //
+
     
     const root = document.getElementById("root");
-    ReactDOM.render(<h1>Welcome to Rocket 🚀</h1>, root);
+    ReactDOM.render(<Root store={store} />, root);
 });
