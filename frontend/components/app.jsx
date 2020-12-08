@@ -7,11 +7,12 @@ import {
 } from 'react-router-dom';
 import SignUpFormContainer from './session/signup_form_container';
 import SignInFormContainer from './session/signin_form_container';
+import Landing from './landing/landing';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
     <div>
-        <h1>Rocket App 🚀</h1>
+        <Route exact path='/' component={Landing} />
         <AuthRoute exact path='/signup' component={SignUpFormContainer} />
         <AuthRoute exact path='/signin' component={SignInFormContainer} />
     </div>

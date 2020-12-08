@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class SessionForm extends Component {
     constructor(props) {
@@ -53,6 +54,7 @@ class SessionForm extends Component {
     render() {
         return (
             <div>
+                <Link to='/'>Rocket 🚀</Link>
                 <form onSubmit={this.handleSubmit}>
                     <h2>{this.props.formType}</h2>
                     <br />
