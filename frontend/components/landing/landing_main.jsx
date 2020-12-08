@@ -8,7 +8,7 @@ export default class LandingMain extends Component {
                 <div className='landing-main-container'>
                     <section className="landing-panel">
                         <div className="landing-panel-content">
-                            <h2>Put knowlege in your Pocket.</h2>
+                            <h2>Knowledge is Rocket fuel.</h2>
                             <button className="email-signup-btn">Sign up with Email</button>
                         </div>
                     </section>
