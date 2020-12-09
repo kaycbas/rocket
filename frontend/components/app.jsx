@@ -21,13 +21,13 @@ import DiscoverIndexContainer from './articles/discover_index_container';
 
 const App = () => (
     <React.Fragment>
-        <main className="landing-container">
-            <AuthRoute path='/' component={LandingNav} />
-            <AuthRoute exact path='/' component={LandingMain} />
-            <AuthRoute exact path='/signup' component={SignUpFormContainer} />
-            <AuthRoute exact path='/signin' component={SignInFormContainer} />
-            <AuthRoute path='/' component={LandingFooter} />
-        </main>
+        {/* TODO: Refactor AuthRoutes under one component */}
+        <AuthRoute path='/' component={LandingNav} />
+        <AuthRoute exact path='/' component={LandingMain} />
+        <AuthRoute exact path='/signup' component={SignUpFormContainer} />
+        <AuthRoute exact path='/signin' component={SignInFormContainer} />
+        <AuthRoute path='/' component={LandingFooter} />
+        
         <ProtectedRoute path='/' component={MainContainer} />
     </React.Fragment>
 );

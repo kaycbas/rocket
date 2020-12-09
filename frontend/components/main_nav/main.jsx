@@ -14,12 +14,14 @@ import DiscoverIndexContainer from '../articles/discover_index_container';
 export default class Main extends Component {
     render() {
         return (
-            <div>
+            <React.Fragment>
                 <MainNavContainer />
-                <SidebarContainer />
-                <Route exact path='/' component={MyListIndexContainer} />
-                <Route exact path='/discover' component={DiscoverIndexContainer} />
-            </div>
+                <main className="main-container">
+                    <SidebarContainer />
+                    <Route exact path='/' component={MyListIndexContainer} />
+                    <Route exact path='/discover' component={DiscoverIndexContainer} />
+                </main>
+            </React.Fragment>
         )
     }
 }

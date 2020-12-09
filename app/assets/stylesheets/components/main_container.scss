@@ -1,7 +1,10 @@
 .main-container {
-//     display: grid;
-//     grid-template-columns: 193px auto;
-//     padding: 63px 20px 0px;
-//     color: blue;
-    display: flex;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 193px auto;
+    padding: 63px 20px 0px;
+    margin: 0px auto;
+    max-width: 1290px;
+    // color: blue;
+    // display: flex;
 }
