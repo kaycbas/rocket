@@ -29,7 +29,7 @@ class SessionForm extends Component {
     }
 
     renderErrors() {
-        if (this.props.errors.length === 0) return null;
+        if (!this.props.errors || this.props.errors.length === 0) return null;
         return (
             <ul className="session-errors">
                 {this.props.errors.map((error, i) => (
