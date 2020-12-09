@@ -6,10 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require 'open-uri'
+# require 'open-uri'
 
-demo_user = User.create(username: "Andy2", email: "andy2@email.com", password: "password2")
+# demo_user = User.create(username: "Andy2", email: "andy2@email.com", password: "password2")
 
-file = open('https://rocket--kb-dev.s3-us-west-1.amazonaws.com/dancer.jpg')
+# file = open('https://rocket--kb-dev.s3-us-west-1.amazonaws.com/dancer.jpg')
 
-demo_user.photo.attach(io: file, filename: 'dancer.jpg')
+# demo_user.photo.attach(io: file, filename: 'dancer.jpg')
+
+demo_user = User.create(username: "demo", email: "demo@email.com", password: "apple123")

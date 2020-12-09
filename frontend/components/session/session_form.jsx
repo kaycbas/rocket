@@ -102,6 +102,7 @@ class SessionForm extends Component {
                         <span className="submit-btn">
                             <input type="submit" value={this.props.formType} />
                         </span>
+                        <span onClick={() => this.props.demoUser()} className="demo-btn">Demo User</span>
                         {this.props.navLink}
                     </form>
                 </div>
