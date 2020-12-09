@@ -1,4 +1,8 @@
 Rails.application.configure do
+  # Custom Addition
+  # config/environments/development.rb
+  config.active_storage.service = :amazon_dev
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on

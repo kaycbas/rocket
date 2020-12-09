@@ -1,4 +1,7 @@
 Rails.application.configure do
+  # config/environments/production.rb
+  config.active_storage.service = :amazon_prod
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
