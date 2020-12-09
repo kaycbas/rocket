@@ -31,12 +31,26 @@
 
 .landing-header-content {
     height: 70px;
-    width: 840px;
+    max-width: 840px;
     margin: auto;
+    padding: 0 30px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
 
-    
+
+// Media Queries
+@media only screen and (max-width : 750px) {
+    .landing-signup-btn {
+        display: none;
+    }
+    .landing-signin-btn {
+        display: none;
+    }
+
+    .landing-header-content {
+        justify-content: center;
+    }
 }
