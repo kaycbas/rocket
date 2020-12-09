@@ -2,13 +2,18 @@
     display: block;
     height: 600px;
     background-color: $sky-blue;
+    background-image: brightness(80%); 
     background: image-url('dancer.jpg') center no-repeat;
-    background-size: 100%;
+    background-size: cover;
+}
+
+.darken {
+    display: block;
+    background: rgba(0, 0, 0, 0.3);
 }
 
 .landing-panel {
-    
-    padding: 230px 0;
+    padding: 130px 0 160px 0;
     margin: 0 auto;
     max-width: 900px;
     
@@ -18,26 +23,77 @@
 }
 
 .landing-panel-content {
-  h2 {
-      color: $white;
-      max-width: 240px;
-      font-size: 32px;
-      line-height: 1.25;
-      font-weight: bold;
-      margin-bottom: 17px;
-  }
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+        color: $white;
+        max-width: 240px;
+        font-size: 34px;
+        line-height: 1.25;
+        font-weight: normal;
+    }
+
+    .btn {
+        box-sizing: border-box;
+        height: 48px;
+        width: 300px;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        border-radius: 4px;
+        max-width: 400px;
+    }
+
+    .google {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        background-color: $google-blue;
+        color: $white;
+        padding: 0 20px;
+
+        img {
+            position: absolute;
+            margin: 0 21px;
+            width: 24px;
+            height: 24px;
+            left: 0px;
+        }
+
+
+    }
+    
+    .email {
+        background-color: $white;
+        color: $black;
+    }
+
+    .signin {
+        color: white;
+        display: flex;
+        font-size: small;
+
+        .link {
+            margin: 0 4px 0 20px;
+            text-decoration: underline;
+        }
+    }
+
+    .terms {
+        color: white;
+        font-size: small;
+        font-weight: lighter;
+        max-width: 300px;
+        line-height: 1.5em;
+    }
 }
 
-.email-signup-btn {
-    height: 48px;
-    width: 300px;
-    background-color: $sky-blue;
-    color: $white;
-    font-size: 16px;
-    line-height: 24px;
-    text-align: center;
-    border-radius: 4px;
+.landing-panel-content > * {
+    margin-bottom: 17px;
 }
+
 
 .landing-main-container-2 {
     display: block;

@@ -6,12 +6,27 @@ export default class LandingMain extends Component {
         return (
             <React.Fragment>
                 <div className='landing-main-container'>
-                    <section className="landing-panel">
-                        <div className="landing-panel-content">
-                            <h2>Knowledge is Rocket fuel.</h2>
-                            <button className="email-signup-btn">Sign up with Email</button>
-                        </div>
-                    </section>
+                    <div className='darken'>
+                        <section className="landing-panel">
+                            <div className="landing-panel-content">
+                                <h2>Knowledge is Rocket fuel.</h2>
+                                <button className="btn google">
+                                    <img src={window.googleIcon} alt="logo" />
+                                    <span>
+                                        Sign up with Google
+                                    </span>
+                                </button>
+                                <button className="btn email">Sign up with Email</button>
+                                <span className="signin">
+                                    <p>Already have an account?</p>
+                                    <Link className="link" to='/signin'>Log In</Link> &gt;
+                                </span>
+                                <p className="terms">
+                                    By signing up, you agree to Pocket’s Terms of Service and Privacy Policy.
+                                </p>
+                            </div>
+                        </section>
+                    </div>
                 </div>
                 <div className='landing-main-container-2'>
                     <section className="landing-panel-2">
