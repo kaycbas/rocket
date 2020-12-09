@@ -36,45 +36,70 @@ class SessionForm extends Component {
         );
     }
 
+    renderFormHeader() {
+        if (this.props.formType === 'Sign In') {
+            return (
+                <h3 className='signin-h3'>Log In</h3>
+            )
+        } else {
+            return (
+                <h3 className='signup-h3'>Sign Up</h3>
+            )
+        }
+    }
+
     renderEmailField() {
         if (this.props.formType === 'Sign In') return null;
         return (
             <React.Fragment>
-                <label>Email:
-                    <input type="email"
-                        value={this.state.email}
-                        onChange={this.update('email')}
-                    />
-                </label>
-                <br />
+                <input type="email"
+                    placeholder="Email"
+                    value={this.state.email}
+                    onChange={this.update('email')}
+                />
             </React.Fragment>
         );
     }
 
+    renderMktgContent() {
+        if (this.props.formType === 'Sign In') {
+            return (
+                <div className="mac-img"></div>
+            )
+        } else {
+            return (
+                <h1>Sign Up Marketing Content</h1>
+            )
+        }
+    }
+
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <h2>{this.props.formType}</h2>
-                    {this.renderErrors()}
-                    <label>Username:
+            <div className="session-container">
+                <div className="session-content">
+                    <div className="session-mktg">
+                        {this.renderMktgContent()}
+                    </div>
+                    <form className="session-form" onSubmit={this.handleSubmit}>
+                        {this.renderFormHeader()}
+                        {this.renderErrors()}
                         <input type="text"
+                            placeholder="Username"
                             value={this.state.username}
                             onChange={this.update('username')}
                         />
-                    </label>
-                    <br />
-                    {this.renderEmailField()}
-                    <label>Password:
+                        {this.renderEmailField()}
                         <input type="password"
+                            placeholder="Password"
                             value={this.state.password}
                             onChange={this.update('password')}
                         />
-                    </label>
-                    <br />
-                    <input type="submit" value={this.props.formType} />
-                </form>
-                {this.props.navLink}
+                        <span className="submit-btn">
+                            <input type="submit" value={this.props.formType} />
+                        </span>
+                        {this.props.navLink}
+                    </form>
+                </div>
             </div>
         );
     }
