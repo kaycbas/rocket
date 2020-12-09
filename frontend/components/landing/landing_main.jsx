@@ -11,7 +11,7 @@ export default class LandingMain extends Component {
                     <div className='darken'>
                         <section className="landing-panel">
                             <div className="landing-panel-content">
-                                <h2>Knowledge is Rocket fuel.</h2>
+                                <h2>Knowledge is rocket fuel.</h2>
                                 <Link to='/signup'>
                                     <button className="btn google">
                                         <img src={window.googleIcon} alt="logo" />
