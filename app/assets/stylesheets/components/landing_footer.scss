@@ -1,0 +1,42 @@
+.footer-container {
+    display: block;
+    height: 285px;
+    background-color: white;
+    color: black;
+}
+
+.footer-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0;
+
+    * {
+        margin-bottom: 20px;
+    }
+}
+
+.footer-links {
+    margin-bottom: 24px;
+    color: $sky-blue;
+    a {
+        padding: 0 10px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.footer-icons {
+    margin-bottom: 15px;
+    a {
+        padding: 10px;
+    }
+}
+
+.footer-copyright {
+    font-size: smaller;
+    color: grey;
+}

@@ -8,7 +8,6 @@ export default class LandingNav extends Component {
                 <div className="landing-header-content">
                     <Link to='/' className="landing-logo">
                         <img className="logo" src={window.rocketLogo} alt="Couldn't load" />
-                        {/* <h1>🚀 rocket</h1> */}
                     </Link>
                     <ul className="minimal-header">
                         <Link to='/signup'>

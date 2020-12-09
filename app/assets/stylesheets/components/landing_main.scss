@@ -43,6 +43,9 @@
         text-align: center;
         border-radius: 4px;
         max-width: 400px;
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     .google {
@@ -115,10 +118,14 @@
     h2 {
         color: $off-black;
         max-width: 240px;
-        font-size: 32px;
+        font-size: 28px;
         line-height: 1.25;
         font-weight: bold;
         margin-bottom: 20px;
+    }
+    p {
+        font-size: 16px;
+        line-height: 1.75;
     }
 }
 
@@ -151,10 +158,14 @@
     h2 {
         color: $off-black;
         max-width: 240px;
-        font-size: 32px;
+        font-size: 28px;
         line-height: 1.25;
         font-weight: bold;
         margin-bottom: 20px;
+    }
+    p {
+        font-size: 16px;
+        line-height: 1.75;
     }
 }
 
