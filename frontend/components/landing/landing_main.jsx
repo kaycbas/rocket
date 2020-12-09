@@ -10,13 +10,17 @@ export default class LandingMain extends Component {
                         <section className="landing-panel">
                             <div className="landing-panel-content">
                                 <h2>Knowledge is Rocket fuel.</h2>
-                                <button className="btn google">
-                                    <img src={window.googleIcon} alt="logo" />
-                                    <span>
-                                        Sign up with Google
-                                    </span>
-                                </button>
-                                <button className="btn email">Sign up with Email</button>
+                                <Link to='/signup'>
+                                    <button className="btn google">
+                                        <img src={window.googleIcon} alt="logo" />
+                                        <span>
+                                            Sign up with Google
+                                        </span>
+                                    </button>
+                                </Link>
+                                <Link to='/signup'>
+                                    <button className="btn email">Sign up with Email</button>
+                                </Link>
                                 <span className="signin">
                                     <p>Already have an account?</p>
                                     <Link className="link" to='/signin'>Log In</Link> &gt;
@@ -55,10 +59,21 @@ export default class LandingMain extends Component {
                     </section>
                 </div>
                 <div className='landing-main-container-5'>
-                    <section className="landing-panel-5">
-                        <div className="landing-panel-content-5">
-                            <h2>Fuel your mind anywhere.</h2>
-                            <p>Immerse yourself in great content anywhere – even offline. Read or listen without distraction, on any device.</p>
+                    <section className="landing-panel-grid">
+                        <div className="app-store">
+                            <span className="apple-store"></span>
+                            <span className="google-store"></span>
+                        </div>
+                        <div className="testimony">
+                            <h2 className="twitter-quote">“It’s revolutionised the way I read industry news on the go. I'm in love”</h2>
+                            <span className="cite">
+                                <i class="fab fa-twitter"></i>
+                                <p>@elliebudd_</p>
+                            </span>
+                        </div>
+                        <div className="award">
+                            <h1>10X</h1>
+                            <h3>Webby Award Winner</h3>
                         </div>
                     </section>
                 </div>

@@ -171,12 +171,12 @@
     height: 517px;
     background-color: $sky-blue;
     background: image-url('gardener.png') center no-repeat;
-    background-size: 100%;
+    background-size: cover;
 }
 
 .landing-panel-4 {
     
-    padding: 185px 0;
+    padding: 190px 0 0 0;
     margin: 0 auto;
     max-width: 900px;
     
@@ -192,17 +192,16 @@
     justify-content: center;
   h2 {
       color: $white;
-      max-width: 240px;
-      font-size: 32px;
+      max-width: none;
+      font-size: 30px;
       line-height: 1.25;
-      font-weight: bold;
-      margin-bottom: 17px;
+      margin-bottom: 22px;
       text-align: center;
   }
 
   .signup-btn {
       height: 48px;
-      width: 300px;
+      width: 126px;
       background-color: $sky-blue;
       color: $white;
       font-size: 16px;
@@ -226,15 +225,75 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+
 }
 
-.landing-panel-content-5 {
-    max-width: 300px;
-    h2 {
-        max-width: 240px;
-        font-size: 32px;
-        line-height: 1.25;
-        font-weight: bold;
-        margin-bottom: 20px;
+// .landing-panel-content-5 {
+//     max-width: 300px;
+//     h2 {
+//         max-width: 240px;
+//         font-size: 32px;
+//         line-height: 1.25;
+//         font-weight: bold;
+//         margin-bottom: 20px;
+//     }
+// }
+
+.landing-panel-grid {
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 250px auto 250px;
+    justify-content: center;
+    color: $white;
+    width: 900px;
+    height: 400px;
+    padding: 80px 0;
+}
+
+.app-store {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .apple-store {
+        display: block;
+        width: 135px;
+        height: 45px;
+        background: image-url('icons/app_store.svg');
+        margin: 10px 0;
     }
+    
+    .google-store {
+        display: block;
+        width: 135px;
+        height: 40px;
+        background: image-url('icons/google_play.svg');
+        margin: 10px 0;
+    }
+}
+
+.testimony {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+
+    h2 {
+        font-size: 24px;
+        font-weight: 200;
+        text-align: center;
+        padding: 50px;
+    }
+}
+
+.award {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
