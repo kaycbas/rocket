@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+// import { IconContext } from "react-icons";
+import { FaTwitter } from 'react-icons/fa';
 
 export default class LandingMain extends Component {
     render() {
@@ -67,7 +69,7 @@ export default class LandingMain extends Component {
                         <div className="testimony">
                             <h2 className="twitter-quote">“It’s revolutionised the way I read industry news on the go. I'm in love”</h2>
                             <span className="cite">
-                                <i class="fab fa-twitter"></i>
+                                <FaTwitter size={25} />
                                 <p>@elliebudd_</p>
                             </span>
                         </div>

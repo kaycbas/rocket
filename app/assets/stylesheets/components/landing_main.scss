@@ -285,9 +285,19 @@
 
     h2 {
         font-size: 24px;
-        font-weight: 200;
+        font-weight: 300;
         text-align: center;
-        padding: 50px;
+        padding: 20px 50px;
+    }
+
+    .cite {
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+
+        * {
+            margin: 6px;
+        }
     }
 }
 
@@ -296,4 +306,15 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    h1 {
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: -5px;
+    }
+
+    h3 {
+        font-size: 18px;
+        font-weight: lighter;
+    }
 }
