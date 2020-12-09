@@ -1,0 +1,67 @@
+.nav-container {
+    display: block;
+    border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+.nav-content {
+    box-sizing: border-box;
+    height: 63px;
+    max-width: 1290px;
+    width: 100%;
+    margin: 0px auto;
+    padding: 0 40px;
+
+    display: grid;
+    grid-template-columns: 193px auto 193px;
+    // text-align: center;
+    align-items: center;
+}
+
+.nav-logo {
+    height: 25px;
+    width: 100px;
+}
+
+.nav-tabs {
+    display: flex;
+}
+
+.nav-tab {
+    display: block;
+    font-size: 14px;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 0 24px;
+    // cursor: pointer;
+
+    label {
+        cursor: pointer;
+    }
+    
+    &:hover {
+        background-image: linear-gradient(90deg, 
+            rgb(131, 237, 184) 0%, 
+            rgb(131, 237, 184) 0%, 
+            rgb(131, 237, 184) 0.01%, 
+            rgb(80, 188, 182) 33.15%, 
+            rgb(239, 64, 86) 67.4%, 
+            rgb(252, 182, 67) 100%);
+        background-image: center no-repeat;
+        background-position-y: top;
+        // background-position: bottom;
+    }
+
+}
+
+.nav-utils {
+    display: flex;
+}
+
+.nav-util {
+    display: block;
+    font-size: 14px;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 0 18px;
+    cursor: pointer;
+}

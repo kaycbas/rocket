@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import { signOut } from '../../actions/session_actions';
-import Home from './home';
+import MainNav from './main_nav';
 
 const mSTP = state => {
     return {
-        
+
     }
 }
 
@@ -14,4 +14,4 @@ const mDTP = dispatch => {
     }
 }
 
-export default connect(mSTP, mDTP)(Home);
+export default connect(mSTP, mDTP)(MainNav);
