@@ -18,12 +18,32 @@
     margin: 20px;
 }
 
+.session-errors {
+    box-sizing: border-box;
+    color: #c33;
+    background-color: #ffe8e9;
+    border-radius: 4px;
+    padding: .5em .8em .45em;
+    margin: 0 auto 1em;
+}
+
 .mac-img {
     display: block;
     width: 470px;
     height: 350px;
     background: image-url('mac.png') center no-repeat;
     background-size: 100%;
+}
+
+.mktg-img {
+    box-sizing: border-box;
+    display: block;
+    width: 410px;
+    height: 406px;
+    background: image-url('mktg.png') center no-repeat;
+    background-size: 100%;
+    margin: 18px 15px 25px;
+    padding-bottom: 10px;
 }
 
 .signin-h3 {

@@ -12,6 +12,10 @@ class SessionForm extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentDidMount() {
+        this.props.clearErrors();
+    }
+
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
@@ -25,8 +29,9 @@ class SessionForm extends Component {
     }
 
     renderErrors() {
+        if (this.props.errors.length === 0) return null;
         return (
-            <ul>
+            <ul className="session-errors">
                 {this.props.errors.map((error, i) => (
                     <li key={`error-${i}`}>
                         {error}
@@ -68,7 +73,7 @@ class SessionForm extends Component {
             )
         } else {
             return (
-                <h1>Sign Up Marketing Content</h1>
+                <div className="mktg-img"></div>
             )
         }
     }
