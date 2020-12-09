@@ -56,7 +56,9 @@ export default class LandingMain extends Component {
                     <section className="landing-panel-4">
                         <div className="landing-panel-content-4">
                             <h2>Start saving to Rocket.</h2>
-                            <button className="signup-btn">Sign up now</button>
+                            <Link to='/signup'>
+                                <button className="signup-btn">Sign up now</button>
+                            </Link>
                         </div>
                     </section>
                 </div>
