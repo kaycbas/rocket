@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ArticleIndexItem from './article_index_item';
 import { Link } from 'react-router-dom';
 import parse from 'html-react-parser';
 
@@ -15,15 +16,7 @@ export default class ArticleIndex extends Component {
     renderArticles() {
         if (!Array.isArray(this.props.articles)) return null;
         return this.props.articles.map(article => (
-            <React.Fragment>
-                {/* <div style={{display: block, width: 100, height: 100, backgroundImage: image-url(article.cover_img)}}></div> */}
-                {/* {/* <div>{article.cover_img}</div> */}
-                <h1>{article.title}</h1>
-                {/* <h2>{article.author}</h2> */}
-                {/* <h2>{article.url}</h2> */}
-                {/* <h2>{article.reading_time}</h2> */}
-                {/* {parse(article.content)} */}
-            </React.Fragment>
+            <ArticleIndexItem key={article.id} article={article} />
         ));
     }
 
@@ -31,7 +24,9 @@ export default class ArticleIndex extends Component {
         return (
             <div>
                 <h1>{this.props.indexType} Index</h1>
-                {this.renderArticles()}
+                <ul className="article-grid">
+                    {this.renderArticles()}
+                </ul>
             </div>
         )
     }

@@ -1,0 +1,84 @@
+.article-grid {
+    // may need to edit
+    height: 3880px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(auto-fit, 485px);
+    justify-content: flex-start;
+    position: relative;
+    color: rgb(51, 51, 51);
+}
+
+.article-grid-item {
+    box-sizing: border-box;
+    min-width: 33.33%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: 485px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.article-item-img {
+    box-sizing: border-box;
+    background-image: url("https://pocket-image-cache.com/684x440/filters:no_upscale()/https%3A%2F%2Fpocket-image-cache.com%2F1200x%2Ffilters%3Ano_upscale()%3Aformat(jpg)%3Aextract_cover()%2Fhttps%253A%252F%252Fpocket-syndicated-images.s3.amazonaws.com%252Farticles%252F4417%252F1589992117_GettyImages-991608726.jpg");
+    background-position: center top;
+    background-size: cover;
+    height: 220px;
+    width: 100%;
+    min-height: 220px;
+    border-radius: 4px;
+    // position: absolute;
+    top: 0px;
+    left: 0px;
+    cursor: pointer;
+}
+
+.article-item-info {
+    box-sizing: border-box;
+    display: block;
+
+    .title {
+        box-sizing: border-box;
+        font-size: 18px;
+        line-height: 1.2em;
+        max-height: 3.6em;
+        overflow: hidden;
+        font-weight: 600;
+        padding-top: 1em;
+    }
+
+    .metas {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 24px;
+        display: flex;
+        width: 100%;
+        padding: 6px 0 0;
+        justify-content: flex-start;
+        align-items: center;
+        color: rgb(130, 130, 130);
+
+        * {
+            padding-right: 6px;
+        }
+    }
+
+    .description {
+        display: block;
+        font-size: 14px;
+        line-height: 1.75em;
+        color: rgb(79, 79, 79);
+        padding-top: 0.4em;
+        max-height: 4.15em;
+        overflow: hidden;
+    }
+}
+
+.article-item-ctrls {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 62px;
+}
