@@ -4,12 +4,16 @@ import { FiMoreHorizontal } from 'react-icons/fi'
 
 export default class ArticleIndexItem extends Component {
     render() {
-        const { id, title, author, url } = this.props.article;
+        // debugger;
+        const { id, title, author, url, cover_img } = this.props.article;
         if (!this.props.article) return null;
         return (
             <article className="article-grid-item">
                 <Link to="/test">
-                    <div className="article-item-img"></div>
+                    <img src={cover_img} alt="cover img" />
+                    {/* <div className="article-item-img">
+                        
+                    </div> */}
                 </Link>
                 <div className="article-item-info">
                     <Link to="/test">
