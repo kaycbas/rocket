@@ -10,7 +10,7 @@ export default class ArticleIndexItem extends Component {
         return (
             <article className="article-grid-item">
                 <Link to="/test">
-                    <img src={cover_img} alt="cover img" />
+                    <img className="article-item-img" src={cover_img} alt="cover img" />
                     {/* <div className="article-item-img">
                         
                     </div> */}

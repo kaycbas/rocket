@@ -7,7 +7,7 @@ module SeedData
         full_url: 'https://a16z.com/2020/04/18/its-time-to-build/', 
         reading_time: '8 min',
         featured: false, 
-        img_name: "build.jpg",
+        img_name: "build.png",
         content: 
             "<div class='article-content'>
                 <p>Every Western institution was unprepared for the coronavirus pandemic, despite many prior warnings. This monumental failure of institutional effectiveness will reverberate for the rest of the decade, but it’s not too early to ask why, and what we need to do about it.</p>
@@ -43,7 +43,7 @@ module SeedData
             full_url: 'http://paulgraham.com/lesson.html', 
             reading_time: '18 min',
             featured: false, 
-            img_name: "pg.jpg",
+            img_name: "pg.png",
             content: 
             "<div class='article-content'>
                 <p>December 2019</p>
@@ -128,7 +128,7 @@ module SeedData
             full_url: 'https://neilkakkar.com/Psychology-of-Human-Misjudgment.html', 
             reading_time: '15 min',
             featured: false, 
-            img_name: "munger.jpg",
+            img_name: "munger.png",
             content: 
                 "<div>
                 <p>Charlie Munger gave a <a rel=\"noopener\"
@@ -622,7 +622,7 @@ module SeedData
             full_url: 'https://blog.pragmaticengineer.com/data-structures-and-algorithms-i-actually-used-day-to-day/', 
             reading_time: '14 min',
             featured: false, 
-            img_name: "algos.jpg",
+            img_name: "algos.png",
             content: 
                 "<div lang=\"en\"><p>Do you actually use data structures and algorithms on your day to day job? I've noticed a growing trend of people assuming algorithms are pointless questions that are asked by tech companies purely as an arbitrary measure. I hear more people complain about how all of this is a purely academic exercise. This notion was definitely popularized after Max Howell, the author of Homebrew, posted his Google interview experience:</p>
                 <blockquote>
@@ -710,7 +710,7 @@ module SeedData
             full_url: 'https://www.collaborativefund.com/blog/common-plots-of-economic-history/', 
             reading_time: '20 min',
             featured: false, 
-            img_name: "brick.jpg",
+            img_name: "brick.png",
             content: 
                 "<div lang=\"en\"><p>Complicated stuff can stem from a handful of common roots. Understanding those common roots can be more important than trying to wrap your head around complexity.</p>
                 <p>To show you what I mean, let me tell you a story about stories.</p>
@@ -885,7 +885,7 @@ module SeedData
             full_url: 'https://neilkakkar.com/sapiens.html', 
             reading_time: '32 min',
             featured: false, 
-            img_name: "sapiens.jpg",
+            img_name: "sapiens.png",
             content: 
                 "<div>
                 <map name=\"image-map\"><area shape=\"poly\" coords=\"0,77,115,77,80,150,0,150\" href=\"#development-of-brains\" title=\"Development of Brains\" alt=\"Taming fire\"><area shape=\"poly\" coords=\"115,77,230,77,195,150,80,150\" href=\"#cognitive-revolution\" title=\"Cognitive Revolution\" alt=\"cognitive revolution\"><area shape=\"poly\" coords=\"230,77,345,77,310,150,195,150\" href=\"#agricultural-revolution\" title=\"Agricultural Revolution\" alt=\"agriculture revolution\"><area shape=\"poly\" coords=\"345,77,460,77,415,150,310,150\" href=\"#unification-of-humankind\" title=\"Unification of Humanity\" alt=\"unificiation\"><area shape=\"poly\" coords=\"460,77,575,77,520,150,415,150\" href=\"#scientific-revolution\" title=\"Scientific Revolution\" alt=\"scientific revolution\"><area shape=\"poly\" coords=\"575,77,690,77,635,150,540,150\" href=\"#industrial-revolution\" title=\"Industrial Revolution\" alt=\"industrial revolution\"><area shape=\"poly\" coords=\"690,77,805,77,750,150,655,150\" href=\"#the-end-of-homo-sapiens\" title=\"The Present\" alt=\"present\"></map><figure><a rel=\"noopener\" href=\"https://amzn.to/2WWNsjq\">
@@ -1163,7 +1163,7 @@ module SeedData
             full_url: 'https://www.gq.com/story/secrets-of-the-worlds-greatest-art-thief', 
             reading_time: '39 min',
             featured: false, 
-            img_name: "art.jpg",
+            img_name: "art.png",
             content: 
                 "<div lang=\"en\"><div class=\"RIL_IMG\" id=\"RIL_IMG_1\"></div><div>Stéphane Breitwieser robbed nearly 200 museums, amassed a collection of treasures worth more than $1.4 billion, and became perhaps the most prolific art thief in history. And as he reveals to GQ’s Michael Finkel, how Breitwieser managed to do all this is every bit as surprising as why.</div><div class=\"RIL_IMG\" id=\"RIL_IMG_3\">
                 <figure>
@@ -1942,7 +1942,7 @@ module SeedData
             full_url: 'http://paulgraham.com/think.html', 
             reading_time: '16 min',
             featured: false, 
-            img_name: "pg-2.jpg",
+            img_name: "pg-2.png",
             content: 
                 "<div lang=\"en\"><p>November 2020</p>
                 <p>There are some kinds of work that you can't do well without thinking differently from your peers. To be a successful scientist, for example, it's not enough just to be correct. Your ideas have to be both correct and novel. You can't publish papers saying things other people already know. You need to say things no one else has realized yet.</p>
@@ -2072,7 +2072,7 @@ module SeedData
             full_url: 'https://www.fastcompany.com/3008346/deep-inside-taco-bells-doritos-locos-taco', 
             reading_time: '13 min',
             featured: false, 
-            img_name: "taco.jpg",
+            img_name: "taco.png",
             content: 
                 "<div class='article-content'><h2>From handshake deals to experiments at Home Depot, the history of Taco Bell’s disruptive faux cheese-dusted taco.
                 </h2><div><div><aside></aside></div><div><div><span>long Read</span></div><article><div></div><div><p>In early 2009, three years prior to Taco Bell’s 50th anniversary, CEO Greg Creed was already experiencing something of a midlife crisis. “Our target audience is [customers] in their 20s. Turning 50 makes us sound old, and I didn’t want to sound old,” Creed explains. “I said, ‘When we have our birthday, I don’t want a cake or a celebration.'”</p></div><div><div></div></div><div></div><div><p>So he issued a bold directive to his team instead: “I said, ‘[let’s] reinvent the crunchy taco,'” Creed recalls.</p><p>“He was really looking for a big innovation to coincide with our anniversary,” says Taco Bell brand marketing director Stephanie Perdue, who helped Creed write the original team brief. Creed explains: “If you look at all the buns the burger boys sell, and the bread at Subway, they are forever coming up with a new bread bun. The crunchy taco: It was yellow and made of corn. We sold a couple billion of them, but there had been no innovation.” He gave his staff until March 2012–slightly under three years–to pull off a complete rethink of traditional Mexican cuisine.</p><q>If you look at all the buns the burger boys sell, and the bread at Subway, they are forever coming up with a new bread bun.</q><p>The team soon assembled for an all-day ideation session at Taco Bell headquarters, where 30 different product concepts were considered, Perdue says, including new forms of burritos, nachos, and taquitos. But one idea, from Doritos-maker Frito-Lay, stuck out: a Doritos-based taco shell pocketed with Taco Bell ingredients. “It was basically an image [of this taco] on a piece of paper, with a written description. I don’t know what technology they use. We didn’t even taste it; it was just more of, ‘Hey, this is what it could look like,'” Perdue says. “It was like, ‘Holy crap!’ Nobody had ever done this before: turning a Dorito into a taco shell. It was just mind-blowing at the idea stage.” Steve Gomez, Taco Bell’s food innovation expert, recalls seeing the first mock-up. “Every day I see a lot of concepts–sketches on paper, written words about products–and my job is to turn those products into reality,” he says. “But in all my years as a product developer, I’ve never seen a concept like this. The product didn’t even exist yet, and already people knew this idea was going to be huge.”</p><figure><div class=\"RIL_IMG\" id=\"RIL_IMG_1\">
@@ -2107,7 +2107,7 @@ module SeedData
             full_url: 'https://getpocket.com/explore/item/why-do-dogs-love-us-science-explains', 
             reading_time: '2 min',
             featured: false, 
-            img_name: 'dog.jpg',
+            img_name: 'dog.png',
             content: 
                 "<div class='article-content'>
                 <div id=\"RIL_header\">
@@ -2258,7 +2258,7 @@ module SeedData
             full_url: 'https://lithub.com/10-works-of-literary-fantasy-you-should-read/', 
             reading_time: '5 min',
             featured: false, 
-            img_name: "fantasy.jpg",
+            img_name: "fantasy.png",
             content: 
                 "<div class='article-content'><h2>Even if you're a genre snob (but also, if you're a genre snob, stop).</h2><article><article><div><div><section><div><div class=\"RIL_IMG\" id=\"RIL_IMG_1\">
                 <figure>
@@ -2342,7 +2342,7 @@ module SeedData
             full_url: 'https://waitbutwhy.com/2016/01/horizontal-history.html', 
             reading_time: '25 min',
             featured: false, 
-            img_name: "history.jpg",
+            img_name: "history.png",
             content: 
                 "<div class='article-content'><div class=\"RIL_IMG\" id=\"RIL_IMG_1\">
                 <figure>
@@ -2472,7 +2472,7 @@ module SeedData
             full_url: 'https://www.quantamagazine.org/why-black-hole-interiors-grow-forever-20181206/#:~:text=According%20to%20general%20relativity%2C%20the,stretches%20toward%20the%20center%20point.', 
             reading_time: '5 min',
             featured: false, 
-            img_name: "gravity.jpg",
+            img_name: "gravity.png",
             content: 
                 "<div class='article-content'><h2>The renowned physicist Leonard Susskind has identified a possible quantum origin for the ever-growing volume of black holes.</h2><article><article><div><div><section><div><div class=\"RIL_IMG\" id=\"RIL_IMG_1\">
                 <figure>
@@ -2514,7 +2514,7 @@ module SeedData
             full_url: 'https://medium.com/@yegg/mental-models-i-find-repeatedly-useful-936f1cc405d', 
             reading_time: '5 min',
             featured: false, 
-            img_name: "mind.jpg",
+            img_name: "mind.png",
             content: 
                 "<div class='article-content'><div class=\"RIL_IMG\" id=\"RIL_IMG_1\">
                 <figure>

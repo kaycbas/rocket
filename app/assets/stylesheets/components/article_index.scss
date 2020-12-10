@@ -101,9 +101,12 @@
 }
 
 .article-item-ctrls {
+    // align-self: flex-end;
+    position: absolute;
+    bottom: 0;
     display: flex;
     justify-content: flex-end;
-    margin-top: 62px;
-    padding-bottom: 14px;
+    // margin-top: 62px;
+    // padding-bottom: 14px;
     border-bottom: 1px solid rgb(224, 224, 224);
 }
