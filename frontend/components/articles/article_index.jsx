@@ -22,12 +22,16 @@ export default class ArticleIndex extends Component {
 
     render() {
         return (
-            <div>
-                <h1>{this.props.indexType} Index</h1>
+            <section className="article-index">
+                <div className="article-index-header">
+                    <h1>
+                        {this.props.indexType}
+                    </h1>
+                </div>
                 <ul className="article-grid">
                     {this.renderArticles()}
                 </ul>
-            </div>
+            </section>
         )
     }
 }
