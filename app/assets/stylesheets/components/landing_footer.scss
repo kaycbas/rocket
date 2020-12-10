@@ -18,7 +18,10 @@
 }
 
 .footer-links {
-    margin-bottom: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
     color: $sky-blue;
     a {
         padding: 0 10px;
