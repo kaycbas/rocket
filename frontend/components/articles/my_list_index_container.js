@@ -4,13 +4,14 @@ import ArticleIndex from './article_index';
 
 const mSTP = state => {
     return {
+        articles: state.entities.articles,
         indexType: 'My List'
     }
 }
 
 const mDTP = dispatch => {
     return {
-
+        fetchArticles: () => dispatch(fetchArticles('list'))
     }
 }
 

@@ -1,35 +1,11 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+import React from 'react';
 
-# require 'open-uri'
-
-# demo_user = User.create(username: "Andy2", email: "andy2@email.com", password: "password2")
-
-# file = open('https://rocket--kb-dev.s3-us-west-1.amazonaws.com/dancer.jpg')
-
-# demo_user.photo.attach(io: file, filename: 'dancer.jpg')
-
-User.destroy_all
-Article.destroy_all
-
-articles = [
-    {
-    title: 'IT’S TIME TO BUILD',
-    author:  'Marc Andreesen',
-    url: 'a16z.com',
-    full_url: 'https://a16z.com/2020/04/18/its-time-to-build/', 
-    reading_time: '8 min',
-    featured: false, 
-    content: 
-    "<div class='article-content'>
+export const articleText = (
+    <div className='article-text'>
         <p>Every Western institution was unprepared for the coronavirus pandemic, despite many prior warnings. This monumental failure of institutional effectiveness will reverberate for the rest of the decade, but it’s not too early to ask why, and what we need to do about it.</p>
         <p>Many of us would like to pin the cause on one political party or another, on one government or another. But the harsh reality is that it all failed — no Western country, or state, or city was prepared — and despite hard work and often extraordinary sacrifice by many people within these institutions. So the problem runs deeper than your favorite political opponent or your home nation.</p>
         <p>Part of the problem is clearly foresight, a failure of imagination. But the other part of the problem is what we didn’t *do* in advance, and what we’re failing to do now. And that is a failure of action, and specifically our widespread inability to *build*.</p>
+        <h3><span>Want more a16z?</span></h3>
         <p>We see this today with the things we urgently need but don’t have. We don’t have enough coronavirus tests, or test materials — including, amazingly, cotton swabs and common reagents. We don’t have enough ventilators, negative pressure rooms, and ICU beds. And we don’t have enough surgical masks, eye shields, and medical gowns — as I write this, New York City has put out a desperate call for rain ponchos to be used as medical gowns. Rain ponchos! In 2020! In America!</p>
         <p>We also don’t have therapies or a vaccine — despite, again, years of advance warning about bat-borne coronaviruses. Our scientists will hopefully invent therapies and a vaccine, but then we may not have the manufacturing factories required to scale their production. And even then, we’ll see if we can deploy therapies or a vaccine fast enough to matter — it took scientists 5 years to get regulatory testing approval for the new Ebola vaccine after that scourge’s 2014 outbreak, at the cost of many lives.</p>
         <p>In the U.S., we don’t even have the ability to get federal bailout money to the people and businesses that need it. Tens of millions of laid off workers and their families, and many millions of small businesses, are in serious trouble *right now*, and we have no direct method to transfer them money without potentially disastrous delays. A government that collects money from all its citizens and businesses each year has never built a system to distribute money to us when it’s needed most.</p>
@@ -51,10 +27,5 @@ articles = [
         <p>Every step of the way, to everyone around us, we should be asking the question, what are you building? What are you building directly, or helping other people to build, or teaching other people to build, or taking care of people who are building? If the work you’re doing isn’t either leading to something being built or taking care of people directly, we’ve failed you, and we need to get you into a position, an occupation, a career where you can contribute to building. There are always outstanding people in even the most broken systems — we need to get all the talent we can on the biggest problems we have, and on building the answers to those problems.</p>
         <p>I expect this essay to be the target of criticism. Here’s a modest proposal to my critics. Instead of attacking my ideas of what to build, conceive your own! What do you think we should build? There’s an excellent chance I’ll agree with you.</p>
         <p>Our nation and our civilization were built on production, on building. Our forefathers and foremothers built roads and trains, farms and factories, then the computer, the microchip, the smartphone, and uncounted thousands of other things that we now take for granted, that are all around us, that define our lives and provide for our well-being. There is only one way to honor their legacy and to create the future we want for our own children and grandchildren, and that’s to build.</p>
-    </div>"
-    },
-]
-
-User.create(username: "demo", email: "demo@email.com", password: "apple123")
-
-Article.create(articles);
+    </div>
+)
