@@ -20,7 +20,7 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
 
     # temporary
-    has_one_attached :photo
+    # has_one_attached :photo
     
 
     def self.find_by_credentials(username, password)
