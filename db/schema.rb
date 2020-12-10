@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_10_005705) do
+ActiveRecord::Schema.define(version: 2020_12_10_034750) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,11 +39,14 @@ ActiveRecord::Schema.define(version: 2020_12_10_005705) do
   create_table "articles", force: :cascade do |t|
     t.string "title", null: false
     t.text "content", null: false
-    t.string "article_url", null: false
     t.boolean "featured", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["article_url"], name: "index_articles_on_article_url", unique: true
+    t.string "author"
+    t.string "url"
+    t.string "full_url", null: false
+    t.string "reading_time"
+    t.index ["full_url"], name: "index_articles_on_full_url", unique: true
     t.index ["title"], name: "index_articles_on_title"
   end
 
