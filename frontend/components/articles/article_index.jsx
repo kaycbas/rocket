@@ -22,7 +22,7 @@ export default class ArticleIndex extends Component {
                 {/* <h2>{article.author}</h2> */}
                 {/* <h2>{article.url}</h2> */}
                 {/* <h2>{article.reading_time}</h2> */}
-                {/* {parse(article.content)} */}
+                {parse(article.content)}
             </React.Fragment>
         ));
     }
