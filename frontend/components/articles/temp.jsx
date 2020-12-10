@@ -1,8 +1,6 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-// import articleText from './temp';
+import React from 'react';
 
-const articleText = (
+export const articleText = (
     <div className='article-text'>
         <p>Every Western institution was unprepared for the coronavirus pandemic, despite many prior warnings. This monumental failure of institutional effectiveness will reverberate for the rest of the decade, but it’s not too early to ask why, and what we need to do about it.</p>
         <p>Many of us would like to pin the cause on one political party or another, on one government or another. But the harsh reality is that it all failed — no Western country, or state, or city was prepared — and despite hard work and often extraordinary sacrifice by many people within these institutions. So the problem runs deeper than your favorite political opponent or your home nation.</p>
@@ -31,36 +29,3 @@ const articleText = (
         <p>Our nation and our civilization were built on production, on building. Our forefathers and foremothers built roads and trains, farms and factories, then the computer, the microchip, the smartphone, and uncounted thousands of other things that we now take for granted, that are all around us, that define our lives and provide for our well-being. There is only one way to honor their legacy and to create the future we want for our own children and grandchildren, and that’s to build.</p>
     </div>
 )
-
-export default class ArticleIndex extends Component {
-    constructor(props) {
-        super(props);
-        this.renderArticles = this.renderArticles.bind(this);
-    }
-
-    componentDidMount() {
-        this.props.fetchArticles();
-    }
-
-    renderArticles() {
-        if (!Array.isArray(this.props.articles)) return null;
-        return this.props.articles.map(article => (
-            <React.Fragment>
-                <h1>{article.title}</h1>
-                <br/>
-                {/* <pre>{article.content}</pre> */}
-                {articleText}
-                {/* <p>{article.content}</p> */}
-            </React.Fragment>
-        ));
-    }
-
-    render() {
-        return (
-            <div>
-                <h1>{this.props.indexType} Index</h1>
-                {this.renderArticles()}
-            </div>
-        )
-    }
-}
