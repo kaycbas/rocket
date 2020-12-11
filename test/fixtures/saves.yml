@@ -1,0 +1,21 @@
+# == Schema Information
+#
+# Table name: saves
+#
+#  id         :bigint           not null, primary key
+#  user_id    :integer          not null
+#  article_id :integer          not null
+#  archived   :boolean          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+one:
+  user_id: 1
+  article_id: 1
+  archived: false
+
+two:
+  user_id: 1
+  article_id: 1
+  archived: false

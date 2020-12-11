@@ -12,6 +12,7 @@
 #  url          :string
 #  full_url     :string           not null
 #  reading_time :string
+#  img_name     :string
 #
 
 one:

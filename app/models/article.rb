@@ -12,10 +12,19 @@
 #  url          :string
 #  full_url     :string           not null
 #  reading_time :string
+#  img_name     :string
 #
 class Article < ApplicationRecord
     validates :title, :content, :full_url, presence: true
     validates :full_url, uniqueness: true
 
     has_one_attached :cover_img
+
+    has_many :saves,
+        foreign_key: :article_id,
+        class_name: :Save
+
+    has_many :savers,
+        through: :saves,
+        source: :user
 end

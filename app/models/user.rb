@@ -19,9 +19,14 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
 
-    # temporary
-    # has_one_attached :photo
-    
+    has_many :saves,
+        foreign_key: :user_id,
+        class_name: :Save,
+        dependent: :destroy
+
+    has_many :articles,
+        through: :saves,
+        source: :article
 
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)
