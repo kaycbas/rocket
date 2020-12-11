@@ -17,10 +17,18 @@ export default class LandingFooter extends Component {
                         <a href="https://getpocket.com/jobs">Jobs</a>
                     </div>
                     <div className="footer-icons">
-                        <a href="https://github.com/kaycbas">
+                        <a 
+                            href="https://github.com/kaycbas"
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                        >
                             <FaGithub size={30} />
                         </a>
-                        <a href="https://www.linkedin.com/in/kevin-bastoul/">
+                        <a 
+                            href="https://www.linkedin.com/in/kevin-bastoul/"
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                        >
                             <FaLinkedinIn size={30} />
                         </a>
                     </div>
