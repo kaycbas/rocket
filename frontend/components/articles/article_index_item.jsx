@@ -10,10 +10,9 @@ export default class ArticleIndexItem extends Component {
         return (
             <article className="article-grid-item">
                 <Link to="/test">
-                    <img className="article-item-img" src={cover_img} alt="cover img" />
-                    {/* <div className="article-item-img">
-                        
-                    </div> */}
+                    <div className="article-item-img-container">
+                        <img className="article-item-img" src={cover_img} alt="cover img" />
+                    </div>
                 </Link>
                 <div className="article-item-info">
                     <Link to="/test">
@@ -29,9 +28,9 @@ export default class ArticleIndexItem extends Component {
                         understanding of history. 
                         Our knowledge is spotty, with large
                     </div>
-                </div>
-                <div className="article-item-ctrls">
-                    <FiMoreHorizontal size={20} />
+                    <div className="article-item-ctrls">
+                        <FiMoreHorizontal size={20} />
+                    </div>
                 </div>
             </article>
         )

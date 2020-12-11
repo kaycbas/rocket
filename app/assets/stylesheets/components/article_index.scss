@@ -42,16 +42,33 @@
     height: 485px;
     border-radius: 4px;
     position: relative;
+    // border-bottom: 1px solid rgb(224, 224, 224);
 }
 
-.article-item-img {
-    box-sizing: border-box;
-    background-position: center top;
-    background-size: cover;
+.article-item-img-container {
+    display: block;
     height: 220px;
     width: 100%;
     min-height: 220px;
+    box-sizing: border-box;
+    position: relative;
     border-radius: 4px;
+    overflow: hidden;
+}
+
+.article-item-img {
+    background-size: cover;
+    background-position: center top;
+    // max-height: 100%;
+    width: 100%;
+    height: 100%;
+    // max-height: 220px;
+    position: absolute;
+    // box-sizing: border-box;
+    // height: 220px;
+    // width: 100%;
+    // min-height: 220px;
+    // border-radius: 4px;
     // position: absolute;
     top: 0px;
     left: 0px;
@@ -61,6 +78,7 @@
 .article-item-info {
     box-sizing: border-box;
     display: block;
+    position: relative;
 
     .title {
         box-sizing: border-box;
@@ -100,12 +118,11 @@
 }
 
 .article-item-ctrls {
-    // align-self: flex-end;
     position: absolute;
-    bottom: 0;
+    top: 190px;
+    width: 100%;
     display: flex;
     justify-content: flex-end;
-    // margin-top: 62px;
-    // padding-bottom: 14px;
+    padding-bottom: 14px;
     border-bottom: 1px solid rgb(224, 224, 224);
 }
