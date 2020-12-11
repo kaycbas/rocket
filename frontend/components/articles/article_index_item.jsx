@@ -9,13 +9,13 @@ export default class ArticleIndexItem extends Component {
         if (!this.props.article) return null;
         return (
             <article className="article-grid-item">
-                <Link to="/test">
+                <Link to={`/read/${id}`}>
                     <div className="article-item-img-container">
                         <img className="article-item-img" src={cover_img} alt="cover img" />
                     </div>
                 </Link>
                 <div className="article-item-info">
-                    <Link to="/test">
+                    <Link to={`/read/${id}`}>
                         <h2 className="title">{title}</h2>
                     </Link>
                     <div className="metas">

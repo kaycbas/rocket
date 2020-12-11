@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ArticleIndexItem from './article_index_item';
 import { Link } from 'react-router-dom';
-import parse from 'html-react-parser';
 
 export default class ArticleIndex extends Component {
     constructor(props) {

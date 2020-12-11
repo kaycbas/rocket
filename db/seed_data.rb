@@ -130,7 +130,7 @@ module SeedData
             featured: false, 
             img_name: "munger.png",
             content: 
-                "<div>
+                "<div class='article-content'>
                 <p>Charlie Munger gave a <a rel=\"noopener\"
                 href=\"https://fs.blog/2013/02/the-psychology-of-human-misjudgement/\">speech</a> to Harvard University in
                 1995. It was about how he built his own curriculum for Psychology. He’s an ace investor - dealing with
@@ -624,7 +624,7 @@ module SeedData
             featured: false, 
             img_name: "algos.png",
             content: 
-                "<div lang=\"en\"><p>Do you actually use data structures and algorithms on your day to day job? I've noticed a growing trend of people assuming algorithms are pointless questions that are asked by tech companies purely as an arbitrary measure. I hear more people complain about how all of this is a purely academic exercise. This notion was definitely popularized after Max Howell, the author of Homebrew, posted his Google interview experience:</p>
+                "<div class='article-content' lang=\"en\"><p>Do you actually use data structures and algorithms on your day to day job? I've noticed a growing trend of people assuming algorithms are pointless questions that are asked by tech companies purely as an arbitrary measure. I hear more people complain about how all of this is a purely academic exercise. This notion was definitely popularized after Max Howell, the author of Homebrew, posted his Google interview experience:</p>
                 <blockquote>
                 <p dir=\"ltr\" lang=\"en\">Google: 90% of our engineers use the software you wrote (Homebrew), but you can’t invert a binary tree on a whiteboard so fuck off.</p>
                 — Max Howell (@mxcl) <a href=\"https://twitter.com/mxcl/status/608682016205344768?ref_src=twsrc%5Etfw\"></a></blockquote>
@@ -712,7 +712,7 @@ module SeedData
             featured: false, 
             img_name: "brick.png",
             content: 
-                "<div lang=\"en\"><p>Complicated stuff can stem from a handful of common roots. Understanding those common roots can be more important than trying to wrap your head around complexity.</p>
+                "<div class='article-content' lang=\"en\"><p>Complicated stuff can stem from a handful of common roots. Understanding those common roots can be more important than trying to wrap your head around complexity.</p>
                 <p>To show you what I mean, let me tell you a story about stories.</p>
                 <hr><p>Tens of millions of fictional stories have been published, written by authors of every age, culture, and life experience that exists. Most never knew each other or read each other’s work. Their stories range from prehistoric battles to science fiction. Stories are perhaps the most diverse things our imaginations have ever created.</p>
                 <p>But all of these stories – every story, <a href=\"https://amzn.to/2PINhmU\">according to</a> author Christopher Booker – take shape in remarkably similar ways.</p>
@@ -887,7 +887,7 @@ module SeedData
             featured: false, 
             img_name: "sapiens.png",
             content: 
-                "<div>
+                "<div class='article-content'>
                 <map name=\"image-map\"><area shape=\"poly\" coords=\"0,77,115,77,80,150,0,150\" href=\"#development-of-brains\" title=\"Development of Brains\" alt=\"Taming fire\"><area shape=\"poly\" coords=\"115,77,230,77,195,150,80,150\" href=\"#cognitive-revolution\" title=\"Cognitive Revolution\" alt=\"cognitive revolution\"><area shape=\"poly\" coords=\"230,77,345,77,310,150,195,150\" href=\"#agricultural-revolution\" title=\"Agricultural Revolution\" alt=\"agriculture revolution\"><area shape=\"poly\" coords=\"345,77,460,77,415,150,310,150\" href=\"#unification-of-humankind\" title=\"Unification of Humanity\" alt=\"unificiation\"><area shape=\"poly\" coords=\"460,77,575,77,520,150,415,150\" href=\"#scientific-revolution\" title=\"Scientific Revolution\" alt=\"scientific revolution\"><area shape=\"poly\" coords=\"575,77,690,77,635,150,540,150\" href=\"#industrial-revolution\" title=\"Industrial Revolution\" alt=\"industrial revolution\"><area shape=\"poly\" coords=\"690,77,805,77,750,150,655,150\" href=\"#the-end-of-homo-sapiens\" title=\"The Present\" alt=\"present\"></map><figure><a rel=\"noopener\" href=\"https://amzn.to/2WWNsjq\">
                 <div class=\"RIL_IMG\" id=\"RIL_IMG_1\">
                 <figure>
@@ -1165,7 +1165,7 @@ module SeedData
             featured: false, 
             img_name: "art.png",
             content: 
-                "<div lang=\"en\"><div class=\"RIL_IMG\" id=\"RIL_IMG_1\"></div><div>Stéphane Breitwieser robbed nearly 200 museums, amassed a collection of treasures worth more than $1.4 billion, and became perhaps the most prolific art thief in history. And as he reveals to GQ’s Michael Finkel, how Breitwieser managed to do all this is every bit as surprising as why.</div><div class=\"RIL_IMG\" id=\"RIL_IMG_3\">
+                "<div class='article-content' lang=\"en\"><div class=\"RIL_IMG\" id=\"RIL_IMG_1\"></div><div>Stéphane Breitwieser robbed nearly 200 museums, amassed a collection of treasures worth more than $1.4 billion, and became perhaps the most prolific art thief in history. And as he reveals to GQ’s Michael Finkel, how Breitwieser managed to do all this is every bit as surprising as why.</div><div class=\"RIL_IMG\" id=\"RIL_IMG_3\">
                 <figure>
                 <img alt=\"© RMN / Rèunion des Musèes Nationaux / Sleeping Shepherd by François Boucher\" src=\"https://pocket-image-cache.com//filters:no_upscale()/https%3A%2F%2Fmedia.gq.com%2Fphotos%2F5c5c59e511c15c09749bbf0c%2F16%3A9%2Fw_2560%252Cc_limit%2FWorld_s%25252520Greatest%25252520Art%25252520Thief-GQ030119-ArtThief-01.jpg\">
                 <figcaption>© RMN / Rèunion des Musèes Nationaux / Sleeping Shepherd by François Boucher</figcaption>
@@ -1252,7 +1252,7 @@ module SeedData
             featured: false, 
             img_name: "stripe.png",
             content: 
-                "<div lang=\"en\">
+                "<div class='article-content' lang=\"en\">
                 <p>Today <a href=\"https://www.wsj.com/articles/stripe-to-offer-banking-services-in-deal-with-goldman-sachs-citigroup-11607007608\">Stripe is announcing Stripe Treasury</a>; from the company’s <a href=\"https://stripe.com/newsroom/news/treasury\">press release</a>:</p>
                 <blockquote>
                 <p>Stripe, the technology company building economic infrastructure for the Internet, today announced that it is launching Stripe Treasury. This gives Stripe’s platform users powerful APIs to embed financial services, enabling their customers to easily send, receive and store funds…</p>
@@ -1362,7 +1362,7 @@ module SeedData
             featured: false, 
             img_name: "hash.png",
             content: 
-                "<div lang=\"en\">
+                "<div class='article-content' lang=\"en\">
                 <p>We'll now begin our foray into cryptography. Cryptography is a deep and vibrant field, and there's a lot more to it than we can cover in a single module. But the next four lessons should equip us with the building blocks we need to understand cryptocurrencies.</p>
                 <p>The first and most important building block for any cryptocurrency is the hash function. Hash functions are used in almost every component of Bitcoin, so in this lesson we'll explore this cryptographic primitive in depth.</p>
                 <h3>What is a hash function?</h3>
@@ -1447,7 +1447,7 @@ module SeedData
             featured: false, 
             img_name: "systems.png",
             content: 
-                "<div lang=\"en\">
+                "<div class='article-content' lang=\"en\">
                 <blockquote>
                 <p>This post is part of my <a href=\"https://advancedbeginners.substack.com/\">Programming for Advanced Beginners series</a>. <a href=\"https://advancedbeginners.substack.com/\">Subscribe now</a> to receive specific, actionable ways to make your code cleaner, every other week, entirely free.</p>
                 </blockquote>
@@ -1944,7 +1944,7 @@ module SeedData
             featured: false, 
             img_name: "pg-2.png",
             content: 
-                "<div lang=\"en\"><p>November 2020</p>
+                "<div class='article-content' lang=\"en\"><p>November 2020</p>
                 <p>There are some kinds of work that you can't do well without thinking differently from your peers. To be a successful scientist, for example, it's not enough just to be correct. Your ideas have to be both correct and novel. You can't publish papers saying things other people already know. You need to say things no one else has realized yet.</p>
                 <p>The same is true for investors. It's not enough for a public market investor to predict correctly how a company will do. If a lot of other people make the same prediction, the stock price will already reflect it, and there's no room to make money. The only valuable insights are the ones most other investors don't share.</p>
                 <p>You see this pattern with startup founders too. You don't want to start a startup to do something that everyone agrees is a good idea, or there will already be other companies doing it. You have to do something that sounds to most other people like a bad idea, but that you know isn't like writing software for a tiny computer used by a few thousand hobbyists, or starting a site to let people rent airbeds on strangers' floors.</p>
@@ -2020,7 +2020,7 @@ module SeedData
             featured: false, 
             img_name: "compass.png",
             content: 
-                "<div lang=\"en\">
+                "<div class='article-content' lang=\"en\">
                 <p>The ultimate productivity hack is saying no.</p>
                 <p>Not doing something will always be faster than doing it. This statement reminds me of the old computer programming saying, “Remember that there is no code faster than no code.” <a rel=\"footnote\" href=\"https://jamesclear.com/saying-no#footnote-1-33502\">1</a></p>
                 <p>The same philosophy applies in other areas of life. For example, there is no meeting that goes faster than not having a meeting at all.</p>
