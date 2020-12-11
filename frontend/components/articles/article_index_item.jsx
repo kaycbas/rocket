@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { FiMoreHorizontal } from 'react-icons/fi'
+import { AiOutlineTag } from 'react-icons/ai'
+import { AiOutlineStar } from 'react-icons/ai'
+import { FiArchive } from 'react-icons/fi'
+import { FiTrash } from 'react-icons/fi'
 
 export default class ArticleIndexItem extends Component {
     render() {
@@ -29,7 +33,28 @@ export default class ArticleIndexItem extends Component {
                         Our knowledge is spotty, with large
                     </div>
                     <div className="article-item-ctrls">
-                        <FiMoreHorizontal size={20} />
+                        <div className="ctrls-btn">
+                            <FiMoreHorizontal size={18} />
+                            <div className="article-ctrls-modal">
+                                <span className="hover-soln"></span>
+                                <div className="ctrl-line">
+                                    <FiTrash size={18} />
+                                    <p>Delete</p>
+                                </div>
+                                <div className="ctrl-line">
+                                    <FiArchive size={18} />
+                                    <p>Archive</p>
+                                </div>
+                                <div className="ctrl-line">
+                                    <AiOutlineStar size={18} />
+                                    <p>Favorite</p>
+                                </div>
+                                <div className="ctrl-line">
+                                    <AiOutlineTag size={18} />
+                                    <p>Tag</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </article>

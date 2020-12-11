@@ -125,6 +125,55 @@
     justify-content: flex-end;
     padding-bottom: 14px;
     border-bottom: 1px solid rgb(224, 224, 224);
+    .ctrls-btn {
+        display: inline-block;
+    }
+}
+
+.article-ctrls-modal {
+    box-sizing: border-box;
+    display: none;
+    position: absolute;
+    bottom: 38px;
+    right: 0;
+    z-index: 10;
+    background-color: white;
+    border-radius: 2px;
+    padding: 8px 0;
+    box-shadow: 1px 1px 8px 0px #aeaeae;
+    width: 120px;
+
+    .ctrl-line {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        padding: 5px 0 5px 11px;
+        * {
+            padding-right: 10px;
+        }
+    }
+
+    .ctrl-line:hover {
+        color: rgb(17, 106, 101);
+        background-color: rgba(28, 176, 168, 0.2);
+    }
+
+}
+
+.hover-soln {
+    position: absolute;
+    width: 132px;
+    height: 152px;
+    top: -3px;
+    left: -3px;
+    z-index: -2;
+}
+
+.ctrls-btn:hover > .article-ctrls-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 @media only screen and (max-width: 1260px) {
