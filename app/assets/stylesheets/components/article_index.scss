@@ -48,7 +48,7 @@
 .article-item-img-container {
     display: block;
     height: 220px;
-    width: 100%;
+    width: 309px;
     min-height: 220px;
     box-sizing: border-box;
     position: relative;
@@ -125,4 +125,16 @@
     justify-content: flex-end;
     padding-bottom: 14px;
     border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+@media only screen and (max-width: 1260px) {
+    .article-item-img-container {
+        width: 263px;
+        height: 150px;
+    }
+
+    .article-item-img {
+        width: 263px;
+        height: 150px;
+    }
 }
