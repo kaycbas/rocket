@@ -10,8 +10,11 @@ const articlesReducer = (state = {}, action) => {
         case RECEIVE_ARTICLES:
            return action.articles
         case RECEIVE_ARTICLE:
-            const newArticle = { [action.article.id]: action.article };
-            return Object.assign({}, state, newArticle);
+            // let nextState = Object.assign({}, state);
+            // nextState[]
+            // const newArticle = { [action.article.id]: action.article };
+            // return Object.assign({}, state, newArticle);
+            return state;
         default:
             return state;
     }
