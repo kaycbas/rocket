@@ -13,7 +13,7 @@
 .read-container {
     max-width: 798px;
     margin: 0px auto;
-    padding: 120px 0px;
+    padding: 120px 40px;
     font-size: 25px;
     line-height: 1.5;
     box-sizing: border-box;
@@ -114,6 +114,14 @@
         Liberation Mono,
         monospace;
         font-size: 1em;
+    }
 
+    figcaption {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 1.25em 0px 0px;
+        font-size: 0.583em;
+        line-height: 1.643;
+        color: rgb(130, 130, 130);
     }
 }
