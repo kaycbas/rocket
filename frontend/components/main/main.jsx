@@ -15,6 +15,7 @@ export default class Main extends Component {
     render() {
         return (
             <React.Fragment>
+            
                 <MainNavContainer />
                 <main className="main-container">
                     <SidebarContainer />

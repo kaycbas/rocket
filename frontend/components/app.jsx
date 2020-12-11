@@ -14,10 +14,12 @@ import LandingMain from './landing/landing_main';
 import LandingFooter from './landing/landing_footer';
 
 import MainNavContainer from './main/main_nav_container';
-import MainContainer from './main/main_container';
 import SidebarContainer from './sidebar/sidebar_container';
 import MyListIndexContainer from './articles/my_list_index_container';
 import DiscoverIndexContainer from './articles/discover_index_container';
+
+import ArticleShowContainer from './articles/article_show_container';
+import MainContainer from './main/main_container';
 
 const App = () => (
     <React.Fragment>
@@ -27,8 +29,10 @@ const App = () => (
         <AuthRoute exact path='/signup' component={SignUpFormContainer} />
         <AuthRoute exact path='/signin' component={SignInFormContainer} />
         <AuthRoute path='/' component={LandingFooter} />
-        
-        <ProtectedRoute path='/' component={MainContainer} />
+        <Switch>
+            <ProtectedRoute path='/read/:article_id' component={ArticleShowContainer} />
+            <ProtectedRoute path='/' component={MainContainer} />
+        </Switch>
     </React.Fragment>
 );
 
