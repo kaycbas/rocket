@@ -4,17 +4,13 @@ import {
 } from '../../actions/article_actions';
 
 const articlesReducer = (state = {}, action) => {
-    debugger
     Object.freeze(state)
     switch (action.type) {
         case RECEIVE_ARTICLES:
            return action.articles
         case RECEIVE_ARTICLE:
-            // let nextState = Object.assign({}, state);
-            // nextState[]
-            // const newArticle = { [action.article.id]: action.article };
-            // return Object.assign({}, state, newArticle);
-            return state;
+            const newArticle = { [action.article.id]: action.article };
+            return Object.assign({}, state, newArticle);
         default:
             return state;
     }

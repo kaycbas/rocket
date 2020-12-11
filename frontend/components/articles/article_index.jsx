@@ -14,7 +14,7 @@ export default class ArticleIndex extends Component {
     }
 
     renderArticles() {
-        if (!Array.isArray(this.props.articles)) return null;
+        if (this.props.articles === []) return null;
         return this.props.articles.map(article => (
             <ArticleIndexItem key={article.id} article={article} />
         ));
