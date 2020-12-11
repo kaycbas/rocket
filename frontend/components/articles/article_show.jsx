@@ -11,7 +11,8 @@ export default class ArticleShow extends Component {
     }
 
     render() {
-        if (!this.props.article.content) return null;
+        // debugger
+        if (!this.props.article || !this.props.article.content) return null;
         return (
             <div className="read-container">
                 <header className="read-header">

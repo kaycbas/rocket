@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { BsSearch } from 'react-icons/bs';
 import { GrAdd } from 'react-icons/gr';
 import { CgProfile } from 'react-icons/cg';
@@ -22,12 +22,16 @@ export default class MainNav extends Component {
                         <img className="nav-logo" src={window.rocketLogo} alt="Rocket logo" />
                     </Link>
                     <ul className="nav-tabs">
-                        <Link to='/' className="nav-tab">
-                            <label>Home</label>
-                        </Link>
-                        <Link to='/discover' className="nav-tab">
-                            <label>Discover</label>
-                        </Link>
+                        <div className="tab-container">
+                            <NavLink exact activeClassName="active-tab" to='/'>
+                                Home
+                            </NavLink>
+                        </div>
+                        <div className="tab-container">
+                            <NavLink exact activeClassName="active-tab" to='/discover'>
+                                Discover
+                            </NavLink>
+                        </div>
                     </ul>
                     <ul className="nav-utils">
                         <div className="nav-util">
