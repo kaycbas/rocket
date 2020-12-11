@@ -1,0 +1,29 @@
+.sidebar-nav-container {
+    padding: 40px 0;
+}
+
+.sidebar-btn {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    font-size: 16px;
+    font-weight:400;
+    line-height: 16px;
+    height: 40px;
+    border-radius: 4px;
+    padding: 0px 20px;
+    
+}
+
+.list-btn {
+    color: rgb(17, 106, 101);
+    background-color: rgba(28, 176, 168, 0.2);
+}
+
+.list-btn > * {
+    margin-right: 8px;
+}
+.archive-btn > * {
+    margin-right: 10px;
+}

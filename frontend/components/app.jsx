@@ -13,8 +13,8 @@ import LandingNav from './landing/landing_nav';
 import LandingMain from './landing/landing_main';
 import LandingFooter from './landing/landing_footer';
 
-import MainNavContainer from './main_nav/main_nav_container';
-import MainContainer from './main_nav/main_container';
+import MainNavContainer from './main/main_nav_container';
+import MainContainer from './main/main_container';
 import SidebarContainer from './sidebar/sidebar_container';
 import MyListIndexContainer from './articles/my_list_index_container';
 import DiscoverIndexContainer from './articles/discover_index_container';

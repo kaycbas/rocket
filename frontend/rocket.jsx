@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // window.signOut = SessionApiUtil.signOut;
     // window.fetchArticles = ArticleApiUtil.fetchArticles;
     window.fetchArticles = ArticleActions.fetchArticles;
+    window.fetchArticle = ArticleActions.fetchArticle;
     window.signUp = SessionActions.signUp;
     window.signIn = SessionActions.signIn;
     window.signOut = SessionActions.signOut;

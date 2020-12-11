@@ -7,3 +7,10 @@ export const fetchArticles = data => {
         data
     })
 }
+
+export const fetchArticle = id => {
+    return $.ajax({
+        method: 'GET',
+        url: `api/articles/${id}`
+    })
+}

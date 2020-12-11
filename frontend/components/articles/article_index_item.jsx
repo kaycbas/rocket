@@ -5,7 +5,7 @@ import { FiMoreHorizontal } from 'react-icons/fi'
 export default class ArticleIndexItem extends Component {
     render() {
         // debugger;
-        const { id, title, author, url, cover_img } = this.props.article;
+        const { id, title, author, url, reading_time, cover_img } = this.props.article;
         if (!this.props.article) return null;
         return (
             <article className="article-grid-item">
@@ -21,7 +21,7 @@ export default class ArticleIndexItem extends Component {
                     <div className="metas">
                         <div>{author ? author : url}</div>
                         <span>•</span>
-                        <div>20 min</div>
+                        <div>{reading_time}</div>
                     </div>
                     <div className="description">
                         Most of us have a pretty terrible 
