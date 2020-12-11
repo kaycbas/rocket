@@ -36,7 +36,6 @@ export default class ArticleIndexItem extends Component {
                         <div className="ctrls-btn">
                             <FiMoreHorizontal size={18} />
                             <div className="article-ctrls-modal">
-                                <span className="hover-soln"></span>
                                 <div className="ctrl-line">
                                     <FiTrash size={18} />
                                     <p>Delete</p>
@@ -53,6 +52,7 @@ export default class ArticleIndexItem extends Component {
                                     <AiOutlineTag size={18} />
                                     <p>Tag</p>
                                 </div>
+                                <span className="hover-soln"></span>
                             </div>
                         </div>
                     </div>
