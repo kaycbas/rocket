@@ -1,0 +1,39 @@
+.read-nav-container {
+    display: block;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    border-bottom: 1px solid rgb(224, 224, 224);
+    background-color: rgb(255, 255, 255);
+}
+
+.read-nav-content {
+    padding: 0px 40px;
+    width: 100%;
+    height: 63px;
+    text-align: center;
+    margin: 0px auto;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 50px auto 50px;
+    grid-template-rows: 63px;
+    align-items: center;
+    color: rgb(130, 130, 130);
+}
+
+.read-nav-utils {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.read-nav-btn {
+    cursor: pointer;
+    padding: 0 5px;
+
+    &:hover {
+        color: $off-black;
+    }
+}

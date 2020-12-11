@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ArticleNav from './article_nav';
 import parse from 'html-react-parser';
 
 export default class ArticleShow extends Component {
@@ -11,14 +12,16 @@ export default class ArticleShow extends Component {
     }
 
     render() {
-        // debugger
         if (!this.props.article || !this.props.article.content) return null;
         return (
-            <div className="read-container">
-                <header className="read-header">
-                    <h1>{this.props.article.title}</h1>
-                </header>
-                {parse(this.props.article.content)}
+            <div>
+                <ArticleNav />
+                <div className="read-container">
+                    <header className="read-header">
+                        <h1>{this.props.article.title}</h1>
+                    </header>
+                    {parse(this.props.article.content)}
+                </div>
             </div>
         )
     }

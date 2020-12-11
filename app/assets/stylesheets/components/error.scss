@@ -1,0 +1,24 @@
+.error-container {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.error-content {
+    max-width: 830px;
+    margin: 20px auto;
+
+    h1 {
+        display: inline-block;
+        box-sizing: border-box;
+        color: #c33;
+        background-color: #ffe8e9;
+        border-radius: 4px;
+        padding: .5em .8em .45em;
+        margin: 0 auto 1em;
+    }
+}
