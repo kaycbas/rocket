@@ -5,9 +5,9 @@ export const createSave = articleId => {
     })
 }
 
-// export const fetchArticle = id => {
-//     return $.ajax({
-//         method: 'GET',
-//         url: `api/articles/${id}`
-//     })
-// }
+export const fetchSaves = () => {
+    return $.ajax({
+        method: 'GET',
+        url: `api/saves`
+    })
+}

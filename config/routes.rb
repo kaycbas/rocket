@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :articles, only: [:index, :show, :create, :destroy] do 
       resources :saves, only: [:create]
     end
-    resources :saves, only: [:update, :destroy]
+    resources :saves, only: [:index, :update, :destroy]
   end
 
   root "static_pages#root"

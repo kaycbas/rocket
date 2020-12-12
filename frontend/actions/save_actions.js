@@ -3,12 +3,12 @@ import * as ApiUtil from '../util/save_api_util';
 export const RECEIVE_SAVES = 'RECEIVE_SAVES';
 export const RECEIVE_SAVE = 'RECEIVE_SAVE';
 
-// export const receiveSaves = saves => {
-//     return {
-//         type: RECEIVE_SAVES,
-//         saves
-//     }
-// }
+export const receiveSaves = saves => {
+    return {
+        type: RECEIVE_SAVES,
+        saves
+    }
+}
 
 export const receiveSave = save => {
     return {
@@ -17,11 +17,11 @@ export const receiveSave = save => {
     }
 }
 
-// export const fetchArticles = filters => dispatch => (
-//     ApiUtil.fetchArticles(filters).then(articles => (
-//         dispatch(receiveArticles(articles))
-//     ))
-// );
+export const fetchSaves = () => dispatch => (
+    ApiUtil.fetchSaves().then(saves => (
+        dispatch(receiveSaves(saves))
+    ))
+);
 
 export const createSave = articleId => dispatch => (
     ApiUtil.createSave(articleId).then(save => (

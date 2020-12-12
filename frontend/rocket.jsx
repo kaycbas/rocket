@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.fetchArticles = ArticleActions.fetchArticles;
     window.fetchArticle = ArticleActions.fetchArticle;
     window.createSave = SaveActions.createSave;
+    window.fetchSaves = SaveActions.fetchSaves;
     window.signUp = SessionActions.signUp;
     window.signIn = SessionActions.signIn;
     window.signOut = SessionActions.signOut;

@@ -1,4 +1,9 @@
 class Api::SavesController < ApplicationController
+    def index
+        @saves = Save.where(user_id: current_user.id)
+        render :index
+    end
+
     def create
         new_save = {}
         new_save[:user_id] = current_user.id
