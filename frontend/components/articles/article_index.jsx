@@ -19,6 +19,7 @@ export default class ArticleIndex extends Component {
                 key={article.id} 
                 article={article} 
                 createSave={this.props.createSave}
+                deleteSave={this.props.deleteSave}
                 indexType={this.props.indexType} 
             />
         ));

@@ -9,10 +9,10 @@ import { FiTrash } from 'react-icons/fi'
 export default class ArticleIndexItem extends Component {
     constructor(props) {
         super(props);
+        this.state = { saved: false }
+
         this.saveArticle = this.saveArticle.bind(this);
-        this.state = {
-           saved: false
-        }
+        this.unsaveArticle = this.unsaveArticle.bind(this);
     }
 
     saveArticle() {
@@ -20,6 +20,14 @@ export default class ArticleIndexItem extends Component {
             this.props.createSave(this.props.article.id);
         }
         this.setState({ saved: !this.state.saved })
+    }
+
+    unsaveArticle() {
+        // if (this.state.saved) {
+            const saveId = this.props.article.save_id;
+            this.props.deleteSave(saveId);
+        // }
+        // this.setState({ saved: !this.state.saved })
     }
 
     renderSave() {
@@ -78,7 +86,7 @@ export default class ArticleIndexItem extends Component {
                         <div className="ctrls-btn">
                             <FiMoreHorizontal size={18} />
                             <div className="article-ctrls-modal">
-                                <div className="ctrl-line">
+                                <div onClick={this.unsaveArticle} className="ctrl-line">
                                     <FiTrash size={18} />
                                     <p>Delete</p>
                                 </div>

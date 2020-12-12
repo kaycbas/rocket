@@ -11,3 +11,10 @@ export const fetchSaves = () => {
         url: `api/saves`
     })
 }
+
+export const deleteSave = id => {
+    return $.ajax({
+        method: 'DELETE',
+        url: `api/saves/${id}`
+    })
+}
