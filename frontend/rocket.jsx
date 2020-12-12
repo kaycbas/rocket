@@ -6,6 +6,7 @@ import Root from './components/root';
 import * as SessionApiUtil from './util/session_api_util';
 import * as SessionActions from './actions/session_actions';
 import * as ArticleApiUtil from './util/article_api_util';
+import * as SaveApiUtil from './util/save_api_util';
 import * as ArticleActions from './actions/article_actions';
 import configureStore from './store/store';
 //
@@ -29,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // window.fetchArticles = ArticleApiUtil.fetchArticles;
     window.fetchArticles = ArticleActions.fetchArticles;
     window.fetchArticle = ArticleActions.fetchArticle;
+    window.createSave = SaveApiUtil.createSave;
     window.signUp = SessionActions.signUp;
     window.signIn = SessionActions.signIn;
     window.signOut = SessionActions.signOut;
