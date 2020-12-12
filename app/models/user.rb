@@ -19,13 +19,19 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
 
-    has_many :saves,
-        foreign_key: :user_id,
+    has_many :saves, -> { where archived: false},
         class_name: :Save,
         dependent: :destroy
 
-    has_many :articles,
+    has_many :saved_articles,
         through: :saves,
+        source: :article
+
+    has_many :archived_saves, -> { where archived: true},
+        class_name: :Save
+
+    has_many :archived_articles,
+        through: :archived_saves,
         source: :article
 
     def self.find_by_credentials(username, password)

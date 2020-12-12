@@ -17,11 +17,12 @@ export const receiveArticle = article => {
     }
 }
 
-export const fetchArticles = filters => dispatch => (
-    ApiUtil.fetchArticles(filters).then(articles => (
+export const fetchArticles = filter => dispatch => {
+    const formattedFilter = { [filter]: true }
+    return ApiUtil.fetchArticles(formattedFilter).then(articles => (
         dispatch(receiveArticles(articles))
     ))
-);
+}
 
 export const fetchArticle = id => dispatch => (
     ApiUtil.fetchArticle(id).then(article => (

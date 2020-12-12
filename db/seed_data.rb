@@ -6,7 +6,7 @@ module SeedData
         url: 'a16z.com',
         full_url: 'https://a16z.com/2020/04/18/its-time-to-build/', 
         reading_time: '8 min',
-        featured: false, 
+        featured: true, 
         img_name: "build.png",
         content: 
             "<div class='article-content'>
@@ -42,7 +42,7 @@ module SeedData
             url: 'paulgraham.com',
             full_url: 'http://paulgraham.com/lesson.html', 
             reading_time: '18 min',
-            featured: false, 
+            featured: true, 
             img_name: "pg.png",
             content: 
             "<div class='article-content'>
@@ -127,7 +127,7 @@ module SeedData
             url: 'neilkakkar.com',
             full_url: 'https://neilkakkar.com/Psychology-of-Human-Misjudgment.html', 
             reading_time: '15 min',
-            featured: false, 
+            featured: true, 
             img_name: "munger.png",
             content: 
                 "<div class='article-content'>
@@ -484,7 +484,7 @@ module SeedData
             url: 'theodinproject.com',
             full_url: 'https://www.theodinproject.com/courses/ruby-on-rails/lessons/sessions-cookies-and-authentication', 
             reading_time: '15 min',
-            featured: false, 
+            featured: true, 
             img_name: "odin.png",
             content: 
                 "<div class='article-content'>
@@ -621,7 +621,7 @@ module SeedData
             url: 'blog.pragmaticengineer.com',
             full_url: 'https://blog.pragmaticengineer.com/data-structures-and-algorithms-i-actually-used-day-to-day/', 
             reading_time: '14 min',
-            featured: false, 
+            featured: true, 
             img_name: "algos.png",
             content: 
                 "<div class='article-content' lang=\"en\"><p>Do you actually use data structures and algorithms on your day to day job? I've noticed a growing trend of people assuming algorithms are pointless questions that are asked by tech companies purely as an arbitrary measure. I hear more people complain about how all of this is a purely academic exercise. This notion was definitely popularized after Max Howell, the author of Homebrew, posted his Google interview experience:</p>
@@ -709,7 +709,7 @@ module SeedData
             url: 'collaborativefund.com',
             full_url: 'https://www.collaborativefund.com/blog/common-plots-of-economic-history/', 
             reading_time: '20 min',
-            featured: false, 
+            featured: true, 
             img_name: "brick.png",
             content: 
                 "<div class='article-content' lang=\"en\"><p>Complicated stuff can stem from a handful of common roots. Understanding those common roots can be more important than trying to wrap your head around complexity.</p>
@@ -884,7 +884,7 @@ module SeedData
             url: 'neilkakkar.com',
             full_url: 'https://neilkakkar.com/sapiens.html', 
             reading_time: '32 min',
-            featured: false, 
+            featured: true, 
             img_name: "sapiens.png",
             content: 
                 "<div class='article-content'>
@@ -1162,7 +1162,7 @@ module SeedData
             url: 'gq.com',
             full_url: 'https://www.gq.com/story/secrets-of-the-worlds-greatest-art-thief', 
             reading_time: '39 min',
-            featured: false, 
+            featured: true, 
             img_name: "art.png",
             content: 
                 "<div class='article-content' lang=\"en\"><div class=\"RIL_IMG\" id=\"RIL_IMG_1\"></div><div>Stéphane Breitwieser robbed nearly 200 museums, amassed a collection of treasures worth more than $1.4 billion, and became perhaps the most prolific art thief in history. And as he reveals to GQ’s Michael Finkel, how Breitwieser managed to do all this is every bit as surprising as why.</div><div class=\"RIL_IMG\" id=\"RIL_IMG_3\">
@@ -1249,7 +1249,7 @@ module SeedData
             url: 'stratechery.com',
             full_url: 'https://stratechery.com/2020/stripe-platform-of-platforms/', 
             reading_time: '8 min',
-            featured: false, 
+            featured: true, 
             img_name: "stripe.png",
             content: 
                 "<div class='article-content' lang=\"en\">
@@ -1359,7 +1359,7 @@ module SeedData
             url: 'nakamoto.com',
             full_url: 'https://nakamoto.com/hash-functions/', 
             reading_time: '10 min',
-            featured: false, 
+            featured: true, 
             img_name: "hash.png",
             content: 
                 "<div class='article-content' lang=\"en\">
@@ -1444,7 +1444,7 @@ module SeedData
             url: 'robertheaton.com',
             full_url: 'https://robertheaton.com/2020/04/06/systems-design-for-advanced-beginners/', 
             reading_time: '41 min',
-            featured: false, 
+            featured: true, 
             img_name: "systems.png",
             content: 
                 "<div class='article-content' lang=\"en\">
@@ -1941,7 +1941,7 @@ module SeedData
             url: 'paulgraham.com',
             full_url: 'http://paulgraham.com/think.html', 
             reading_time: '16 min',
-            featured: false, 
+            featured: true, 
             img_name: "pg-2.png",
             content: 
                 "<div class='article-content' lang=\"en\"><p>November 2020</p>
@@ -2017,7 +2017,7 @@ module SeedData
             url: 'jamesclear.com',
             full_url: 'https://jamesclear.com/saying-no', 
             reading_time: '6 min',
-            featured: false, 
+            featured: true, 
             img_name: "compass.png",
             content: 
                 "<div class='article-content' lang=\"en\">
@@ -2071,7 +2071,7 @@ module SeedData
             url: 'fastcompany.com',
             full_url: 'https://www.fastcompany.com/3008346/deep-inside-taco-bells-doritos-locos-taco', 
             reading_time: '13 min',
-            featured: false, 
+            featured: true, 
             img_name: "taco.png",
             content: 
                 "<div class='article-content'><h2>From handshake deals to experiments at Home Depot, the history of Taco Bell’s disruptive faux cheese-dusted taco.
@@ -2106,7 +2106,7 @@ module SeedData
             url: 'getpocket.com',
             full_url: 'https://getpocket.com/explore/item/why-do-dogs-love-us-science-explains', 
             reading_time: '2 min',
-            featured: false, 
+            featured: true, 
             img_name: 'dog.png',
             content: 
                 "<div class='article-content'>
@@ -2155,7 +2155,7 @@ module SeedData
             url: 'getpocket.com',
             full_url: 'https://getpocket.com/explore/item/top-10-design-flaws-in-the-human-body', 
             reading_time: '7 min',
-            featured: false, 
+            featured: true, 
             img_name: "brain.png",
             content: 
                 "<div class='article-content'><p><span>T</span>he Greeks were obsessed with the mathematically perfect body. But unfortunately for anyone chasing that ideal, we were designed not by Pygmalion, the mythical sculptor who carved a flawless woman, but by MacGyver. Evolution constructed our bodies with the biological equivalent of duct tape and lumber scraps. And the only way to refine the form (short of an asteroid strike or nuclear detonation to wipe clean the slate) is to jerry-rig the current model. “Evolution doesn’t produce perfection,” explains Alan Mann, a physical anthropologist at Princeton University. “It produces function.”</p><p>With that in mind, I surveyed anatomists and biologists to compile a punch list for the human body, just as you’d do before buying a house. Get out your checkbook. This one’s a fixer-upper.</p><p><b>1. An unsound spine</b></p><p><b>Problem:</b> Our spines are a mess. It’s a wonder we can even walk, says Bruce Latimer, director of the Center for Human Origins at Case Western Reserve University, in Cleveland. When our ancestors walked on all fours, their spines arched, like a bow, to withstand the weight of the organs suspended below. But then we stood up. That threw the system out of whack by 90 degrees, and the spine was forced to become a column. Next, to allow for bipedalism, it curved forward at the lower back. And to keep the head in balance—so that we didn’t all walk around as if doing the limbo—the upper spine curved in the opposite direction. This change put tremendous pressure on the lower vertebrae, sticking about 80 percent of adults, according to one estimate, with lower back pain.</p><p><b>Fix:</b> Go back to the arch. “Think of your dog,” Latimer says. “From the sacrum to the neck, it’s a single bow curve. That’s a great system.” Simple. Strong. Pain-free. There’s only one catch: To keep the weight of our heads from pitching us forward, we’d need to return to all fours.</p><p><b>2. An inflexible knee</b></p><p><b>Problem:</b> As Latimer says, “You take the most complex joint in the body and put it between two huge levers—the femur and the tibia—and you’re looking for trouble.” The upshot is your knee only rotates in two directions: forward and back. “That’s why every major sport, except maybe rugby, makes it illegal to clip, or hit an opponent’s knee from the side.”</p><p><b>Fix:</b> Replace this hinge with a ball and socket, like in your shoulders and hips. We never developed this type of joint at the knee “because we didn’t need it,” Latimer says. “We didn’t know about football.”</p><figure><div><div class=\"RIL_IMG\" id=\"RIL_IMG_2\">
@@ -2178,7 +2178,7 @@ module SeedData
             url: 'getpocket.com',
             full_url: 'https://getpocket.com/explore/item/universal-quantum-phenomenon-found-in-strange-metals', 
             reading_time: '8 min',
-            featured: false, 
+            featured: true, 
             img_name: "quantum.png",
             content: 
                 "<div class='article-content'><h2>Experiments suggest that exotic superconducting materials share a “strange metal” state characterized by a quantum speed limit that somehow acts as a fundamental organizing principle.</h2><article><article><div><div><section><div><div class=\"RIL_IMG\" id=\"RIL_IMG_1\">
@@ -2257,7 +2257,7 @@ module SeedData
             url: 'lithub.com',
             full_url: 'https://lithub.com/10-works-of-literary-fantasy-you-should-read/', 
             reading_time: '5 min',
-            featured: false, 
+            featured: true, 
             img_name: "fantasy.png",
             content: 
                 "<div class='article-content'><h2>Even if you're a genre snob (but also, if you're a genre snob, stop).</h2><article><article><div><div><section><div><div class=\"RIL_IMG\" id=\"RIL_IMG_1\">
@@ -2315,7 +2315,7 @@ module SeedData
             url: 'nytimes.com',
             full_url: 'https://www.nytimes.com/2016/04/17/magazine/the-minecraft-generation.html', 
             reading_time: '31 min',
-            featured: false, 
+            featured: true, 
             img_name: "minecraft.png",
             content: 
                 "<div class='article-content'>
@@ -2341,7 +2341,7 @@ module SeedData
             url: 'waitbutwhy.com',
             full_url: 'https://waitbutwhy.com/2016/01/horizontal-history.html', 
             reading_time: '25 min',
-            featured: false, 
+            featured: true, 
             img_name: "history.png",
             content: 
                 "<div class='article-content'><div class=\"RIL_IMG\" id=\"RIL_IMG_1\">
@@ -2471,7 +2471,7 @@ module SeedData
             url: 'www.quantamagazine.org',
             full_url: 'https://www.quantamagazine.org/why-black-hole-interiors-grow-forever-20181206/#:~:text=According%20to%20general%20relativity%2C%20the,stretches%20toward%20the%20center%20point.', 
             reading_time: '5 min',
-            featured: false, 
+            featured: true, 
             img_name: "gravity.png",
             content: 
                 "<div class='article-content'><h2>The renowned physicist Leonard Susskind has identified a possible quantum origin for the ever-growing volume of black holes.</h2><article><article><div><div><section><div><div class=\"RIL_IMG\" id=\"RIL_IMG_1\">
@@ -2513,7 +2513,7 @@ module SeedData
             url: 'medium.com/@yegg',
             full_url: 'https://medium.com/@yegg/mental-models-i-find-repeatedly-useful-936f1cc405d', 
             reading_time: '5 min',
-            featured: false, 
+            featured: true, 
             img_name: "mind.png",
             content: 
                 "<div class='article-content'><div class=\"RIL_IMG\" id=\"RIL_IMG_1\">

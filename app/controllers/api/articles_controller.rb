@@ -1,6 +1,15 @@
 class Api::ArticlesController < ApplicationController
     def index
-        @articles = Article.all
+        if params[:featured]
+            @articles = Article.where(featured: true)
+        elsif params[:archived]
+            @articles = current_user.archived_articles
+        else 
+            # @articles = Article.where(featured: true)
+            # debugger
+            @articles = current_user.saved_articles
+            # @articles = Article.all # TODO: remove
+        end
         render :index
     end
 
