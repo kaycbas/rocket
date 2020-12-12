@@ -7,10 +7,30 @@ import { FiArchive } from 'react-icons/fi'
 import { FiTrash } from 'react-icons/fi'
 
 export default class ArticleIndexItem extends Component {
+    constructor(props) {
+        super(props);
+        this.saveArticle = this.saveArticle.bind(this);
+    }
+
+    saveArticle() {
+        this.props.createSave(this.props.article.id);
+    }
+
+    renderSave() {
+        if (!this.props.indexType === 'Discover') return null;
+        return (
+            <div onClick={this.saveArticle} className="pocket-save">
+                <div className="pocket-save-img"></div>
+                <p>Save</p>
+            </div>
+        )
+    }
+
     render() {
-        // debugger;
-        const { id, title, author, url, reading_time, cover_img } = this.props.article;
         if (!this.props.article) return null;
+        const { 
+            id, title, author, url, reading_time, cover_img 
+        } = this.props.article;
         return (
             <article className="article-grid-item">
                 <Link to={`/read/${id}`}>
@@ -32,6 +52,7 @@ export default class ArticleIndexItem extends Component {
                         understanding of history. 
                         Our knowledge is spotty, with large
                     </div>
+                    {this.renderSave()}
                     <div className="article-item-ctrls">
                         <div className="ctrls-btn">
                             <FiMoreHorizontal size={18} />
