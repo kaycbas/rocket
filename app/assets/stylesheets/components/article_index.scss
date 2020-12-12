@@ -109,28 +109,44 @@
     }
 }
 
+
 .pocket-save {
     position: absolute;
     top: 188px;
     left: 0px;
     display: flex;
     color: rgb(51, 51, 51);
-    // background-color: red;
     z-index: 100;
     cursor: pointer;
-
-    .pocket-save-img {
-        display: block;
+    
+    p {
+        padding: 3px 0 0 0px;
+    }
+    }
+    
+#svg-pocket {
+        display: inline-block;
+        vertical-align: middle;
+        fill: currentcolor;
+        height: 22px;
         width: 22px;
-        height: 21px;
-        // padding-bottom: 5px;
-        background-image: image-url('pocket-save.png');
-        background-position: center no-repeat;
-        background-size: 22px 21px;
+        padding: 0px;
+        margin: 0px 8px 0px 0px;
+}
+
+.article-unsaved:hover {
+    color: $deep-green;
+}
+
+.article-saved {
+    color: rgb(239, 64, 86);
+
+    &:hover {
+        color: rgb(133, 31, 45);
     }
 
-    p {
-        padding: 2px 0 0 7px;
+    p:after {
+        content: 'd';
     }
 }
 

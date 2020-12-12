@@ -10,17 +10,38 @@ export default class ArticleIndexItem extends Component {
     constructor(props) {
         super(props);
         this.saveArticle = this.saveArticle.bind(this);
+        this.state = {
+           saved: false
+        }
     }
 
     saveArticle() {
-        this.props.createSave(this.props.article.id);
+        if (!this.state.saved) {
+            this.props.createSave(this.props.article.id);
+        }
+        this.setState({ saved: !this.state.saved })
     }
 
     renderSave() {
-        if (!this.props.indexType === 'Discover') return null;
+        if (this.props.indexType !== 'Discover') return null;
+        const saveClass = this.state.saved ? 
+            "article-saved" : "article-unsaved";
+        const saveIcon = this.state.saved ? (
+                <path 
+                    d="M1.643 2h20.714C23.264 2 24 2.715 24 3.597v7.736C24 17.777 18.628 23 12 23S0 17.777 0 11.333V3.597C0 2.715.736 2 1.643 2zm14.306 6.43L12 12.304 8.05 8.429a1.5 1.5 0 0 0-2.1 2.142l5 4.906a1.5 1.5 0 0 0 2.1 0l5-4.906a1.5 1.5 0 0 0-2.1-2.142z">
+                </path> 
+            ) : ( 
+                <path 
+                    d="M2.506 4A.514.514 0 0 0 2 4.521v6.368C2 16.476 6.48 21 12 21s10-4.524 10-10.111V4.52A.514.514 0 0 0 21.494 4H2.506zm0-2h18.988A2.514 2.514 0 0 1 24 4.521v6.368C24 17.576 18.63 23 12 23S0 17.576 0 10.889V4.52C0 3.131 1.12 2 2.506 2zM16.3 8.786a1 1 0 0 1 1.4 1.428l-5 4.906a1 1 0 0 1-1.4 0l-5-4.906a1 1 0 1 1 1.4-1.428l4.3 4.22 4.3-4.22z">
+                </path> 
+            );
         return (
-            <div onClick={this.saveArticle} className="pocket-save">
-                <div className="pocket-save-img"></div>
+            <div 
+                onClick={this.saveArticle} 
+                className={`pocket-save ${saveClass}`}>
+                <svg viewBox="0 0 24 24" id="svg-pocket">
+                    {saveIcon}
+                </svg>
                 <p>Save</p>
             </div>
         )
