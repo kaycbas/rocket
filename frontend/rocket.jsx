@@ -8,6 +8,7 @@ import * as SessionActions from './actions/session_actions';
 import * as ArticleApiUtil from './util/article_api_util';
 import * as SaveApiUtil from './util/save_api_util';
 import * as ArticleActions from './actions/article_actions';
+import * as SaveActions from './actions/save_actions';
 import configureStore from './store/store';
 //
 
@@ -28,9 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // window.signIn = SessionApiUtil.signIn;
     // window.signOut = SessionApiUtil.signOut;
     // window.fetchArticles = ArticleApiUtil.fetchArticles;
+    // window.createSave = SaveApiUtil.createSave;
     window.fetchArticles = ArticleActions.fetchArticles;
     window.fetchArticle = ArticleActions.fetchArticle;
-    window.createSave = SaveApiUtil.createSave;
+    window.createSave = SaveActions.createSave;
     window.signUp = SessionActions.signUp;
     window.signIn = SessionActions.signIn;
     window.signOut = SessionActions.signOut;
