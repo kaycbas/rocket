@@ -23,11 +23,8 @@ export default class ArticleIndexItem extends Component {
     }
 
     unsaveArticle() {
-        // if (this.state.saved) {
-            const saveId = this.props.article.save_id;
-            this.props.deleteSave(saveId);
-        // }
-        // this.setState({ saved: !this.state.saved })
+        const saveId = this.props.article.save_id;
+        this.props.deleteSave(saveId);
     }
 
     renderSave() {
