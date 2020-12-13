@@ -9,7 +9,7 @@ import React from 'react';
 //   </div>
 // );
 const LoadingIcon = () => (
-    <div class="lds-dual-ring"></div>
+    <div className="lds-dual-ring"></div>
 );
 
 export default LoadingIcon;

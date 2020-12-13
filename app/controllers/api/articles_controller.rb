@@ -1,9 +1,10 @@
 class Api::ArticlesController < ApplicationController
     def index
-        if params[:featured]
+        @filter = params[:filter]
+        if @filter == 'featured'
             @articles = Article.where(featured: true)
             @articles = @articles.reject { |article| article.savers.include?(current_user) }
-        elsif params[:archived]
+        elsif @filter == 'archived'
             @articles = current_user.archived_articles
         else 
             @articles = current_user.saved_articles

@@ -10,19 +10,19 @@ export default class ArticleIndex extends Component {
     }
 
     componentDidMount() {
-        // debugger;
         this.props.fetchArticles();
     }
 
     renderArticles() {
-        if (this.props.articles === []) return null;
-        return this.props.articles.map(article => (
+        let { articles, indexType, createSave, deleteSave} = this.props;
+        if (articles === []) return null;
+        return articles.map(article => (
             <ArticleIndexItem 
                 key={article.id} 
                 article={article} 
-                indexType={this.props.indexType} 
-                createSave={this.props.createSave}
-                deleteSave={this.props.deleteSave}
+                indexType={indexType} 
+                createSave={createSave}
+                deleteSave={deleteSave}
             />
         ));
     }

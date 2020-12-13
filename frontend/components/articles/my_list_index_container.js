@@ -14,7 +14,7 @@ const mSTP = state => {
 
 const mDTP = dispatch => {
     return {
-        fetchArticles: () => dispatch(fetchArticles()),
+        fetchArticles: () => dispatch(fetchArticles('list')),
         deleteSave: saveId => dispatch(deleteSave(saveId))
     }
 }

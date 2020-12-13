@@ -18,6 +18,9 @@ export default class ArticleIndexItem extends Component {
     saveArticle() {
         if (!this.state.saved) {
             this.props.createSave(this.props.article.id);
+        } else {
+            const saveId = this.props.article.save_id;
+            this.props.deleteSave(saveId);
         }
         this.setState({ saved: !this.state.saved })
     }

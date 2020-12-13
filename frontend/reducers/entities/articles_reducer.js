@@ -20,7 +20,12 @@ const articlesReducer = (state = {}, action) => {
             nextState[action.save.article_id].save_id = action.save.id;
             return nextState;
         case REMOVE_SAVE:
-            delete nextState[action.save.article_id]
+            const filter = state[action.save.article_id].filter;
+            if (filter == 'featured') {
+                state[action.save.article_id].save_id = null;
+            } else {
+                delete nextState[action.save.article_id];
+            }
             return nextState;
         default:
             return state;

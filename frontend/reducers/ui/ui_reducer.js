@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux';
-// import errorsReducer from './errors_reducer';
-import loadingReducer from './loading_reducer';
+import loading from './loading_reducer';
+// import filter from './filter_reducer';
+// import errors from './errors_reducer';
 
 const uiReducer = combineReducers({
-  loading: loadingReducer,
-//   errors: errorsReducer
+  loading,
+  // errors
 });
 
 export default uiReducer;
