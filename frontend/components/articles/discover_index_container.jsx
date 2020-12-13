@@ -8,7 +8,8 @@ import { articlesArray } from '../../reducers/selectors';
 const mSTP = state => {
     return {
         articles: articlesArray(state),
-        indexType: 'Discover'
+        indexType: 'Discover',
+        loading: state.ui.loading.articlesLoading
     }
 }
 

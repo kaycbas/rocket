@@ -7,7 +7,8 @@ import { deleteSave } from '../../actions/save_actions';
 const mSTP = state => {
     return {
         articles: articlesArray(state),
-        indexType: 'My List'
+        indexType: 'My List',
+        loading: state.ui.loading.articlesLoading
     }
 }
 
