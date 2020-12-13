@@ -14,9 +14,9 @@ export default class Landing extends Component {
             <React.Fragment>
                 <LandingNav />
                 <Switch>
-                    <Route exact path='/' component={LandingMain} />
-                    <Route exact path='/signup' component={SignUpFormContainer} />
-                    <Route exact path='/signin' component={SignInFormContainer} />
+                    <Route exact path='/home' component={LandingMain} />
+                    <Route exact path='/home/signup' component={SignUpFormContainer} />
+                    <Route exact path='/home/signin' component={SignInFormContainer} />
                     <Route component={Error} />
                 </Switch>
                 <LandingFooter />

@@ -9,6 +9,7 @@ export default class ArticleIndex extends Component {
     }
 
     componentDidMount() {
+        // debugger;
         this.props.fetchArticles();
     }
 

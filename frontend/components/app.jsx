@@ -14,7 +14,7 @@ import Error from './error/error';
 
 const App = () => (
     <React.Fragment>
-        <AuthRoute path='/' component={Landing} />
+        <AuthRoute path='/home' component={Landing} />
         <Switch>
             <ProtectedRoute exact path='/read/:article_id' component={ArticleShowContainer} />
             <ProtectedRoute path='/' component={MainContainer} />

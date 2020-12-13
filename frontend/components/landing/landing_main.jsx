@@ -12,7 +12,7 @@ export default class LandingMain extends Component {
                         <section className="landing-panel">
                             <div className="landing-panel-content">
                                 <h2>Knowledge is rocket fuel.</h2>
-                                <Link to='/signup'>
+                                <Link to='/home/signup'>
                                     <button className="btn google">
                                         <img src={window.googleIcon} alt="logo" />
                                         <span>
@@ -20,12 +20,12 @@ export default class LandingMain extends Component {
                                         </span>
                                     </button>
                                 </Link>
-                                <Link to='/signup'>
+                                <Link to='/home/signup'>
                                     <button className="btn email">Sign up with Email</button>
                                 </Link>
                                 <span className="signin">
                                     <p>Already have an account?</p>
-                                    <Link className="link" to='/signin'>Log In</Link> &gt;
+                                    <Link className="link" to='/home/signin'>Log In</Link> &gt;
                                 </span>
                                 <p className="terms">
                                     By signing up, you agree to Pocket’s Terms of Service and Privacy Policy.
@@ -56,7 +56,7 @@ export default class LandingMain extends Component {
                     <section className="landing-panel-4">
                         <div className="landing-panel-content-4">
                             <h2>Start saving to Rocket.</h2>
-                            <Link to='/signup'>
+                            <Link to='/home/signup'>
                                 <button className="signup-btn">Sign up now</button>
                             </Link>
                         </div>
