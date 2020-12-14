@@ -7,8 +7,10 @@ class Api::ArticlesController < ApplicationController
             @articles = @articles.reject { |article| article.savers.include?(current_user) }
         elsif @filter == 'archived'
             @articles = current_user.archived_articles
-        else 
+        elsif @filter == 'list'
             @articles = current_user.listed_articles
+        elsif @filter== 'favorites'
+            @articles = current_user.favorite_articles
         end
         render :index
     end

@@ -13,6 +13,7 @@
 #  full_url     :string           not null
 #  reading_time :string
 #  img_name     :string
+#  description  :string
 #
 require 'test_helper'
 

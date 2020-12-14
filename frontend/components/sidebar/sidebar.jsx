@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { TiHome } from 'react-icons/ti';
 import { BsArchiveFill } from 'react-icons/bs';
+import { AiFillStar } from 'react-icons/ai'
 
 
 export default class Sidebar extends Component {
@@ -23,6 +24,12 @@ export default class Sidebar extends Component {
                         <div className="sidebar-btn archive-btn">
                             <BsArchiveFill size={15} />
                             Archive
+                        </div>
+                    </NavLink>
+                    <NavLink exact activeClassName="active-sidebar" to='/favorites'>
+                        <div className="sidebar-btn favorite-btn">
+                            <AiFillStar size={21} />
+                            Favorites
                         </div>
                     </NavLink>
                 </div>

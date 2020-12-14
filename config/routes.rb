@@ -5,8 +5,10 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :show]
     resources :articles, only: [:index, :show, :create, :destroy] do 
       resources :saves, only: [:create]
+      resources :favorites, only: [:create]
     end
     resources :saves, only: [:index, :update, :destroy]
+    resources :favorites, only: [:destroy]
   end
 
   root "static_pages#root"

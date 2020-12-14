@@ -42,6 +42,14 @@ class User < ApplicationRecord
         through: :archived_saves,
         source: :article
 
+    has_many :favorites,
+        foreign_key: :user_id,
+        class_name: :Favorite
+
+    has_many :favorite_articles,
+        through: :favorites,
+        source: :article
+
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)
         return user if user && user.is_password?(password)

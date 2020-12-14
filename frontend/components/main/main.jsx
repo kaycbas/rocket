@@ -24,6 +24,7 @@ export default class Main extends Component {
                         <Route exact path='/' component={MyListIndexContainer} />
                         <Route exact path='/discover' component={DiscoverIndexContainer} />
                         <Route exact path='/archive' component={ArchiveIndexContainer} />
+                        <Route exact path='/favorites' component={FavoritesIndexContainer} />
                         <Route component={Error} />
                     </Switch>
                 </main>

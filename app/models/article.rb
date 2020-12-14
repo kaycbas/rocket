@@ -13,6 +13,7 @@
 #  full_url     :string           not null
 #  reading_time :string
 #  img_name     :string
+#  description  :string
 #
 class Article < ApplicationRecord
     validates :title, :content, :full_url, presence: true
@@ -26,5 +27,13 @@ class Article < ApplicationRecord
 
     has_many :savers,
         through: :saves,
+        source: :user
+
+    has_many :favorites,
+        foreign_key: :article_id,
+        class_name: :Favorite
+
+    has_many :favoriters,
+        through: :favorites,
         source: :user
 end
