@@ -16,7 +16,11 @@ const articlesReducer = (state = {}, action) => {
         case RECEIVE_ARTICLES:
            return action.payload.articles;
         case RECEIVE_ARTICLE:
-            const newArticle = { [action.payload.article.id]: action.payload.article };
+            articleId = action.payload.article.id;
+            const newArticle = { [articleId]: action.payload.article };
+            if (state[articleId]) {
+                newArticle[articleId].filter = state[articleId].filter;
+            }
             return Object.assign({}, state, newArticle);
         case RECEIVE_SAVE:
             saveId = action.save.id;
