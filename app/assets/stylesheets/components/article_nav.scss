@@ -50,3 +50,16 @@
         background-image: image-url('save_black.png');
     }
 }
+
+.save-util-icon-red {
+    display: block;
+    width: 23px;
+    height: 21px;
+    background-image: image-url('save_red.png');
+    background-size: 23px 21px;
+
+    &:hover {
+        background-image: image-url('save_maroon.png');
+    }
+}
+

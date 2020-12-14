@@ -18,6 +18,7 @@ class ArticleNav extends Component {
         this.archiveArticle = this.archiveArticle.bind(this);
         this.unArchiveArticle = this.unArchiveArticle.bind(this);
         this.saveArticle = this.saveArticle.bind(this);
+        this.toggleSave = this.toggleSave.bind(this);
         this.unsaveArticle = this.unsaveArticle.bind(this);
     }
 
@@ -39,9 +40,20 @@ class ArticleNav extends Component {
         }
     }
 
+    toggleSave() {
+        if (!!this.props.article.save_id) {
+            this.props.deleteSave(this.props.save.id);
+        } else {
+            this.props.createSave(this.props.article.id);
+        }
+    }
+
     unsaveArticle() {
         if (!!this.props.article.save_id) {
             this.props.deleteSave(this.props.save.id);
+        }
+        if (!!this.props.article.favorite_id) {
+            this.props.deleteFavorite(this.props.article.favorite_id)
         }
     }
 
@@ -93,13 +105,17 @@ class ArticleNav extends Component {
                 </ul>
             )
         } else if (this.props.article.filter === 'featured') {
+            const isSaved = !!this.props.article.save_id;
             return (
                 <ul className="read-nav-utils">
-                    <Link to="/discover">
-                        <div onClick={this.saveArticle} className="read-nav-btn">
-                            <div className="save-util-icon"></div>
+                    {/* <Link to="/discover"> */}
+                        <div onClick={this.toggleSave} className="read-nav-btn">
+                            { isSaved ?
+                                <div className="save-util-icon-red"></div> :
+                                <div className="save-util-icon"></div>
+                            }
                         </div>
-                    </Link>
+                    {/* </Link> */}
                     {/* <Link to="/discover"> */}
                         <div className="read-nav-btn">
                             <BiHide size={28} />
