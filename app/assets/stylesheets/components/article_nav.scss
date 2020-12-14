@@ -29,11 +29,24 @@
     justify-content: center;
 
 }
+
 .read-nav-btn {
     cursor: pointer;
     padding: 0 5px;
 
     &:hover {
         color: $off-black;
+    }
+}
+
+.save-util-icon {
+    display: block;
+    width: 23px;
+    height: 21px;
+    background-image: image-url('save.png');
+    background-size: 23px 21px;
+
+    &:hover {
+        background-image: image-url('save_black.png');
     }
 }

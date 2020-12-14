@@ -8,6 +8,7 @@ import { AiOutlineStar } from 'react-icons/ai'
 import { FiArchive } from 'react-icons/fi'
 import { FiTrash } from 'react-icons/fi'
 import { BiFontFamily } from 'react-icons/bi'
+import { BiHide } from 'react-icons/bi'
 
 
 export default class ArticleNav extends Component {
@@ -58,23 +59,20 @@ export default class ArticleNav extends Component {
         } else if (this.props.article.filter === 'archived') {
             return (
                 <ul className="read-nav-utils">
-                        {/* <div className="read-nav-btn">
-                            <AiOutlineHighlight size={28} />
-                        </div>
+                    <div className="read-nav-btn">
+                        <div className="save-util-icon"></div>
+                    </div>
+                    <Link to="/">
                         <div className="read-nav-btn">
-                            <AiOutlineTag size={26} />
-                        </div> */}
-                        <Link to="/">
-                            <div className="read-nav-btn">
-                                <AiOutlineStar size={28} />
-                            </div>
-                        </Link>
-                        <Link to="/">
-                            <div onClick={this.unsaveArticle} className="read-nav-btn">
-                                <FiTrash size={25} />
-                            </div>
-                        </Link>
-                    </ul>
+                            <AiOutlineStar size={28} />
+                        </div>
+                    </Link>
+                    <Link to="/">
+                        <div onClick={this.unsaveArticle} className="read-nav-btn">
+                            <FiTrash size={25} />
+                        </div>
+                    </Link>
+                </ul>
             )
         } else if (this.props.article.filter === 'featured') {
             return (
@@ -95,9 +93,12 @@ export default class ArticleNav extends Component {
                             <FiArchive size={23} />
                         </div>
                     </Link> */}
+                    <div className="read-nav-btn">
+                        <div className="save-util-icon"></div>
+                    </div>
                     <Link to="/">
                         <div onClick={this.unsaveArticle} className="read-nav-btn">
-                            <FiTrash size={25} />
+                            <BiHide size={28} />
                         </div>
                     </Link>
                 </ul>
