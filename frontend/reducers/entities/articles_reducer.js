@@ -10,16 +10,22 @@ import {
 const articlesReducer = (state = {}, action) => {
     Object.freeze(state);
     let nextState = Object.assign({}, state);
-    let saveId, filter, articleId, archived;
+    let saveId, filter, articleId, article, archived;
     
     switch (action.type) {
         case RECEIVE_ARTICLES:
            return action.payload.articles;
         case RECEIVE_ARTICLE:
             articleId = action.payload.article.id;
-            const newArticle = { [articleId]: action.payload.article };
-            if (state[articleId]) {
-                newArticle[articleId].filter = state[articleId].filter;
+            article = action.payload.article
+            const newArticle = { [articleId]: article };
+            // debugger
+            if (!article.save_id) {
+                newArticle[articleId].filter = 'featured';
+            } else if (action.payload.save.archived) {
+                newArticle[articleId].filter = 'archived';
+            } else {
+                newArticle[articleId].filter = 'list';
             }
             return Object.assign({}, state, newArticle);
         case RECEIVE_SAVE:

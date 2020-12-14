@@ -28,6 +28,7 @@ export default class ArticleNav extends Component {
     }
 
     renderNavUtils() {
+        // debugger;
         if (this.props.article.filter === 'list') {
             return (
                 <ul className="read-nav-utils">
@@ -84,7 +85,7 @@ export default class ArticleNav extends Component {
                     <div className="read-nav-btn">
                         <AiOutlineTag size={26} />
                     </div> */}
-                    <Link to="/">
+                    {/* <Link to="/">
                         <div className="read-nav-btn">
                             <AiOutlineStar size={28} />
                         </div>
@@ -93,7 +94,7 @@ export default class ArticleNav extends Component {
                         <div onClick={this.archiveArticle} className="read-nav-btn">
                             <FiArchive size={23} />
                         </div>
-                    </Link>
+                    </Link> */}
                     <Link to="/">
                         <div onClick={this.unsaveArticle} className="read-nav-btn">
                             <FiTrash size={25} />
@@ -105,6 +106,7 @@ export default class ArticleNav extends Component {
     }
 
     render() {
+        // debugger;
         return (
             <header className="read-nav-container">
                 <nav className="read-nav-content">
