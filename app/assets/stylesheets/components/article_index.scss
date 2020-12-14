@@ -208,6 +208,10 @@
     }
 }
 
+.fav-icon-label {
+    margin-left: -2px;
+}
+
 .save-ctrl-icon {
     box-sizing: border-box;
     display: block;
@@ -217,6 +221,8 @@
     background-image: image-url('save_transparent.png');
     background-size: 18px 16px;
 }
+
+
 
 .hover-soln {
     position: absolute;

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { FiMoreHorizontal } from 'react-icons/fi'
 import { AiOutlineTag } from 'react-icons/ai'
-import { AiOutlineStar } from 'react-icons/ai'
+import { AiOutlineStar, AiFillStar } from 'react-icons/ai'
 import { FiArchive } from 'react-icons/fi'
 import { FiTrash } from 'react-icons/fi'
 import { BiHide } from 'react-icons/bi'
@@ -72,10 +72,8 @@ export default class ArticleIndexItem extends Component {
                 </div>
             )
         } else {
+            if (!this.props.article.favorite_id) return null;
             return (
-                // <svg viewBox="0 0 12 12" id="favorite-badge">
-                //     <path d="M6.44.44l1.774 3.284 3.184.307a.5.5 0 0 1 .327.829L9.321 7.579l.634 3.782a.5.5 0 0 1-.732.522L6 10.125l-3.223 1.758a.5.5 0 0 1-.732-.522l.634-3.782-2.404-2.72A.5.5 0 0 1 .6 4.032l3.184-.307L5.56.44a.5.5 0 0 1 .88 0z" fill-rule="nonzero"></path>
-                // </svg>
                 <div className="favorite-badge-container">
                     <div className="favorite-badge"></div>
                 </div>
@@ -84,15 +82,16 @@ export default class ArticleIndexItem extends Component {
     }
 
     renderCtrls() {
+        const isFavorited = !!this.props.article.favorite_id;
         if (this.props.article.filter === 'list') {
             return (
                 <div className="article-item-ctrls">
                     <div className="ctrls-btn">
                         <FiMoreHorizontal size={18} />
-                        <div className="article-ctrls-modal">
+                        <div className="article-ctrls-modal fav-ctrl-line">
                             <div onClick={this.toggleFavorite} className="ctrl-line">
-                                <AiOutlineStar size={18} />
-                                <p>Favorite</p>
+                                { isFavorited ? <AiFillStar size={20} color="#fcb643" /> : <AiOutlineStar size={20} />}
+                                <p className="fav-icon-label">Favorite</p>
                             </div>
                             <div onClick={this.archiveArticle} className="ctrl-line">
                                 <FiArchive size={18} />
@@ -121,8 +120,8 @@ export default class ArticleIndexItem extends Component {
                                 <div className="save-ctrl-icon"></div>
                                 <p>Re-add</p>
                             </div>
-                            <div onClick={this.toggleFavorite} className="ctrl-line">
-                                <AiOutlineStar size={18} />
+                            <div onClick={this.toggleFavorite} className="ctrl-line fav-ctrl-line">
+                                <AiOutlineStar size={20} />
                                 <p>Favorite</p>
                             </div>
                             <div onClick={this.unsaveArticle} className="ctrl-line">
