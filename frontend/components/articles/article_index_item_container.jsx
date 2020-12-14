@@ -7,7 +7,6 @@ import {
 import ArticleIndexItem from './article_index_item';
 
 const mSTP = (state, ownProps) => {
-    // debugger
     return {
         save: state.entities.saves[ownProps.article.save_id]
     }

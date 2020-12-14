@@ -9,24 +9,21 @@ import { FiTrash } from 'react-icons/fi'
 export default class ArticleIndexItem extends Component {
     constructor(props) {
         super(props);
-        this.state = { saved: false }
+        // this.state = { saved: false }
 
-        this.saveArticle = this.saveArticle.bind(this);
+        this.toggleSave = this.toggleSave.bind(this);
         this.unsaveArticle = this.unsaveArticle.bind(this);
     }
 
-    saveArticle() {
-        if (!this.state.saved) {
-            this.props.createSave(this.props.article.id);
+    toggleSave() {
+        if (!!this.props.article.save_id) {
+            this.props.deleteSave(this.props.save.id);
         } else {
-            const saveId = this.props.article.save_id;
-            this.props.deleteSave(saveId);
+            this.props.createSave(this.props.article.id);
         }
-        this.setState({ saved: !this.state.saved })
     }
 
     unsaveArticle() {
-        // debugger
         const saveId = this.props.article.save_id;
         this.props.deleteSave(saveId);
     }
@@ -52,7 +49,7 @@ export default class ArticleIndexItem extends Component {
             );
         return (
             <div 
-                onClick={this.saveArticle} 
+                onClick={this.toggleSave} 
                 className={`pocket-save ${saveClass}`}>
                 <svg viewBox="0 0 24 24" id="svg-pocket">
                     {saveIcon}
