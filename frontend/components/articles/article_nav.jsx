@@ -13,10 +13,18 @@ import { BiFontFamily } from 'react-icons/bi'
 export default class ArticleNav extends Component {
     constructor(props) {
         super(props);
+        this.archiveArticle = this.archiveArticle.bind(this);
+        this.unsaveArticle = this.unsaveArticle.bind(this);
     }
 
     archiveArticle() {
+        this.props.archiveSave(this.props.save);
+    }
 
+    unsaveArticle() {
+        if (!!this.props.article.save_id) {
+            this.props.deleteSave(this.props.save.id);
+        }
     }
 
     render() {
@@ -38,12 +46,16 @@ export default class ArticleNav extends Component {
                                 <AiOutlineStar size={28} />
                             </div>
                         </Link>
-                        <div className="read-nav-btn">
-                            <FiArchive size={23} />
-                        </div>
-                        <div className="read-nav-btn">
-                            <FiTrash size={25} />
-                        </div>
+                        <Link to="/">
+                            <div onClick={this.archiveArticle} className="read-nav-btn">
+                                <FiArchive size={23} />
+                            </div>
+                        </Link>
+                        <Link to="/">
+                            <div onClick={this.unsaveArticle} className="read-nav-btn">
+                                <FiTrash size={25} />
+                            </div>
+                        </Link>
                     </ul>
                     <div className="read-nav-btn">
                         <BiFontFamily size={26} />
