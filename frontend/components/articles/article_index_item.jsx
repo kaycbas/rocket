@@ -9,8 +9,6 @@ import { FiTrash } from 'react-icons/fi'
 export default class ArticleIndexItem extends Component {
     constructor(props) {
         super(props);
-        // this.state = { saved: false }
-
         this.toggleSave = this.toggleSave.bind(this);
         this.unsaveArticle = this.unsaveArticle.bind(this);
     }

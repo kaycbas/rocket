@@ -6,7 +6,6 @@ import ArticleIndex from './article_index';
 import { articlesArray } from '../../reducers/selectors';
 
 const mSTP = state => {
-    // const shuffledArticles = articlesArray(state).sort(() => Math.random() - 0.5);
     return {
         articles: articlesArray(state),
         indexType: 'Discover',
@@ -19,8 +18,6 @@ const mDTP = dispatch => {
 
     return {
         fetchArticles: () => dispatch(fetchArticles('featured')),
-        createSave: articleId => dispatch(createSave(articleId)),
-        deleteSave: saveId => dispatch(deleteSave(saveId))
     }
 }
 
