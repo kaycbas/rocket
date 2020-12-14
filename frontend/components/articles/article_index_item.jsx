@@ -42,9 +42,11 @@ export default class ArticleIndexItem extends Component {
 
     toggleFavorite() {
         if (!!this.props.article.favorite_id) {
-            this.props.deleteFavorite(this.props.article.favorite_id);
+            this.props.deleteFavorite(this.props.article.favorite_id)
+                .then(() => this.forceUpdate());
         } else {
-            this.props.createFavorite(this.props.article.id);
+            this.props.createFavorite(this.props.article.id)
+                .then(() => this.forceUpdate());
         }
     }
 
@@ -90,7 +92,7 @@ export default class ArticleIndexItem extends Component {
                         <FiMoreHorizontal size={18} />
                         <div className="article-ctrls-modal fav-ctrl-line">
                             <div onClick={this.toggleFavorite} className="ctrl-line">
-                                { isFavorited ? <AiFillStar size={20} color="#fcb643" /> : <AiOutlineStar size={20} />}
+                                { isFavorited ? <AiFillStar size={20} color="#fcb643" /> : <AiOutlineStar size={20} /> }
                                 <p className="fav-icon-label">Favorite</p>
                             </div>
                             <div onClick={this.archiveArticle} className="ctrl-line">
@@ -120,9 +122,9 @@ export default class ArticleIndexItem extends Component {
                                 <div className="save-ctrl-icon"></div>
                                 <p>Re-add</p>
                             </div>
-                            <div onClick={this.toggleFavorite} className="ctrl-line fav-ctrl-line">
-                                <AiOutlineStar size={20} />
-                                <p>Favorite</p>
+                            <div onClick={this.toggleFavorite} className="ctrl-line">
+                                { isFavorited ? <AiFillStar size={20} color="#fcb643" /> : <AiOutlineStar size={20} /> }
+                                <p className="fav-icon-label">Favorite</p>
                             </div>
                             <div onClick={this.unsaveArticle} className="ctrl-line">
                                 <FiTrash size={18} />
@@ -133,7 +135,7 @@ export default class ArticleIndexItem extends Component {
                     </div>
                 </div>
             )
-        } else {
+        } else if (this.props.article.filter === 'discover') {
             return (
                 <div className="article-item-ctrls">
                     <div className="ctrls-btn">
@@ -142,6 +144,25 @@ export default class ArticleIndexItem extends Component {
                             <div className="ctrl-line">
                                 <BiHide size={18} />
                                 <p>Hide</p>
+                            </div>
+                            <span className="hover-soln"></span>
+                        </div>
+                    </div>
+                </div>
+            )
+        } else if (this.props.article.filter === 'favorites') {
+            return (
+                <div className="article-item-ctrls">
+                    <div className="ctrls-btn">
+                        <FiMoreHorizontal size={18} />
+                        <div className="article-ctrls-modal">
+                            <div onClick={this.toggleFavorite} className="ctrl-line">
+                                { isFavorited ? <AiFillStar size={20} color="#fcb643" /> : <AiOutlineStar size={20} /> }
+                                <p className="fav-icon-label">Favorite</p>
+                            </div>
+                            <div onClick={this.unsaveArticle} className="ctrl-line">
+                                <FiTrash size={18} />
+                                <p>Delete</p>
                             </div>
                             <span className="hover-soln"></span>
                         </div>
