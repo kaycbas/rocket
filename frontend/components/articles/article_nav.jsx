@@ -100,11 +100,11 @@ class ArticleNav extends Component {
                             <div className="save-util-icon"></div>
                         </div>
                     </Link>
-                    <Link to="/discover">
+                    {/* <Link to="/discover"> */}
                         <div className="read-nav-btn">
                             <BiHide size={28} />
                         </div>
-                    </Link>
+                    {/* </Link> */}
                 </ul>
             )
         }
