@@ -10,14 +10,13 @@ class Api::SavesController < ApplicationController
         new_save[:article_id] = params[:article_id]
         new_save[:archived] = false
         @save = Save.create!(new_save)
-        
-        # temp
         render json: @save
     end
 
     def update
         @save = Save.find_by(id: params[:id])
-
+        
+        debugger
         if @save.user == current_user && @save.update(save_params)
             render json: @save
         else

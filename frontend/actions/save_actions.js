@@ -37,8 +37,8 @@ export const createSave = articleId => dispatch => (
     ))
 );
 
-export const archiveSave = saveId => dispatch => {
-
+export const archiveSave = save => dispatch => {
+    debugger;
     return ApiUtil.updateSave(save).then(save => (
         dispatch(receiveSave(save))
     ))

@@ -11,6 +11,7 @@ export default class ArticleIndexItem extends Component {
         super(props);
         this.toggleSave = this.toggleSave.bind(this);
         this.unsaveArticle = this.unsaveArticle.bind(this);
+        this.archiveArticle = this.archiveArticle.bind(this);
     }
 
     toggleSave() {
@@ -25,11 +26,10 @@ export default class ArticleIndexItem extends Component {
         if (!!this.props.article.save_id) {
             this.props.deleteSave(this.props.save.id);
         }
-        // const saveId = this.props.article.save_id;
     }
 
     archiveArticle() {
-        const saveId = this.props.article.save_id;
+        this.props.archiveSave(this.props.save);
     }
 
     renderSave() {
@@ -96,7 +96,7 @@ export default class ArticleIndexItem extends Component {
                                     <FiTrash size={18} />
                                     <p>Delete</p>
                                 </div>
-                                <div className="ctrl-line">
+                                <div onClick={this.archiveArticle} className="ctrl-line">
                                     <FiArchive size={18} />
                                     <p>Archive</p>
                                 </div>
