@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 import { BiArrowBack } from 'react-icons/bi'
 import { AiOutlineHighlight } from 'react-icons/ai'
@@ -11,15 +11,32 @@ import { BiFontFamily } from 'react-icons/bi'
 import { BiHide } from 'react-icons/bi'
 
 
-export default class ArticleNav extends Component {
+class ArticleNav extends Component {
     constructor(props) {
         super(props);
+        this.goBack = this.goBack.bind(this);
         this.archiveArticle = this.archiveArticle.bind(this);
+        this.unArchiveArticle = this.unArchiveArticle.bind(this);
+        this.saveArticle = this.saveArticle.bind(this);
         this.unsaveArticle = this.unsaveArticle.bind(this);
+    }
+
+    goBack() {
+        this.props.history.goBack();
     }
 
     archiveArticle() {
         this.props.archiveSave(this.props.save);
+    }
+
+    unArchiveArticle() {
+        this.props.unArchiveSave(this.props.save);
+    }
+
+    saveArticle() {
+        if (!this.props.article.save_id) {
+            this.props.createSave(this.props.article.id);
+        }
     }
 
     unsaveArticle() {
@@ -29,7 +46,6 @@ export default class ArticleNav extends Component {
     }
 
     renderNavUtils() {
-        // debugger;
         if (this.props.article.filter === 'list') {
             return (
                 <ul className="read-nav-utils">
@@ -59,15 +75,17 @@ export default class ArticleNav extends Component {
         } else if (this.props.article.filter === 'archived') {
             return (
                 <ul className="read-nav-utils">
-                    <div className="read-nav-btn">
-                        <div className="save-util-icon"></div>
-                    </div>
-                    <Link to="/">
+                    <Link to="/archive">
+                        <div onClick={this.unArchiveArticle} className="read-nav-btn">
+                            <div className="save-util-icon"></div>
+                        </div>
+                    </Link>
+                    <Link to="/archive">
                         <div className="read-nav-btn">
                             <AiOutlineStar size={28} />
                         </div>
                     </Link>
-                    <Link to="/">
+                    <Link to="/archive">
                         <div onClick={this.unsaveArticle} className="read-nav-btn">
                             <FiTrash size={25} />
                         </div>
@@ -77,27 +95,13 @@ export default class ArticleNav extends Component {
         } else if (this.props.article.filter === 'featured') {
             return (
                 <ul className="read-nav-utils">
-                    {/* <div className="read-nav-btn">
-                        <AiOutlineHighlight size={28} />
-                    </div>
-                    <div className="read-nav-btn">
-                        <AiOutlineTag size={26} />
-                    </div> */}
-                    {/* <Link to="/">
-                        <div className="read-nav-btn">
-                            <AiOutlineStar size={28} />
+                    <Link to="/discover">
+                        <div onClick={this.saveArticle} className="read-nav-btn">
+                            <div className="save-util-icon"></div>
                         </div>
                     </Link>
-                    <Link to="/">
-                        <div onClick={this.archiveArticle} className="read-nav-btn">
-                            <FiArchive size={23} />
-                        </div>
-                    </Link> */}
-                    <div className="read-nav-btn">
-                        <div className="save-util-icon"></div>
-                    </div>
-                    <Link to="/">
-                        <div onClick={this.unsaveArticle} className="read-nav-btn">
+                    <Link to="/discover">
+                        <div className="read-nav-btn">
                             <BiHide size={28} />
                         </div>
                     </Link>
@@ -111,9 +115,9 @@ export default class ArticleNav extends Component {
         return (
             <header className="read-nav-container">
                 <nav className="read-nav-content">
-                    <Link to='/' className="read-nav-btn">
+                    <div onClick={this.goBack} className="read-nav-btn">
                         <BiArrowBack size={26} />
-                    </Link>
+                    </div>
                     {this.renderNavUtils()}
                     <div className="read-nav-btn">
                         <BiFontFamily size={26} />
@@ -123,3 +127,5 @@ export default class ArticleNav extends Component {
         )
     }
 }
+
+export default withRouter(ArticleNav);

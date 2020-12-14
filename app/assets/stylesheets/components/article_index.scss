@@ -192,7 +192,16 @@
         color: rgb(17, 106, 101);
         background-color: rgba(28, 176, 168, 0.2);
     }
+}
 
+.save-ctrl-icon {
+    box-sizing: border-box;
+    display: block;
+    width: 18px;
+    height: 16px;
+    margin-right: 9px;
+    background-image: image-url('save_transparent.png');
+    background-size: 18px 16px;
 }
 
 .hover-soln {

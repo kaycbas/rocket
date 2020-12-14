@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import { 
     createSave,
     archiveSave,
-    deleteSave 
+    unArchiveSave,
+    deleteSave
 } from '../../actions/save_actions';
 import ArticleIndexItem from './article_index_item';
 
@@ -16,7 +17,8 @@ const mDTP = dispatch => {
     return {
         createSave: articleId => dispatch(createSave(articleId)),
         deleteSave: saveId => dispatch(deleteSave(saveId)),
-        archiveSave: save => dispatch(archiveSave(save))
+        archiveSave: save => dispatch(archiveSave(save)),
+        unArchiveSave: save => dispatch(unArchiveSave(save))
     }
 }
 

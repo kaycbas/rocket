@@ -5,6 +5,7 @@ import { AiOutlineTag } from 'react-icons/ai'
 import { AiOutlineStar } from 'react-icons/ai'
 import { FiArchive } from 'react-icons/fi'
 import { FiTrash } from 'react-icons/fi'
+import { BiHide } from 'react-icons/bi'
 
 export default class ArticleIndexItem extends Component {
     constructor(props) {
@@ -12,6 +13,7 @@ export default class ArticleIndexItem extends Component {
         this.toggleSave = this.toggleSave.bind(this);
         this.unsaveArticle = this.unsaveArticle.bind(this);
         this.archiveArticle = this.archiveArticle.bind(this);
+        this.unArchiveArticle = this.unArchiveArticle.bind(this);
         this.renderCtrls = this.renderCtrls.bind(this);
     }
 
@@ -30,8 +32,11 @@ export default class ArticleIndexItem extends Component {
     }
 
     archiveArticle() {
-        // debugger
         this.props.archiveSave(this.props.save);
+    }
+
+    unArchiveArticle() {
+        this.props.unArchiveSave(this.props.save);
     }
 
     renderSave() {
@@ -66,21 +71,21 @@ export default class ArticleIndexItem extends Component {
                     <div className="ctrls-btn">
                         <FiMoreHorizontal size={18} />
                         <div className="article-ctrls-modal">
-                            <div onClick={this.unsaveArticle} className="ctrl-line">
-                                <FiTrash size={18} />
-                                <p>Delete</p>
+                            <div className="ctrl-line">
+                                <AiOutlineStar size={18} />
+                                <p>Favorite</p>
                             </div>
                             <div onClick={this.archiveArticle} className="ctrl-line">
                                 <FiArchive size={18} />
                                 <p>Archive</p>
                             </div>
-                            <div className="ctrl-line">
-                                <AiOutlineStar size={18} />
-                                <p>Favorite</p>
-                            </div>
-                            <div className="ctrl-line">
+                            {/* <div className="ctrl-line">
                                 <AiOutlineTag size={18} />
                                 <p>Tag</p>
+                            </div> */}
+                            <div onClick={this.unsaveArticle} className="ctrl-line">
+                                <FiTrash size={18} />
+                                <p>Delete</p>
                             </div>
                             <span className="hover-soln"></span>
                         </div>
@@ -93,18 +98,18 @@ export default class ArticleIndexItem extends Component {
                     <div className="ctrls-btn">
                         <FiMoreHorizontal size={18} />
                         <div className="article-ctrls-modal">
-                            <div onClick={this.unsaveArticle} className="ctrl-line">
-                                <FiTrash size={18} />
-                                <p>Delete</p>
+                            <div onClick={this.unArchiveArticle} className="ctrl-line">
+                                <div className="save-ctrl-icon"></div>
+                                <p>Re-add</p>
                             </div>
                             <div className="ctrl-line">
                                 <AiOutlineStar size={18} />
                                 <p>Favorite</p>
                             </div>
-                            {/* <div className="ctrl-line">
-                                <AiOutlineTag size={18} />
-                                <p>Tag</p>
-                            </div> */}
+                            <div onClick={this.unsaveArticle} className="ctrl-line">
+                                <FiTrash size={18} />
+                                <p>Delete</p>
+                            </div>
                             <span className="hover-soln"></span>
                         </div>
                     </div>
@@ -116,18 +121,10 @@ export default class ArticleIndexItem extends Component {
                     <div className="ctrls-btn">
                         <FiMoreHorizontal size={18} />
                         <div className="article-ctrls-modal">
-                            <div onClick={this.unsaveArticle} className="ctrl-line">
-                                <FiTrash size={18} />
-                                <p>Delete</p>
-                            </div>
                             <div className="ctrl-line">
-                                <AiOutlineStar size={18} />
-                                <p>Favorite</p>
+                                <BiHide size={18} />
+                                <p>Hide</p>
                             </div>
-                            {/* <div className="ctrl-line">
-                                <AiOutlineTag size={18} />
-                                <p>Tag</p>
-                            </div> */}
                             <span className="hover-soln"></span>
                         </div>
                     </div>

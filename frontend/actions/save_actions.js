@@ -44,6 +44,13 @@ export const archiveSave = save => dispatch => {
     })
 }
 
+export const unArchiveSave = save => dispatch => {
+    save.archived = false;
+    return ApiUtil.updateSave(save).then(save => {
+        dispatch(receiveSave(save))
+    })
+}
+
 export const deleteSave = saveId => dispatch => {
     return ApiUtil.deleteSave(saveId).then(save => (
         dispatch(removeSave(save))
