@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ArticleIndexItem from './article_index_item'
+import ArticleIndexItemContainer from './article_index_item_container'
 import { Link } from 'react-router-dom'
 import LoadingIcon from './loading_icon'
 
@@ -16,13 +17,20 @@ export default class ArticleIndex extends Component {
     renderArticles() {
         let { articles, indexType, createSave, deleteSave} = this.props;
         if (articles === []) return null;
+        // return articles.map(article => (
+        //     <ArticleIndexItem 
+        //         key={article.id} 
+        //         article={article} 
+        //         indexType={indexType} 
+        //         createSave={createSave}
+        //         deleteSave={deleteSave}
+        //     />
+        // ));
         return articles.map(article => (
-            <ArticleIndexItem 
+            <ArticleIndexItemContainer 
                 key={article.id} 
-                article={article} 
-                indexType={indexType} 
-                createSave={createSave}
-                deleteSave={deleteSave}
+                article={article}
+                indexType={indexType}
             />
         ));
     }

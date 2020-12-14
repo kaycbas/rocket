@@ -12,7 +12,7 @@ const articlesReducer = (state = {}, action) => {
     let nextState = Object.assign({}, state);
     switch (action.type) {
         case RECEIVE_ARTICLES:
-           return action.articles
+           return action.payload.articles;
         case RECEIVE_ARTICLE:
             const newArticle = { [action.article.id]: action.article };
             return Object.assign({}, state, newArticle);

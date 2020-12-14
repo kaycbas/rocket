@@ -1,13 +1,18 @@
 import {
+    RECEIVE_ARTICLES,
+    RECEIVE_ARTICLE
+} from '../../actions/article_actions';
+import {
     RECEIVE_SAVE,
     RECEIVE_SAVES,
     REMOVE_SAVE
-} from '../../actions/save_actions';
+} from '../../actions/save_actions'
 
 const savesReducer = (state = {}, action) => {
-    // debugger;
     Object.freeze(state)
     switch (action.type) {
+        case RECEIVE_ARTICLES:
+            return action.payload.saves;
         case RECEIVE_SAVES:
            return action.saves
         case RECEIVE_SAVE:

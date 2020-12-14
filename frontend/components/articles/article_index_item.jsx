@@ -26,11 +26,18 @@ export default class ArticleIndexItem extends Component {
     }
 
     unsaveArticle() {
+        // debugger
         const saveId = this.props.article.save_id;
         this.props.deleteSave(saveId);
     }
 
+    archiveArticle() {
+        const saveId = this.props.article.save_id;
+        // const save = 
+    }
+
     renderSave() {
+        // debugger
         if (this.props.indexType !== 'Discover') return null;
         const isSaved = !!this.props.article.save_id;
         const saveClass = isSaved ? "article-saved" : "article-unsaved";

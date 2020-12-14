@@ -5,6 +5,14 @@ export const createSave = articleId => {
     })
 }
 
+export const updateSave = save => {
+    return $.ajax({
+        method: 'PATCH',
+        url: `api/saves/${save.id}`,
+        save
+    })
+}
+
 export const fetchSaves = () => {
     return $.ajax({
         method: 'GET',

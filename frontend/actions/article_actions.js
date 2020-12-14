@@ -5,10 +5,10 @@ export const RECEIVE_ARTICLE = 'RECEIVE_ARTICLE';
 export const START_LOADING_ARTICLES = 'START_LOADING_ARTICLES';
 export const RECEIVE_ARTICLES_FILTER = 'RECEIVE_ARTICLES_FILTER';
 
-export const receiveArticles = articles => {
+export const receiveArticles = payload => {
     return {
         type: RECEIVE_ARTICLES,
-        articles
+        payload
     }
 }
 
@@ -25,8 +25,8 @@ export const startLoadingArticles = () => ({
 
 export const fetchArticles = filter => dispatch => {
     dispatch(startLoadingArticles());
-    return ApiUtil.fetchArticles({ filter }).then(articles => (
-        dispatch(receiveArticles(articles))
+    return ApiUtil.fetchArticles({ filter }).then(payload => (
+        dispatch(receiveArticles(payload))
     ))
 }
 

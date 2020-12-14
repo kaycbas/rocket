@@ -1,5 +1,6 @@
 class Api::ArticlesController < ApplicationController
     def index
+        @saves = Save.all
         @filter = params[:filter]
         if @filter == 'featured'
             @articles = Article.where(featured: true)
