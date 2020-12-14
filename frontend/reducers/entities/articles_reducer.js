@@ -6,6 +6,10 @@ import {
     RECEIVE_SAVE,
     REMOVE_SAVE
  } from '../../actions/save_actions';
+ import { 
+    RECEIVE_FAVORITE,
+    REMOVE_FAVORITE 
+} from '../../actions/favorite_actions';
 
 const articlesReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -19,7 +23,6 @@ const articlesReducer = (state = {}, action) => {
             articleId = action.payload.article.id;
             article = action.payload.article
             const newArticle = { [articleId]: article };
-            // debugger
             if (!article.save_id) {
                 newArticle[articleId].filter = 'featured';
             } else if (action.payload.save.archived) {
@@ -42,10 +45,22 @@ const articlesReducer = (state = {}, action) => {
             return nextState;
         case REMOVE_SAVE:
             filter = state[action.save.article_id].filter;
-            if (filter == 'featured') {
+            if (filter === 'featured') {
                 state[action.save.article_id].save_id = null;
             } else {
                 delete nextState[action.save.article_id];
+            }
+            return nextState;
+        case RECEIVE_FAVORITE:
+            articleId = action.favorite.article_id;
+            nextState[articleId].favorite_id = action.favorite.id;
+            return nextState;
+        case REMOVE_FAVORITE:
+            filter = state[action.favorite.article_id].filter;
+            if (filter === 'favorites') {
+                delete nextState[action.favorite.article_id];
+            } else {
+                state[action.favorite.article_id].favorite_id = null;
             }
             return nextState;
         default:

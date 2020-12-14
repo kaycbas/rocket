@@ -18,7 +18,9 @@ class Api::ArticlesController < ApplicationController
     def show
         @article = Article.find_by(id: params[:id])
         @save = @article.saves.find_by(user_id: current_user.id)
+        @fav = @article.favorites.find_by(user_id: current_user.id)
         @save_id = @save ? @save.id : nil
+        @favorite_id = @fav ? @fav.id : nil
         render :show
     end
 

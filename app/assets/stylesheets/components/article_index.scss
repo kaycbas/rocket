@@ -122,7 +122,7 @@
     p {
         padding: 3px 0 0 0px;
     }
-    }
+}
     
 #svg-pocket {
         display: inline-block;
@@ -148,6 +148,20 @@
     p:after {
         content: 'd';
     }
+}
+
+.favorite-badge-container {
+    position: absolute;
+    top: 188px;
+    left: 0px;
+}
+
+.favorite-badge {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-image: image-url('favorite_badge.png');
+    background-size: cover;
 }
 
 .article-item-ctrls {
