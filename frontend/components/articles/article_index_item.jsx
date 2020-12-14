@@ -30,6 +30,9 @@ export default class ArticleIndexItem extends Component {
         if (!!this.props.article.save_id) {
             this.props.deleteSave(this.props.save.id);
         }
+        if (!!this.props.article.favorite_id) {
+            this.props.deleteFavorite(this.props.article.favorite_id)
+        }
     }
 
     archiveArticle() {
@@ -135,7 +138,7 @@ export default class ArticleIndexItem extends Component {
                     </div>
                 </div>
             )
-        } else if (this.props.article.filter === 'discover') {
+        } else if (this.props.article.filter === 'featured') {
             return (
                 <div className="article-item-ctrls">
                     <div className="ctrls-btn">
