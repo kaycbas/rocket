@@ -16,6 +16,7 @@ export default class ArticleShow extends Component {
         const { 
             id, title, author, url, full_url, reading_time, content 
         } = this.props.article;
+        debugger;
         return (
             <div>
                 <ArticleNavContainer article={this.props.article} save={this.props.save} />

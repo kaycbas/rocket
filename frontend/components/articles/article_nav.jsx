@@ -11,6 +11,14 @@ import { BiFontFamily } from 'react-icons/bi'
 
 
 export default class ArticleNav extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    archiveArticle() {
+
+    }
+
     render() {
         return (
             <header className="read-nav-container">
