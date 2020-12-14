@@ -10,6 +10,7 @@ import SidebarContainer from '../sidebar/sidebar_container';
 import MyListIndexContainer from '../articles/my_list_index_container';
 import DiscoverIndexContainer from '../articles/discover_index_container';
 import ArchiveIndexContainer from '../articles/archive_index_container';
+import FavoritesIndexContainer from '../articles/favorites_index_container';
 import Error from '../error/error';
 
 
