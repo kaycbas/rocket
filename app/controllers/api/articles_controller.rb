@@ -8,7 +8,7 @@ class Api::ArticlesController < ApplicationController
         elsif @filter == 'archived'
             @articles = current_user.archived_articles
         else 
-            @articles = current_user.saved_articles
+            @articles = current_user.listed_articles
         end
         render :index
     end

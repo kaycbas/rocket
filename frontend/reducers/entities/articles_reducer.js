@@ -10,6 +10,8 @@ import {
 const articlesReducer = (state = {}, action) => {
     Object.freeze(state);
     let nextState = Object.assign({}, state);
+    let saveId, filter, articleId, archived;
+    
     switch (action.type) {
         case RECEIVE_ARTICLES:
            return action.payload.articles;
@@ -17,10 +19,18 @@ const articlesReducer = (state = {}, action) => {
             const newArticle = { [action.article.id]: action.article };
             return Object.assign({}, state, newArticle);
         case RECEIVE_SAVE:
-            nextState[action.save.article_id].save_id = action.save.id;
+            saveId = action.save.id;
+            articleId = action.save.article_id;
+            archived = action.save.archived;
+            filter = nextState[articleId].filter;
+
+            nextState[articleId] = saveId;
+            if (archived && filter !== 'archived') {
+                delete nextState[articleId];
+            }
             return nextState;
         case REMOVE_SAVE:
-            const filter = state[action.save.article_id].filter;
+            filter = state[action.save.article_id].filter;
             if (filter == 'featured') {
                 state[action.save.article_id].save_id = null;
             } else {
