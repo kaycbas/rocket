@@ -12,6 +12,7 @@ export default class ArticleIndexItem extends Component {
         this.toggleSave = this.toggleSave.bind(this);
         this.unsaveArticle = this.unsaveArticle.bind(this);
         this.archiveArticle = this.archiveArticle.bind(this);
+        this.renderCtrls = this.renderCtrls.bind(this);
     }
 
     toggleSave() {
@@ -59,7 +60,80 @@ export default class ArticleIndexItem extends Component {
     }
 
     renderCtrls() {
-
+        if (this.props.article.filter === 'list') {
+            return (
+                <div className="article-item-ctrls">
+                    <div className="ctrls-btn">
+                        <FiMoreHorizontal size={18} />
+                        <div className="article-ctrls-modal">
+                            <div onClick={this.unsaveArticle} className="ctrl-line">
+                                <FiTrash size={18} />
+                                <p>Delete</p>
+                            </div>
+                            <div onClick={this.archiveArticle} className="ctrl-line">
+                                <FiArchive size={18} />
+                                <p>Archive</p>
+                            </div>
+                            <div className="ctrl-line">
+                                <AiOutlineStar size={18} />
+                                <p>Favorite</p>
+                            </div>
+                            <div className="ctrl-line">
+                                <AiOutlineTag size={18} />
+                                <p>Tag</p>
+                            </div>
+                            <span className="hover-soln"></span>
+                        </div>
+                    </div>
+                </div>
+            )
+        } else if (this.props.article.filter === 'archived') {
+            return (
+                <div className="article-item-ctrls">
+                    <div className="ctrls-btn">
+                        <FiMoreHorizontal size={18} />
+                        <div className="article-ctrls-modal">
+                            <div onClick={this.unsaveArticle} className="ctrl-line">
+                                <FiTrash size={18} />
+                                <p>Delete</p>
+                            </div>
+                            <div className="ctrl-line">
+                                <AiOutlineStar size={18} />
+                                <p>Favorite</p>
+                            </div>
+                            {/* <div className="ctrl-line">
+                                <AiOutlineTag size={18} />
+                                <p>Tag</p>
+                            </div> */}
+                            <span className="hover-soln"></span>
+                        </div>
+                    </div>
+                </div>
+            )
+        } else {
+            return (
+                <div className="article-item-ctrls">
+                    <div className="ctrls-btn">
+                        <FiMoreHorizontal size={18} />
+                        <div className="article-ctrls-modal">
+                            <div onClick={this.unsaveArticle} className="ctrl-line">
+                                <FiTrash size={18} />
+                                <p>Delete</p>
+                            </div>
+                            <div className="ctrl-line">
+                                <AiOutlineStar size={18} />
+                                <p>Favorite</p>
+                            </div>
+                            {/* <div className="ctrl-line">
+                                <AiOutlineTag size={18} />
+                                <p>Tag</p>
+                            </div> */}
+                            <span className="hover-soln"></span>
+                        </div>
+                    </div>
+                </div>
+            )
+        }
     }
 
     render() {
@@ -89,30 +163,7 @@ export default class ArticleIndexItem extends Component {
                         Our knowledge is spotty, with large
                     </div>
                     {this.renderSave()}
-                    <div className="article-item-ctrls">
-                        <div className="ctrls-btn">
-                            <FiMoreHorizontal size={18} />
-                            <div className="article-ctrls-modal">
-                                <div onClick={this.unsaveArticle} className="ctrl-line">
-                                    <FiTrash size={18} />
-                                    <p>Delete</p>
-                                </div>
-                                <div onClick={this.archiveArticle} className="ctrl-line">
-                                    <FiArchive size={18} />
-                                    <p>Archive</p>
-                                </div>
-                                <div className="ctrl-line">
-                                    <AiOutlineStar size={18} />
-                                    <p>Favorite</p>
-                                </div>
-                                <div className="ctrl-line">
-                                    <AiOutlineTag size={18} />
-                                    <p>Tag</p>
-                                </div>
-                                <span className="hover-soln"></span>
-                            </div>
-                        </div>
-                    </div>
+                    {this.renderCtrls()}
                 </div>
             </article>
         )

@@ -35,12 +35,12 @@ export default class ArticleNav extends Component {
                         <BiArrowBack size={26} />
                     </Link>
                     <ul className="read-nav-utils">
-                        <div className="read-nav-btn">
+                        {/* <div className="read-nav-btn">
                             <AiOutlineHighlight size={28} />
                         </div>
                         <div className="read-nav-btn">
                             <AiOutlineTag size={26} />
-                        </div>
+                        </div> */}
                         <Link to="/">
                             <div className="read-nav-btn">
                                 <AiOutlineStar size={28} />
