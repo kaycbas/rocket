@@ -5,11 +5,12 @@ export const createSave = articleId => {
     })
 }
 
-export const updateSave = data => {
+export const updateSave = save => {
+    // debugger;
     return $.ajax({
         method: 'PATCH',
         url: `api/saves/${save.id}`,
-        data
+        data: { 'save': save }
     })
 }
 

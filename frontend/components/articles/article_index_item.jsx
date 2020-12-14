@@ -29,6 +29,7 @@ export default class ArticleIndexItem extends Component {
     }
 
     archiveArticle() {
+        // debugger
         this.props.archiveSave(this.props.save);
     }
 

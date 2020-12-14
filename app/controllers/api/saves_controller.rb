@@ -16,7 +16,6 @@ class Api::SavesController < ApplicationController
     def update
         @save = Save.find_by(id: params[:id])
         
-        debugger
         if @save.user == current_user && @save.update(save_params)
             render json: @save
         else

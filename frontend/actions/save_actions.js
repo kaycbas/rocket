@@ -38,10 +38,10 @@ export const createSave = articleId => dispatch => (
 );
 
 export const archiveSave = save => dispatch => {
-    debugger;
-    return ApiUtil.updateSave(save).then(save => (
+    save.archived = true;
+    return ApiUtil.updateSave(save).then(save => {
         dispatch(receiveSave(save))
-    ))
+    })
 }
 
 export const deleteSave = saveId => dispatch => {
