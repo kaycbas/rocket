@@ -8,6 +8,7 @@ module SeedData
         reading_time: '8 min',
         featured: true, 
         img_name: "build.png",
+        description: "Every Western institution was unprepared for the coronavirus pandemic, despite many prior warnings.",
         content: 
             "<div class='article-content'>
                 <p>Every Western institution was unprepared for the coronavirus pandemic, despite many prior warnings. This monumental failure of institutional effectiveness will reverberate for the rest of the decade, but it’s not too early to ask why, and what we need to do about it.</p>
@@ -44,6 +45,7 @@ module SeedData
             reading_time: '18 min',
             featured: true, 
             img_name: "pg.png",
+            description: "The most damaging thing you learned in school wasn't something you learned in any specific class.",
             content: 
             "<div class='article-content'>
                 <p>December 2019</p>
@@ -129,6 +131,7 @@ module SeedData
             reading_time: '15 min',
             featured: true, 
             img_name: "munger.png",
+            description: "Charlie Munger gave a speech to Harvard University in 1995. It was about how he built his own curriculum for Psychology.",
             content: 
                 "<div class='article-content'>
                 <p>Charlie Munger gave a <a rel=\"noopener\"
@@ -486,6 +489,7 @@ module SeedData
             reading_time: '15 min',
             featured: true, 
             img_name: "odin.png",
+            description: "“Sessions” are the idea that your user’s state is somehow preserved when he/she clicks from one page to the next.",
             content: 
                 "<div class='article-content'>
                 <h3 id=\"introduction\">Introduction</h3>
@@ -623,6 +627,7 @@ module SeedData
             reading_time: '14 min',
             featured: true, 
             img_name: "algos.png",
+            description: "Do you actually use data structures and algorithms on your day to day job? I've noticed a growing trend of people assuming algorithms",
             content: 
                 "<div class='article-content' lang=\"en\"><p>Do you actually use data structures and algorithms on your day to day job? I've noticed a growing trend of people assuming algorithms are pointless questions that are asked by tech companies purely as an arbitrary measure. I hear more people complain about how all of this is a purely academic exercise. This notion was definitely popularized after Max Howell, the author of Homebrew, posted his Google interview experience:</p>
                 <blockquote>
@@ -711,6 +716,7 @@ module SeedData
             reading_time: '20 min',
             featured: true, 
             img_name: "brick.png",
+            description: "Complicated stuff can stem from a handful of common roots. Understanding those common roots can be more important",
             content: 
                 "<div class='article-content' lang=\"en\"><p>Complicated stuff can stem from a handful of common roots. Understanding those common roots can be more important than trying to wrap your head around complexity.</p>
                 <p>To show you what I mean, let me tell you a story about stories.</p>
@@ -886,6 +892,7 @@ module SeedData
             reading_time: '32 min',
             featured: true, 
             img_name: "sapiens.png",
+            description: "I spent over 25 hours building a cut-down version of Sapiens. The goal? Future-me should be happy to read this once future",
             content: 
                 "<div class='article-content'>
                 <map name=\"image-map\"><area shape=\"poly\" coords=\"0,77,115,77,80,150,0,150\" href=\"#development-of-brains\" title=\"Development of Brains\" alt=\"Taming fire\"><area shape=\"poly\" coords=\"115,77,230,77,195,150,80,150\" href=\"#cognitive-revolution\" title=\"Cognitive Revolution\" alt=\"cognitive revolution\"><area shape=\"poly\" coords=\"230,77,345,77,310,150,195,150\" href=\"#agricultural-revolution\" title=\"Agricultural Revolution\" alt=\"agriculture revolution\"><area shape=\"poly\" coords=\"345,77,460,77,415,150,310,150\" href=\"#unification-of-humankind\" title=\"Unification of Humanity\" alt=\"unificiation\"><area shape=\"poly\" coords=\"460,77,575,77,520,150,415,150\" href=\"#scientific-revolution\" title=\"Scientific Revolution\" alt=\"scientific revolution\"><area shape=\"poly\" coords=\"575,77,690,77,635,150,540,150\" href=\"#industrial-revolution\" title=\"Industrial Revolution\" alt=\"industrial revolution\"><area shape=\"poly\" coords=\"690,77,805,77,750,150,655,150\" href=\"#the-end-of-homo-sapiens\" title=\"The Present\" alt=\"present\"></map><figure><a rel=\"noopener\" href=\"https://amzn.to/2WWNsjq\">
@@ -1164,6 +1171,7 @@ module SeedData
             reading_time: '39 min',
             featured: true, 
             img_name: "art.png",
+            description: "Stéphane Breitwieser robbed nearly 200 museums, amassed a collection of treasures worth more than $1.4 billion,",
             content: 
                 "<div class='article-content' lang=\"en\"><div class=\"RIL_IMG\" id=\"RIL_IMG_1\"></div><div>Stéphane Breitwieser robbed nearly 200 museums, amassed a collection of treasures worth more than $1.4 billion, and became perhaps the most prolific art thief in history. And as he reveals to GQ’s Michael Finkel, how Breitwieser managed to do all this is every bit as surprising as why.</div><div class=\"RIL_IMG\" id=\"RIL_IMG_3\">
                 <figure>
@@ -1251,6 +1259,7 @@ module SeedData
             reading_time: '8 min',
             featured: true, 
             img_name: "stripe.png",
+            description: "Stripe, the technology company building economic infrastructure for the Internet, today announced that it is launching Stripe Treasury.",
             content: 
                 "<div class='article-content' lang=\"en\">
                 <p>Today <a href=\"https://www.wsj.com/articles/stripe-to-offer-banking-services-in-deal-with-goldman-sachs-citigroup-11607007608\">Stripe is announcing Stripe Treasury</a>; from the company’s <a href=\"https://stripe.com/newsroom/news/treasury\">press release</a>:</p>
@@ -1361,6 +1370,7 @@ module SeedData
             reading_time: '10 min',
             featured: true, 
             img_name: "hash.png",
+            description: "We'll now begin our foray into cryptography. Cryptography is a deep and vibrant field, and there's a lot more to it than we can cover",
             content: 
                 "<div class='article-content' lang=\"en\">
                 <p>We'll now begin our foray into cryptography. Cryptography is a deep and vibrant field, and there's a lot more to it than we can cover in a single module. But the next four lessons should equip us with the building blocks we need to understand cryptocurrencies.</p>
@@ -1446,6 +1456,7 @@ module SeedData
             reading_time: '41 min',
             featured: true, 
             img_name: "systems.png",
+            description: "You’re going to be responsible for building the entire Steveslist technical platform, including all of its websites, mobile apps,",
             content: 
                 "<div class='article-content' lang=\"en\">
                 <blockquote>
@@ -1943,6 +1954,7 @@ module SeedData
             reading_time: '16 min',
             featured: true, 
             img_name: "pg-2.png",
+            description: "There are some kinds of work that you can't do well without thinking differently from your peers.",
             content: 
                 "<div class='article-content' lang=\"en\"><p>November 2020</p>
                 <p>There are some kinds of work that you can't do well without thinking differently from your peers. To be a successful scientist, for example, it's not enough just to be correct. Your ideas have to be both correct and novel. You can't publish papers saying things other people already know. You need to say things no one else has realized yet.</p>
@@ -2019,6 +2031,7 @@ module SeedData
             reading_time: '6 min',
             featured: true, 
             img_name: "compass.png",
+            description: "Not doing something will always be faster than doing it. This statement reminds me of the old computer programming saying,",
             content: 
                 "<div class='article-content' lang=\"en\">
                 <p>The ultimate productivity hack is saying no.</p>
@@ -2073,6 +2086,7 @@ module SeedData
             reading_time: '13 min',
             featured: true, 
             img_name: "taco.png",
+            description: "From handshake deals to experiments at Home Depot, the history of Taco Bell’s disruptive faux cheese-dusted taco.",
             content: 
                 "<div class='article-content'><h2>From handshake deals to experiments at Home Depot, the history of Taco Bell’s disruptive faux cheese-dusted taco.
                 </h2><div><div><aside></aside></div><div><div><span>long Read</span></div><article><div></div><div><p>In early 2009, three years prior to Taco Bell’s 50th anniversary, CEO Greg Creed was already experiencing something of a midlife crisis. “Our target audience is [customers] in their 20s. Turning 50 makes us sound old, and I didn’t want to sound old,” Creed explains. “I said, ‘When we have our birthday, I don’t want a cake or a celebration.'”</p></div><div><div></div></div><div></div><div><p>So he issued a bold directive to his team instead: “I said, ‘[let’s] reinvent the crunchy taco,'” Creed recalls.</p><p>“He was really looking for a big innovation to coincide with our anniversary,” says Taco Bell brand marketing director Stephanie Perdue, who helped Creed write the original team brief. Creed explains: “If you look at all the buns the burger boys sell, and the bread at Subway, they are forever coming up with a new bread bun. The crunchy taco: It was yellow and made of corn. We sold a couple billion of them, but there had been no innovation.” He gave his staff until March 2012–slightly under three years–to pull off a complete rethink of traditional Mexican cuisine.</p><q>If you look at all the buns the burger boys sell, and the bread at Subway, they are forever coming up with a new bread bun.</q><p>The team soon assembled for an all-day ideation session at Taco Bell headquarters, where 30 different product concepts were considered, Perdue says, including new forms of burritos, nachos, and taquitos. But one idea, from Doritos-maker Frito-Lay, stuck out: a Doritos-based taco shell pocketed with Taco Bell ingredients. “It was basically an image [of this taco] on a piece of paper, with a written description. I don’t know what technology they use. We didn’t even taste it; it was just more of, ‘Hey, this is what it could look like,'” Perdue says. “It was like, ‘Holy crap!’ Nobody had ever done this before: turning a Dorito into a taco shell. It was just mind-blowing at the idea stage.” Steve Gomez, Taco Bell’s food innovation expert, recalls seeing the first mock-up. “Every day I see a lot of concepts–sketches on paper, written words about products–and my job is to turn those products into reality,” he says. “But in all my years as a product developer, I’ve never seen a concept like this. The product didn’t even exist yet, and already people knew this idea was going to be huge.”</p><figure><div class=\"RIL_IMG\" id=\"RIL_IMG_1\">
@@ -2108,6 +2122,7 @@ module SeedData
             reading_time: '2 min',
             featured: true, 
             img_name: 'dog.png',
+            description: "Dogs really do love their owners—here’s the research to back it up.",
             content: 
                 "<div class='article-content'>
                 <div id=\"RIL_header\">
@@ -2157,6 +2172,7 @@ module SeedData
             reading_time: '7 min',
             featured: true, 
             img_name: "brain.png",
+            description: "The Greeks were obsessed with the mathematically perfect body. But unfortunately for anyone chasing that ideal, we were designed",
             content: 
                 "<div class='article-content'><p><span>T</span>he Greeks were obsessed with the mathematically perfect body. But unfortunately for anyone chasing that ideal, we were designed not by Pygmalion, the mythical sculptor who carved a flawless woman, but by MacGyver. Evolution constructed our bodies with the biological equivalent of duct tape and lumber scraps. And the only way to refine the form (short of an asteroid strike or nuclear detonation to wipe clean the slate) is to jerry-rig the current model. “Evolution doesn’t produce perfection,” explains Alan Mann, a physical anthropologist at Princeton University. “It produces function.”</p><p>With that in mind, I surveyed anatomists and biologists to compile a punch list for the human body, just as you’d do before buying a house. Get out your checkbook. This one’s a fixer-upper.</p><p><b>1. An unsound spine</b></p><p><b>Problem:</b> Our spines are a mess. It’s a wonder we can even walk, says Bruce Latimer, director of the Center for Human Origins at Case Western Reserve University, in Cleveland. When our ancestors walked on all fours, their spines arched, like a bow, to withstand the weight of the organs suspended below. But then we stood up. That threw the system out of whack by 90 degrees, and the spine was forced to become a column. Next, to allow for bipedalism, it curved forward at the lower back. And to keep the head in balance—so that we didn’t all walk around as if doing the limbo—the upper spine curved in the opposite direction. This change put tremendous pressure on the lower vertebrae, sticking about 80 percent of adults, according to one estimate, with lower back pain.</p><p><b>Fix:</b> Go back to the arch. “Think of your dog,” Latimer says. “From the sacrum to the neck, it’s a single bow curve. That’s a great system.” Simple. Strong. Pain-free. There’s only one catch: To keep the weight of our heads from pitching us forward, we’d need to return to all fours.</p><p><b>2. An inflexible knee</b></p><p><b>Problem:</b> As Latimer says, “You take the most complex joint in the body and put it between two huge levers—the femur and the tibia—and you’re looking for trouble.” The upshot is your knee only rotates in two directions: forward and back. “That’s why every major sport, except maybe rugby, makes it illegal to clip, or hit an opponent’s knee from the side.”</p><p><b>Fix:</b> Replace this hinge with a ball and socket, like in your shoulders and hips. We never developed this type of joint at the knee “because we didn’t need it,” Latimer says. “We didn’t know about football.”</p><figure><div><div class=\"RIL_IMG\" id=\"RIL_IMG_2\">
                 <figure>
@@ -2180,6 +2196,7 @@ module SeedData
             reading_time: '8 min',
             featured: true, 
             img_name: "quantum.png",
+            description: "Experiments suggest that exotic superconducting materials share a “strange metal” state characterized by a quantum speed",
             content: 
                 "<div class='article-content'><h2>Experiments suggest that exotic superconducting materials share a “strange metal” state characterized by a quantum speed limit that somehow acts as a fundamental organizing principle.</h2><article><article><div><div><section><div><div class=\"RIL_IMG\" id=\"RIL_IMG_1\">
                 <figure>
@@ -2259,8 +2276,9 @@ module SeedData
             reading_time: '5 min',
             featured: true, 
             img_name: "fantasy.png",
+            description: "Today marks the release of one of the most anticipated books of 2019: Marlon James’s Black Leopard, Red Wolf, a sprawling literary fantasy",
             content: 
-                "<div class='article-content'><h2>Even if you're a genre snob (but also, if you're a genre snob, stop).</h2><article><article><div><div><section><div><div class=\"RIL_IMG\" id=\"RIL_IMG_1\">
+                "<div class='article-content'><article><article><div><div><section><div><div class=\"RIL_IMG\" id=\"RIL_IMG_1\">
                 <figure>
                 <img alt=\"--\" src=\"https://pocket-image-cache.com//filters:no_upscale()/https%3A%2F%2Fpocket-image-cache.com%2Fdirect%3Fresize%3Dw2000%26url%3Dhttps%253A%252F%252Flithub.com%252Fwp-content%252Fuploads%252F2019%252F01%252F9780241315545.jpg\">
                 <figcaption>--</figcaption>
@@ -2317,6 +2335,7 @@ module SeedData
             reading_time: '31 min',
             featured: true, 
             img_name: "minecraft.png",
+            description: "There’s no better way to understand Minecraft than to get into the game and start exploring. Christoph Niemann, our visual columnist",
             content: 
                 "<div class='article-content'>
                 <div class=\"RIL_IMG\" id=\"RIL_IMG_1\">
@@ -2343,6 +2362,7 @@ module SeedData
             reading_time: '25 min',
             featured: true, 
             img_name: "history.png",
+            description: "Most of us have a pretty terrible understanding of history. Our knowledge is spotty, with large gaps all over the place,",
             content: 
                 "<div class='article-content'><div class=\"RIL_IMG\" id=\"RIL_IMG_1\">
                 <figure>
@@ -2473,6 +2493,7 @@ module SeedData
             reading_time: '5 min',
             featured: true, 
             img_name: "gravity.png",
+            description: "The renowned physicist Leonard Susskind has identified a possible quantum origin for the ever-growing volume",
             content: 
                 "<div class='article-content'><h2>The renowned physicist Leonard Susskind has identified a possible quantum origin for the ever-growing volume of black holes.</h2><article><article><div><div><section><div><div class=\"RIL_IMG\" id=\"RIL_IMG_1\">
                 <figure>
@@ -2515,6 +2536,7 @@ module SeedData
             reading_time: '7 min',
             featured: true, 
             img_name: "skyscraper.png",
+            description: "If you want to collect data from the web, you’ll come across a lot of resources teaching you how to do",
             content: 
                 "<div lang=\"en\"><section><div></div><div><figure><div><div><div><div></div><div class=\"RIL_IMG\" id=\"RIL_IMG_2\">
                 <figure>
@@ -2531,6 +2553,7 @@ module SeedData
             reading_time: '5 min',
             featured: true, 
             img_name: "airbnb.png",
+            description: "To celebrate Airbnb’s IPO and to help future founders, I thought it might be useful to explain what was special about Airbnb.",
             content: 
                 "<div lang=\"en\">
                 <p>To celebrate Airbnb’s IPO and to help future founders, I thought it might be useful to explain what was special about Airbnb.</p>
@@ -2558,6 +2581,7 @@ module SeedData
             reading_time: '3 min',
             featured: true, 
             img_name: "macgod.png",
+            description: "We turned a MacBook into a touchscreen using only $1 of hardware and a little bit of computer vision. The proof-of-concept, dubbed “Project Sistine”",
             content: 
                 "<div lang=\"en\">
                 <p>We turned a MacBook into a touchscreen using only $1 of hardware and a little bit of computer vision. The proof-of-concept, dubbed “Project Sistine” after our <a href=\"https://www.anishathalye.com/media/2018/04/03/thumbnail.jpg\">recreation</a> of the famous <a href=\"https://en.wikipedia.org/wiki/The_Creation_of_Adam\">painting</a> in the Sistine Chapel, was prototyped by me, <a href=\"https://twitter.com/antimatter15\">Kevin</a>, <a href=\"https://twitter.com/biject\">Guillermo</a>, and <a href=\"https://github.com/lengstrom\">Logan</a> in about 16 hours.</p>
@@ -2622,6 +2646,7 @@ module SeedData
             reading_time: '15 min',
             featured: true, 
             img_name: "failure.png",
+            description: "In 2011, I left my job as the second employee at Pinterest — before I vested any of my stock — to work on what I thought would be my life’s work.",
             content: 
                 "<div lang=\"en\"><section><div><div><figure><div tabindex=\"0\" role=\"button\"><div><div><div><div></div><div class=\"RIL_IMG\" id=\"RIL_IMG_2\">
                 <figure>

@@ -136,7 +136,7 @@ export default class ArticleIndexItem extends Component {
     render() {
         if (!this.props.article) return null;
         const { 
-            id, title, author, url, reading_time, cover_img 
+            id, title, author, url, reading_time, cover_img , description
         } = this.props.article;
         return (
             <article className="article-grid-item">
@@ -155,9 +155,7 @@ export default class ArticleIndexItem extends Component {
                         <div>{reading_time}</div>
                     </div>
                     <div className="description">
-                        Most of us have a pretty terrible 
-                        understanding of history. 
-                        Our knowledge is spotty, with large
+                        {description}
                     </div>
                     {this.renderSave()}
                     {this.renderCtrls()}

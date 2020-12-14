@@ -2,7 +2,7 @@ if @articles.length > 0
   json.articles do 
     @articles.each do |article|
       json.set! article.id do
-        json.extract! article, :id, :title, :author, :reading_time, :url, :full_url, :featured
+        json.extract! article, :id, :title, :author, :reading_time, :url, :full_url, :featured, :description
         json.save_id article.saves.where(user_id: current_user.id).ids.first
         json.cover_img url_for(article.cover_img)
         if (current_user.saved_articles.include?(article)) 

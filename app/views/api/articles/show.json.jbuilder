@@ -1,5 +1,5 @@
 json.article do
-    json.extract! @article, :id, :title, :author, :reading_time, :url, :full_url, :featured, :content
+    json.extract! @article, :id, :title, :author, :reading_time, :url, :full_url, :featured, :content, :description
     json.save_id @save_id
     json.cover_img url_for(@article.cover_img)
 end
