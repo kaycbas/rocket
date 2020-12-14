@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { BiArrowBack } from 'react-icons/bi'
 import { AiOutlineHighlight } from 'react-icons/ai'
 import { AiOutlineTag } from 'react-icons/ai'
-import { AiOutlineStar } from 'react-icons/ai'
+import { AiOutlineStar, AiFillStar } from 'react-icons/ai'
 import { FiArchive } from 'react-icons/fi'
 import { FiTrash } from 'react-icons/fi'
 import { BiFontFamily } from 'react-icons/bi'
@@ -20,6 +20,7 @@ class ArticleNav extends Component {
         this.saveArticle = this.saveArticle.bind(this);
         this.toggleSave = this.toggleSave.bind(this);
         this.unsaveArticle = this.unsaveArticle.bind(this);
+        this.toggleFavorite = this.toggleFavorite.bind(this);
     }
 
     goBack() {
@@ -40,14 +41,6 @@ class ArticleNav extends Component {
         }
     }
 
-    toggleSave() {
-        if (!!this.props.article.save_id) {
-            this.props.deleteSave(this.props.save.id);
-        } else {
-            this.props.createSave(this.props.article.id);
-        }
-    }
-
     unsaveArticle() {
         if (!!this.props.article.save_id) {
             this.props.deleteSave(this.props.save.id);
@@ -57,7 +50,26 @@ class ArticleNav extends Component {
         }
     }
 
+    toggleSave() {
+        if (!!this.props.article.save_id) {
+            this.props.deleteSave(this.props.save.id);
+        } else {
+            this.props.createSave(this.props.article.id);
+        }
+    }
+
+    toggleFavorite() {
+        if (!!this.props.article.favorite_id) {
+            this.props.deleteFavorite(this.props.article.favorite_id)
+                .then(() => this.forceUpdate());
+        } else {
+            this.props.createFavorite(this.props.article.id)
+                .then(() => this.forceUpdate());
+        }
+    }
+
     renderNavUtils() {
+        const isFavorited = !!this.props.article.favorite_id;
         if (this.props.article.filter === 'list') {
             return (
                 <ul className="read-nav-utils">
@@ -67,11 +79,12 @@ class ArticleNav extends Component {
                         <div className="read-nav-btn">
                             <AiOutlineTag size={26} />
                         </div> */}
-                        <Link to="/">
-                            <div className="read-nav-btn">
-                                <AiOutlineStar size={28} />
-                            </div>
-                        </Link>
+                        <div onClick={this.toggleFavorite} className="read-nav-btn">
+                            { isFavorited ? 
+                                <AiFillStar size={28} color="#fcb643" /> : 
+                                <AiOutlineStar size={28} /> 
+                            }
+                        </div>
                         <Link to="/">
                             <div onClick={this.archiveArticle} className="read-nav-btn">
                                 <FiArchive size={23} />
@@ -92,11 +105,12 @@ class ArticleNav extends Component {
                             <div className="save-util-icon"></div>
                         </div>
                     </Link>
-                    <Link to="/archive">
-                        <div className="read-nav-btn">
-                            <AiOutlineStar size={28} />
-                        </div>
-                    </Link>
+                    <div onClick={this.toggleFavorite} className="read-nav-btn">
+                        { isFavorited ? 
+                            <AiFillStar size={28} color="#fcb643" /> : 
+                            <AiOutlineStar size={28} /> 
+                        }
+                    </div>
                     <Link to="/archive">
                         <div onClick={this.unsaveArticle} className="read-nav-btn">
                             <FiTrash size={25} />
@@ -108,19 +122,15 @@ class ArticleNav extends Component {
             const isSaved = !!this.props.article.save_id;
             return (
                 <ul className="read-nav-utils">
-                    {/* <Link to="/discover"> */}
                         <div onClick={this.toggleSave} className="read-nav-btn">
                             { isSaved ?
                                 <div className="save-util-icon-red"></div> :
                                 <div className="save-util-icon"></div>
                             }
                         </div>
-                    {/* </Link> */}
-                    {/* <Link to="/discover"> */}
                         <div className="read-nav-btn">
                             <BiHide size={28} />
                         </div>
-                    {/* </Link> */}
                 </ul>
             )
         }
