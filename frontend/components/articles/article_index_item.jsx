@@ -22,8 +22,10 @@ export default class ArticleIndexItem extends Component {
     }
 
     unsaveArticle() {
-        const saveId = this.props.article.save_id;
-        this.props.deleteSave(saveId);
+        if (!!this.props.article.save_id) {
+            this.props.deleteSave(this.props.save.id);
+        }
+        // const saveId = this.props.article.save_id;
     }
 
     archiveArticle() {
