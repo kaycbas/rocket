@@ -12,10 +12,10 @@ export const receiveArticles = payload => {
     }
 }
 
-export const receiveArticle = article => {
+export const receiveArticle = payload => {
     return {
         type: RECEIVE_ARTICLE,
-        article
+        payload
     }
 }
 
@@ -31,7 +31,7 @@ export const fetchArticles = filter => dispatch => {
 }
 
 export const fetchArticle = id => dispatch => (
-    ApiUtil.fetchArticle(id).then(article => (
-        dispatch(receiveArticle(article))
+    ApiUtil.fetchArticle(id).then(payload => (
+        dispatch(receiveArticle(payload))
     ))
 );

@@ -25,9 +25,11 @@ export default class ArticleNav extends Component {
                         <div className="read-nav-btn">
                             <AiOutlineTag size={26} />
                         </div>
-                        <div className="read-nav-btn">
-                            <AiOutlineStar size={28} />
-                        </div>
+                        <Link to="/">
+                            <div className="read-nav-btn">
+                                <AiOutlineStar size={28} />
+                            </div>
+                        </Link>
                         <div className="read-nav-btn">
                             <FiArchive size={23} />
                         </div>

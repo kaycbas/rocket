@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ArticleNav from './article_nav';
+import ArticleNavContainer from './article_nav_container';
 import parse from 'html-react-parser';
 
 export default class ArticleShow extends Component {
@@ -18,7 +18,7 @@ export default class ArticleShow extends Component {
         } = this.props.article;
         return (
             <div>
-                <ArticleNav />
+                <ArticleNavContainer article={this.props.article} save={this.props.save} />
                 <div className="read-container">
                     <header className="read-header">
                         <h1>{title}</h1>

@@ -18,10 +18,14 @@ else
   json.articles ({})
 end
 
-json.saves do 
-  @saves.each do |save|
-    json.set! save.id do
-      json.extract! save, :id, :user_id, :article_id, :archived
+if @saves.length > 0
+  json.saves do 
+    @saves.each do |save|
+      json.set! save.id do
+        json.extract! save, :id, :user_id, :article_id, :archived
+      end
     end
   end
+else
+  json.saves ({})
 end
