@@ -26,6 +26,7 @@ class Api::SavesController < ApplicationController
 
     def destroy
         @save = Save.find_by(id: params[:id])
+        @save.archived = false
         @save.destroy
         render json: @save
     end
