@@ -39,9 +39,9 @@ export default class MainNav extends Component {
         //     }).then(text => {
         //         debugger;
         //     })
-        $.get(url, res => {
-            debugger;
-        })
+        // $.get(url, res => {
+        //     debugger;
+        // })
     }
 
     renderDefaultNav() {
