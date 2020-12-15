@@ -57,9 +57,58 @@
 
 .nav-util {
     display: block;
+    position: relative;
     font-size: 14px;
     height: 100%;
     box-sizing: border-box;
     padding: 0 18px;
     cursor: pointer;
+}
+
+.profile-modal {
+    position: absolute;
+    display: none;
+    box-sizing: border-box;
+    z-index: 10;
+    background-color: white;
+    border-radius: 2px;
+    padding: 8px 0;
+    box-shadow: 1px 1px 8px 0px #aeaeae;
+    width: 120px;
+    top: 32px;
+    right: 12px;
+    font-size: 15px;
+    color: $off-black;
+
+    .modal-line {
+        width: 100%;
+        padding: 6px 0 6px 11px;
+        cursor: pointer;
+
+        * {
+            padding-right: 10px;
+        }
+    }
+
+    .modal-line:hover {
+        color: rgb(17, 106, 101);
+        background-color: rgba(28, 176, 168, 0.2);
+    }
+
+    .dropped {
+        display: block;
+    }
+}
+
+.nav-util:hover > .profile-modal {
+    display: block;
+}
+
+.profile-hover-soln {
+    position: absolute;
+    width: 140px;
+    height: 100px;
+    top: -15px;
+    left: -10px;
+    z-index: -2;
 }

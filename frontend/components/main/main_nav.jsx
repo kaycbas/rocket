@@ -7,11 +7,17 @@ import { CgProfile } from 'react-icons/cg';
 export default class MainNav extends Component {
     constructor(props) {
         super(props);
-        this.handleClick = this.handleClick.bind(this);
+        // this.handleClick = this.handleClick.bind(this);
+        this.toggleDropdown = this.toggleDropdown.bind(this);
+        this.state = { dropdown: 'collapsed' }
     }
 
-    handleClick(e) {
-        this.props.signOut();
+    toggleDropdown(e) {
+        if (e.currentTarget.classList.contains("dropped")) {
+            e.currentTarget.classList.remove("dropped");
+        } else {
+            e.currentTarget.classList.add("dropped");
+        }
     }
 
     render() {
@@ -40,8 +46,17 @@ export default class MainNav extends Component {
                         <div className="nav-util">
                             <GrAdd size={22} />
                         </div>
-                        <div className="nav-util" onClick={this.handleClick} >
+                        <div onClick={this.toggleDropdown} className="nav-util" >
                             <CgProfile size={22} />
+                            <div className='profile-modal'>
+                                <div className="modal-line profile-hide-reset">
+                                    <p>Reset Hides</p>
+                                </div>
+                                <div className="modal-line profile-signout">
+                                    <p>Sign Out</p>
+                                </div>
+                                <span className="profile-hover-soln"></span>
+                            </div>
                         </div>
                     </ul>
                 </nav>
