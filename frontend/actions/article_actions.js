@@ -38,6 +38,6 @@ export const fetchArticle = id => dispatch => (
 
 export const createArticle = url => dispatch => (
     ApiUtil.createArticle(url).then(article => (
-        dispatch(receiveArticle(articl))
+        dispatch(receiveArticle(article))
     ))
 );
