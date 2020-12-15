@@ -5,7 +5,7 @@ import {
     unArchiveSave,
     deleteSave
 } from '../../actions/save_actions'
-import { 
+import {
     createFavorite, 
     deleteFavorite 
 } from '../../actions/favorite_actions'

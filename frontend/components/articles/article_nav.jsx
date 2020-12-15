@@ -21,6 +21,7 @@ class ArticleNav extends Component {
         this.toggleSave = this.toggleSave.bind(this);
         this.unsaveArticle = this.unsaveArticle.bind(this);
         this.toggleFavorite = this.toggleFavorite.bind(this);
+        this.hideArticle = this.hideArticle.bind(this);
     }
 
     goBack() {
@@ -66,6 +67,10 @@ class ArticleNav extends Component {
             this.props.createFavorite(this.props.article.id)
                 .then(() => this.forceUpdate());
         }
+    }
+
+    hideArticle() {
+        this.props.createHide(this.props.article.id);
     }
 
     renderNavUtils() {
@@ -128,9 +133,11 @@ class ArticleNav extends Component {
                                 <div className="save-util-icon"></div>
                             }
                         </div>
-                        <div className="read-nav-btn">
-                            <BiHide size={28} />
-                        </div>
+                        <Link to="/discover">
+                            <div onClick={this.hideArticle} className="read-nav-btn">
+                                <BiHide size={28} />
+                            </div>
+                        </Link>
                 </ul>
             )
         }
