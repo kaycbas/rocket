@@ -298,27 +298,40 @@
 }
 
 @media only screen and (max-width: 950px) {
-    .article-item-img-container {
+    .article-index-header > h1 {
+        grid-column-start: 2;
+        text-align: center;
+    }
 
+    .article-index {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .article-grid {
+        grid-template-columns: 349px;
+        grid-template-rows: repeat(auto-fit, 485px);
+    }
+    .article-item-img-container {
+        height: 220px;
+        width: 309px;
     }
 
     .article-item-img {
-
+        height: 220px;
+        width: 309px;
     }
 
     .article-item-info {
         .title {
-
-        }
-        .metas {
-
+            max-height: 3.5em;
         }
         .description {
-
+            max-height: 4.15em;
         }
     }
 
     .article-item-ctrls {
-
+        width: 309px;
     }
 }
