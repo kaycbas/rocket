@@ -8,9 +8,9 @@ class Api::HidesController < ApplicationController
     end
 
     def destroy
-        @hide = Hide.find_by(id: params[:id])
-        @hide.destroy
-        render json: @hide
+        @hides = Hide.where(user_id: current_user.id);
+        @hides.destroy_all
+        render json: @hides
     end
 
     private

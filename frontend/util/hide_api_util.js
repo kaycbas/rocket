@@ -5,9 +5,9 @@ export const createHide = articleId => {
     })
 }
 
-export const deleteHide = id => {
+export const deleteHides = () => {
     return $.ajax({
         method: 'DELETE',
-        url: `api/hides/${id}`
+        url: `api/hides/1`
     })
 }

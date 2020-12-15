@@ -7,14 +7,14 @@ import { CgProfile } from 'react-icons/cg';
 export default class MainNav extends Component {
     constructor(props) {
         super(props);
-        // this.handleClick = this.handleClick.bind(this);
         this.state = { dropdown: 'collapsed' }
         this.resetHides = this.resetHides.bind(this);
         this.signOut = this.signOut.bind(this);
     }
 
     resetHides() {
-
+        this.props.deleteHides()
+            .then(this.props.fetchArticles(this.props.articles[0].filter))
     }
 
     signOut() {

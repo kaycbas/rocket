@@ -10,12 +10,11 @@ export const receiveHide = hide => {
     }
 }
 
-export const removeHide = hide => {
-    return {
-        type: REMOVE_HIDE,
-        hide
-    }
-}
+// export const removeHides = () => {
+//     return {
+//         type: REMOVE_HIDES
+//     }
+// }
 
 export const createHide = articleId => dispatch => (
     ApiUtil.createHide(articleId).then(hide => (
@@ -23,8 +22,4 @@ export const createHide = articleId => dispatch => (
     ))
 );
 
-export const deleteHide = hideId => dispatch => {
-    return ApiUtil.deleteHide(hideId).then(hide => (
-        dispatch(removeHide(hide))
-    ))
-}
+export const deleteHides = () => dispatch => ApiUtil.deleteHides();
