@@ -12,6 +12,7 @@ class Api::ArticlesController < ApplicationController
         elsif @filter== 'favorites'
             @articles = current_user.favorite_articles
         end
+        @articles = @articles - current_user.hidden_articles
         render :index
     end
 

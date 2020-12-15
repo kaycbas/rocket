@@ -9,6 +9,7 @@ import {
     createFavorite, 
     deleteFavorite 
 } from '../../actions/favorite_actions'
+import { createHide } from '../../actions/hide_actions'
 import ArticleIndexItem from './article_index_item'
 
 const mSTP = (state, ownProps) => {
@@ -24,7 +25,8 @@ const mDTP = dispatch => {
         archiveSave: save => dispatch(archiveSave(save)),
         unArchiveSave: save => dispatch(unArchiveSave(save)),
         createFavorite: articleId => dispatch(createFavorite(articleId)),
-        deleteFavorite: favId => dispatch(deleteFavorite(favId))
+        deleteFavorite: favId => dispatch(deleteFavorite(favId)),
+        createHide: articleId => dispatch(createHide(articleId))
     }
 }
 

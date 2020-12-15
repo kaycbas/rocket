@@ -36,4 +36,12 @@ class Article < ApplicationRecord
     has_many :favoriters,
         through: :favorites,
         source: :user
+
+    has_many :hides,
+        foreign_key: :article_id,
+        class_name: :Hide
+
+    has_many :hiders,
+        through: :hides,
+        source: :user
 end

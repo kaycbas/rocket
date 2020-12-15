@@ -16,6 +16,7 @@ export default class ArticleIndexItem extends Component {
         this.unArchiveArticle = this.unArchiveArticle.bind(this);
         this.toggleFavorite = this.toggleFavorite.bind(this);
         this.renderCtrls = this.renderCtrls.bind(this);
+        this.hideArticle = this.hideArticle.bind(this);
     }
 
     toggleSave() {
@@ -51,6 +52,10 @@ export default class ArticleIndexItem extends Component {
             this.props.createFavorite(this.props.article.id)
                 .then(() => this.forceUpdate());
         }
+    }
+
+    hideArticle() {
+        this.props.createHide(this.props.article.id);
     }
 
     renderSave() {
@@ -144,7 +149,7 @@ export default class ArticleIndexItem extends Component {
                     <div className="ctrls-btn">
                         <FiMoreHorizontal size={18} />
                         <div className="article-ctrls-modal">
-                            <div className="ctrl-line">
+                            <div onClick={this.hideArticle} className="ctrl-line">
                                 <BiHide size={18} />
                                 <p>Hide</p>
                             </div>
