@@ -8,16 +8,17 @@ export default class MainNav extends Component {
     constructor(props) {
         super(props);
         // this.handleClick = this.handleClick.bind(this);
-        this.toggleDropdown = this.toggleDropdown.bind(this);
         this.state = { dropdown: 'collapsed' }
+        this.resetHides = this.resetHides.bind(this);
+        this.signOut = this.signOut.bind(this);
     }
 
-    toggleDropdown(e) {
-        if (e.currentTarget.classList.contains("dropped")) {
-            e.currentTarget.classList.remove("dropped");
-        } else {
-            e.currentTarget.classList.add("dropped");
-        }
+    resetHides() {
+
+    }
+
+    signOut() {
+        this.props.signOut();
     }
 
     render() {
@@ -46,13 +47,13 @@ export default class MainNav extends Component {
                         <div className="nav-util">
                             <GrAdd size={22} />
                         </div>
-                        <div onClick={this.toggleDropdown} className="nav-util" >
+                        <div className="nav-util" >
                             <CgProfile size={22} />
                             <div className='profile-modal'>
-                                <div className="modal-line profile-hide-reset">
+                                <div onClick={this.resetHides} className="modal-line profile-hide-reset">
                                     <p>Reset Hides</p>
                                 </div>
-                                <div className="modal-line profile-signout">
+                                <div onClick={this.signOut} className="modal-line profile-signout">
                                     <p>Sign Out</p>
                                 </div>
                                 <span className="profile-hover-soln"></span>
