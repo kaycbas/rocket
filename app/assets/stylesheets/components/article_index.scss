@@ -39,7 +39,7 @@
     display: flex;
     flex-direction: column;
     padding: 20px;
-    height: 485px;
+    height: 100%;
     border-radius: 4px;
     position: relative;
 }
@@ -74,10 +74,11 @@
         box-sizing: border-box;
         font-size: 18px;
         line-height: 1.2em;
-        max-height: 7em;
-        overflow: hidden;
+        max-height: 3.5em;
         font-weight: 600;
         padding-top: 1em;
+        overflow: hidden;
+        word-break: break-word;
     }
 
     .metas {
@@ -166,7 +167,7 @@
 .article-item-ctrls {
     position: absolute;
     bottom: 23px;
-    width: 88%;
+    width: 309px;
     display: flex;
     justify-content: flex-end;
     padding-bottom: 10px;
@@ -241,11 +242,83 @@
 @media only screen and (max-width: 1260px) {
     .article-item-img-container {
         width: 263px;
-        height: 150px;
+        height: 170px;
     }
 
     .article-item-img {
         width: 263px;
-        height: 150px;
+        height: 170px;
+    }
+
+    .article-item-info {
+        .title {
+            max-height: 4.5em;
+            width: 95%;
+        }
+        .description {
+            width: 90%;
+            max-height: 5.15em;
+        }
+    }
+    .article-item-ctrls {
+        width: 263px;
+    }
+}
+
+@media only screen and (max-width: 1060px) {
+    .article-grid {
+        grid-template-rows: repeat(auto-fit, 425px);
+    }
+
+    .article-item-img-container {
+        width: 212px;
+        height: 136px;
+    }
+
+    .article-item-img {
+        width: 212px;
+        height: 136px;
+    }
+
+    .article-item-info {
+        .title {
+
+        }
+        .metas {
+
+        }
+        .description {
+
+        }
+    }
+
+    .article-item-ctrls {
+        width: 212px;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .article-item-img-container {
+
+    }
+
+    .article-item-img {
+
+    }
+
+    .article-item-info {
+        .title {
+
+        }
+        .metas {
+
+        }
+        .description {
+
+        }
+    }
+
+    .article-item-ctrls {
+
     }
 }
