@@ -97,7 +97,7 @@ export default class ArticleIndexItem extends Component {
             return (
                 <div className="article-item-ctrls">
                     <div className="ctrls-btn">
-                        <FiMoreHorizontal size={18} />
+                        <FiMoreHorizontal size={20} />
                         <div className="article-ctrls-modal fav-ctrl-line">
                             <div onClick={this.toggleFavorite} className="ctrl-line">
                                 { isFavorited ? <AiFillStar size={20} color="#fcb643" /> : <AiOutlineStar size={20} /> }
@@ -124,7 +124,7 @@ export default class ArticleIndexItem extends Component {
             return (
                 <div className="article-item-ctrls">
                     <div className="ctrls-btn">
-                        <FiMoreHorizontal size={18} />
+                        <FiMoreHorizontal size={20} />
                         <div className="article-ctrls-modal">
                             <div onClick={this.unArchiveArticle} className="ctrl-line">
                                 <div className="save-ctrl-icon"></div>
@@ -147,7 +147,7 @@ export default class ArticleIndexItem extends Component {
             return (
                 <div className="article-item-ctrls">
                     <div className="ctrls-btn">
-                        <FiMoreHorizontal size={18} />
+                        <FiMoreHorizontal size={20} />
                         <div className="article-ctrls-modal">
                             <div onClick={this.hideArticle} className="ctrl-line">
                                 <BiHide size={18} />
@@ -162,7 +162,7 @@ export default class ArticleIndexItem extends Component {
             return (
                 <div className="article-item-ctrls">
                     <div className="ctrls-btn">
-                        <FiMoreHorizontal size={18} />
+                        <FiMoreHorizontal size={20} />
                         <div className="article-ctrls-modal">
                             <div onClick={this.toggleFavorite} className="ctrl-line">
                                 { isFavorited ? <AiFillStar size={20} color="#fcb643" /> : <AiOutlineStar size={20} /> }
@@ -204,9 +204,9 @@ export default class ArticleIndexItem extends Component {
                     <div className="description">
                         {description}
                     </div>
-                    {this.renderSave()}
-                    {this.renderCtrls()}
                 </div>
+                {this.renderSave()}
+                {this.renderCtrls()}
             </article>
         )
     }

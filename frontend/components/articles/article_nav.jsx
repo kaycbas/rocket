@@ -144,7 +144,6 @@ class ArticleNav extends Component {
     }
 
     render() {
-        // debugger;
         return (
             <header className="read-nav-container">
                 <nav className="read-nav-content">
