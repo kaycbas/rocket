@@ -35,3 +35,9 @@ export const fetchArticle = id => dispatch => (
         dispatch(receiveArticle(payload))
     ))
 );
+
+export const createArticle = url => dispatch => (
+    ApiUtil.createArticle(url).then(article => (
+        dispatch(receiveArticle(articl))
+    ))
+);

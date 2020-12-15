@@ -26,7 +26,8 @@ class Api::ArticlesController < ApplicationController
     end
 
     def create
-        
+        # debugger
+        Scraper.new(params[:url])
     end
 
     def destroy

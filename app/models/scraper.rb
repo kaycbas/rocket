@@ -17,11 +17,12 @@ require_relative 'article'
 class Scraper
     
 
-    def initialize
+    def initialize(full_url)
         
         # full_url = 'https://neilkakkar.com/sapiens.html'
-        full_url = 'http://www.paulgraham.com/ecw.html'
+        # full_url = 'http://www.paulgraham.com/ecw.html'
         # full_url = 'https://a16z.com/2020/04/18/its-time-to-build/'
+
 
         article = {}
         article[:full_url] = full_url
@@ -36,7 +37,7 @@ class Scraper
         body = doc.at('body').children.to_html
         
 
-        debugger
+        # debugger
 
         article[:title] = doc.css('title').text
         article[:content] = body
@@ -47,11 +48,11 @@ class Scraper
         article[:img_name] = 'placeholder.png'
         article[:description] = "This is placeholder text. This is placeholder text. This is placeholder text. This is placeholder text. This is placeholder text."
 
-        # article = Article.create!(article)
+        article = Article.create!(article)
 
-        # # puts article.img_name
-        # img = open("https://rocket--kb-dev.s3-us-west-1.amazonaws.com/#{article.img_name}")
-        # article.cover_img.attach(io: img, filename: article.img_name)
+        # puts article.img_name
+        img = open("https://rocket--kb-dev.s3-us-west-1.amazonaws.com/#{article.img_name}")
+        article.cover_img.attach(io: img, filename: article.img_name)
         # # binding.pry
     end
 

@@ -12,3 +12,11 @@ export const fetchArticle = id => {
         url: `api/articles/${id}`
     })
 }
+
+export const createArticle = url => {
+    return $.ajax({
+        method: 'POST',
+        url: `api/articles`,
+        data: { url: url }
+    })
+}
