@@ -1,6 +1,6 @@
 .mobile-sidebar {
     position: absolute;
-    // display: none;
+    display: none;
     opacity: 0;
     height: 100%;
     display: block;
@@ -12,6 +12,11 @@
     border-right: 1px solid rgb(224, 224, 224);
     left: 0px;
     top: 64px;
+    width: 0px;
+}
+
+.mobile-mode {
+    width: auto;
 }
 
 .mobile-tabs {
