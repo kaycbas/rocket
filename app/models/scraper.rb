@@ -64,15 +64,18 @@ class Scraper
         doc.css('svg').each do |el|
             el.remove
         end
+        doc.css('figcaption').each do |el|
+            el.remove
+        end
         doc.css('button').each do |el|
             el.remove
         end
         doc.css('a').each do |el|
             el.remove
         end
-        doc.at('h1').remove
-        doc.at('h2').remove
-        return doc
+        doc.at('h1').remove if doc.at('h1')
+        doc.at('h2').remove if doc.at('h2')
+        doc
     end
 
     def is_blank?(node)
@@ -93,30 +96,31 @@ class Scraper
     end
 
     def medium_scraper(doc)
-        # contentAt = doc.at('.n')
-        # # content = doc.at_css('div.n.p')
-        # content = doc.at_css('//div.n.p[3]')
-        # debugger
-        # # p = doc.at('p')
-        # # parent = p.parent
-        # content.xpath('//@*').remove
-        # content.wrap("<div class='article-content'></div>")
-        # doc.at('.article-content').to_html
-        ####
-        # doc.search('p').to_html
-        ####
         content = doc.at_css('article')
         content.xpath('//@*').remove
         content.wrap("<div class='article-content'></div>")
         article_content = doc.at('.article-content')
         scrubbed = scrub(article_content)
         html = scrubbed.to_html
+        html = remove_medium_read_time(html)
         # html.slice!('min read')
         # i = html.index('min read')
         # html = html[0...(i-5)] + html[(i+8)..-1]
         # * 10 min read
         # html.slice!(/· (\d)+ min read/)
         return html
+    end
+
+    def remove_medium_read_time(str)
+        if (str.include?('min read'))
+            idx1 = str.index('->·<!')
+            idx1 += 2
+            idx2 = str.index('min read')
+            idx2 += 7
+            sub = str[idx1..idx2]
+            str.slice!(sub)
+        end
+        str
     end
 
 end
