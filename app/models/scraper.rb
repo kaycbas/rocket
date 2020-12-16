@@ -3,17 +3,6 @@ require 'open-uri'
 require 'pry'
 require_relative 'article'
 
-# NEED
-#  title        :string           not null
-#  content      :text             not null
-#  featured     :boolean          not null
-#  author       :string
-#  url          :string
-#  full_url     :string           not null
-#  reading_time :string
-#  img_name     :string
-#  description  :string
-
 class Scraper
     def get_article_info(full_url)
         article = {}
@@ -45,11 +34,12 @@ class Scraper
         elsif (host.last(10) == 'medium.com')
             return medium_scraper(doc)
         else
-            children = doc.at('body').children
-            children.remove_attr('class')
-            children.xpath('//@*').remove
-            children.wrap("<div class='article-content'></div>")
-            return doc.at('body').children.to_html
+            # children = doc.at('body').children
+            # children.remove_attr('class')
+            # children.xpath('//@*').remove
+            # children.wrap("<div class='article-content'></div>")
+            # return doc.at('body').children.to_html
+            return universal_scraper(doc)
         end
     end
 
@@ -57,7 +47,32 @@ class Scraper
         "#{(length / 1500) + 1} min"
     end
 
-    def scrub(doc)
+    def scrub_universal(doc)
+        doc.xpath('//@*').remove
+        doc.css('p').find_all{|p| all_children_are_blank?(p) }.each do |p|
+            p.remove
+        end
+        doc.css('header').each do |el|
+            el.remove
+        end
+        doc.css('svg').each do |el|
+            el.remove
+        end
+        doc.css('figcaption').each do |el|
+            el.remove
+        end
+        doc.css('button').each do |el|
+            el.remove
+        end
+        doc.css('a').each do |el|
+            el.remove
+        end
+        doc.at('h1').remove if doc.at('h1')
+        doc.at('h2').remove if doc.at('h2')
+        doc
+    end
+
+    def scrub_medium(doc)
         doc.css('p').find_all{|p| all_children_are_blank?(p) }.each do |p|
             p.remove
         end
@@ -84,10 +99,25 @@ class Scraper
 
     def all_children_are_blank?(node)
         node.children.all?{|child| is_blank?(child) } 
-        # Here you see the convenience of monkeypatching... sometimes.
     end
 
     # Domain specific scrapers
+    def universal_scraper(doc)
+        content = nil
+        if doc.at_css('article')
+            content = doc.at_css('article')
+        elsif doc.at_css('main')
+            content = doc.at_css('main')
+        else
+            content = doc.at_css('main')
+        end
+        content.wrap("<div class='article-content'></div>")
+        article_content = doc.at('.article-content')
+        scrubbed = scrub_universal(article_content)
+        html = scrubbed.to_html
+        return html
+    end
+
     def pg_scraper(doc)
         content = doc.at('font')
         content.xpath('//@*').remove
@@ -100,14 +130,9 @@ class Scraper
         content.xpath('//@*').remove
         content.wrap("<div class='article-content'></div>")
         article_content = doc.at('.article-content')
-        scrubbed = scrub(article_content)
+        scrubbed = scrub_medium(article_content)
         html = scrubbed.to_html
         html = remove_medium_read_time(html)
-        # html.slice!('min read')
-        # i = html.index('min read')
-        # html = html[0...(i-5)] + html[(i+8)..-1]
-        # * 10 min read
-        # html.slice!(/· (\d)+ min read/)
         return html
     end
 
@@ -122,7 +147,4 @@ class Scraper
         end
         str
     end
-
 end
-
-# · (\d)+ min read
