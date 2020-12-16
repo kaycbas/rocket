@@ -26,13 +26,13 @@ class Api::ArticlesController < ApplicationController
     end
 
     def create
-        # Scraper.new(params[:url])
         scraper = Scraper.new
         article_info = scraper.get_article_info(params[:url])
 
-        article = Article.create!(article_info)
-        img = open("https://rocket--kb-dev.s3-us-west-1.amazonaws.com/#{article.img_name}")
-        article.cover_img.attach(io: img, filename: article.img_name)
+        @article = Article.create!(article_info)
+        img = open("https://rocket--kb-dev.s3-us-west-1.amazonaws.com/#{@article.img_name}")
+        @article.cover_img.attach(io: img, filename: @article.img_name)
+        render :show
     end
 
     def destroy

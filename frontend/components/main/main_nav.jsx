@@ -32,18 +32,8 @@ export default class MainNav extends Component {
     handleUrlSubmit() {
         const input = document.getElementById('url-input');
         const url = input.value;
-        // debugger
         this.props.createArticle(url);
-        // fetch(url, { mode: 'no-cors'})
-        //     .then(res => {
-        //         debugger;
-        //         return res.text();
-        //     }).then(text => {
-        //         debugger;
-        //     })
-        // $.get(url, res => {
-        //     debugger;
-        // })
+        this.toggleAddUrl();
     }
 
     renderDefaultNav() {

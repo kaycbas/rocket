@@ -40,9 +40,11 @@ class Scraper
     end
 
     def get_content(doc, host)
-        # debugger
+        debugger
         if (host == 'paulgraham.com')
             return pg_scraper(doc)
+        elsif (host.last(10) == 'medium.com')
+            return medium_scraper(doc)
         else
             children = doc.at('body').children
             children.remove_attr('class')
@@ -60,13 +62,19 @@ class Scraper
 
     # Domain specific scrapers
     def pg_scraper(doc)
-        font = doc.at('font')
-        font.xpath('//@*').remove
-        font.wrap("<div class='article-content'></div>")
+        content = doc.at('font')
+        content.xpath('//@*').remove
+        content.wrap("<div class='article-content'></div>")
         doc.at('.article-content').to_html
     end
 
-    def medium_scraper
-
+    def medium_scraper(doc)
+        content = doc.at('.meteredContent')
+        p = doc.at('p')
+        parent = p.parent
+        parent.xpath('//@*').remove
+        parent.wrap("<div class='article-content'></div>")
+        # debugger
+        doc.at('.article-content').to_html
     end
 end
