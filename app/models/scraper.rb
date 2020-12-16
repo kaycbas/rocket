@@ -23,15 +23,17 @@ class Scraper
         article
     end
 
+    #  &&
+    # (img.attr('src').include?('jpg') ||
+    # img.attr('src').include?('jpeg') ||
+    # img.attr('src').include?('png'))
+
     def get_img_url(doc)
         imgs = doc.css('img')
         img_url = nil;
         imgs.each do |img|
             if (img.attr('src') && 
-                img.attr('src').include?('https') &&
-                (img.attr('src').include?('jpg') ||
-                img.attr('src').include?('jpeg') ||
-                img.attr('src').include?('png')))
+                img.attr('src').include?('https'))
                 src = img.attr('src')
                 if (src.include?('/max/'))
                     idx1 = src.index('max')

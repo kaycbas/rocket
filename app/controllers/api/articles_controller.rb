@@ -34,6 +34,15 @@ class Api::ArticlesController < ApplicationController
         img = open("https://rocket--kb-dev.s3-us-west-1.amazonaws.com/#{@article.img_name}")
         @article.cover_img.attach(io: img, filename: @article.img_name)
         @custom_img_url = @article.custom_img_url ? @article.custom_img_url : nil
+
+        new_save = {}
+        new_save[:user_id] = current_user.id
+        new_save[:article_id] = @article.id
+        new_save[:archived] = false
+        @save = Save.create!(new_save)
+        @save_id = @save.id
+        @favorite_id = nil
+
         render :show
     end
 
