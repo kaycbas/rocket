@@ -95,3 +95,9 @@
         opacity 0.5s ease;
     }
 }
+
+@media only screen and (max-width: 770px) {
+    .url-add {
+        display: none;
+    }
+}

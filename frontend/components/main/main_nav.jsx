@@ -65,7 +65,7 @@ export default class MainNav extends Component {
                     </div>
                 </ul>
                 <ul className="nav-utils">
-                    <div onClick={this.toggleAddUrl} className="nav-util">
+                    <div onClick={this.toggleAddUrl} className="nav-util url-add">
                         <GrAdd size={22} />
                     </div>
                     <div className="nav-util" >

@@ -308,6 +308,9 @@
 }
 
 @media only screen and (max-width: 770px) {
+    .url-add {
+        display: none;
+    }
     .article-index-header > h1 {
         grid-column-start: 2;
         text-align: center;
