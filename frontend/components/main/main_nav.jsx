@@ -34,7 +34,6 @@ export default class MainNav extends Component {
     }   
 
     toggleMode() {
-        debugger;
         if (this.state.mode === 'default-mode') {
             this.setState({ mode: 'mobile-mode' })
         } else {
@@ -121,7 +120,7 @@ export default class MainNav extends Component {
                     </NavLink>
                     <NavLink exact activeClassName="active-mobile" className="mobile-tab" to='/'>
                         <TiHome size={20} />
-                        Home
+                        My List
                     </NavLink>
                     <NavLink exact activeClassName="active-mobile" className="mobile-tab" to='/archive'>
                         <BsArchiveFill size={20} />
@@ -142,7 +141,7 @@ export default class MainNav extends Component {
                 {this.renderMobileSidebar()}
                 <nav className="nav-content">
                     <div className="hamburger-wrapper">
-                        <div className="mobile-hamburger" onClick={this.toggelMode}>
+                        <div onClick={this.toggleMode} className="mobile-hamburger">
                             <GiHamburgerMenu size={20}/>
                         </div>
                         <Link to='/' className="nav-logo">
