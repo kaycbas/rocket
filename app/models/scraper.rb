@@ -23,7 +23,7 @@ class Scraper
         article
     end
 
-    #  &&
+    # removed image type checks... so far so good
     # (img.attr('src').include?('jpg') ||
     # img.attr('src').include?('jpeg') ||
     # img.attr('src').include?('png'))

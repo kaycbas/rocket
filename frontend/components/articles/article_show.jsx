@@ -4,11 +4,17 @@ import parse from 'html-react-parser';
 
 export default class ArticleShow extends Component {
     constructor(props) {
-        super(props)
+        super(props);
+        this.renderHeaderImg = this.renderHeaderImg.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchArticle(this.props.match.params.article_id);
+    }
+
+    renderHeaderImg() {
+        if (!this.props.article.custom_img_url) return null;
+        return (<img className="article-show-img" src={this.props.article.custom_img_url} alt="show img" />)
     }
 
     render() {
@@ -35,6 +41,7 @@ export default class ArticleShow extends Component {
                             target="_blank" 
                             rel="noopener noreferrer"
                         >View Original</a>
+                        {this.renderHeaderImg()}
                     </header>
                     <main className="read-body">
                         {parse(content)}
