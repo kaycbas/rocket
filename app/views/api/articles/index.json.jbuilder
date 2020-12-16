@@ -11,6 +11,11 @@ if @articles.length > 0
         else
           json.updated_at article.updated_at
         end
+        if (article.custom_img_url)
+          json.custom_img_url article.custom_img_url
+        else
+          json.custom_img_url nil
+        end
         json.filter @filter
       end
     end

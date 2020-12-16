@@ -22,6 +22,7 @@ class Api::ArticlesController < ApplicationController
         @fav = @article.favorites.find_by(user_id: current_user.id)
         @save_id = @save ? @save.id : nil
         @favorite_id = @fav ? @fav.id : nil
+        @custom_img_url = @article.custom_img_url ? @article.custom_img_url : nil
         render :show
     end
 
@@ -32,6 +33,7 @@ class Api::ArticlesController < ApplicationController
         @article = Article.create!(article_info)
         img = open("https://rocket--kb-dev.s3-us-west-1.amazonaws.com/#{@article.img_name}")
         @article.cover_img.attach(io: img, filename: @article.img_name)
+        @custom_img_url = @article.custom_img_url ? @article.custom_img_url : nil
         render :show
     end
 

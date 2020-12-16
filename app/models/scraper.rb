@@ -8,12 +8,10 @@ class Scraper
         article = {}
         html = open(full_url)
         doc = Nokogiri::HTML(html)
-
-        img_url = get_img_url(doc)
-        # debugger
-
+        
         article[:title] = doc.css('title').text.split('|').first
         article[:full_url] = full_url
+        article[:custom_img_url] = get_img_url(doc)
         article[:url] = get_host_without_www(full_url)
         article[:content] = get_content(doc, article[:url])
         article[:reading_time] = calculate_reading_time(article[:content].length)
@@ -26,7 +24,6 @@ class Scraper
     end
 
     def get_img_url(doc)
-        # debugger
         imgs = doc.css('img')
         img_url = nil;
         imgs.each do |img|
@@ -85,7 +82,6 @@ class Scraper
     end
 
     def scrub_universal(doc)
-        # doc.xpath('//@*').remove
         doc.css('nav').each do |el|
             el.children.each do |child|
                 child.remove
@@ -151,7 +147,7 @@ class Scraper
             content = doc.at_css('article')
         elsif doc.at_css('main')
             content = doc.at_css('main')
-        else # this code is dedicated to sites with bad css
+        else # this code is dedicated to articles with bad css
             content = doc.at('body').children
             content.xpath('//@*').remove
             content.wrap("<div class='article-content'></div>")
