@@ -20,7 +20,7 @@ class Scraper
         html = open(full_url)
         doc = Nokogiri::HTML(html)
 
-        article[:title] = doc.css('title').text
+        article[:title] = doc.css('title').text.split('|').first
         article[:full_url] = full_url
         article[:url] = get_host_without_www(full_url)
         article[:content] = get_content(doc, article[:url])
@@ -57,6 +57,33 @@ class Scraper
         "#{(length / 1500) + 1} min"
     end
 
+    def scrub(doc)
+        doc.css('p').find_all{|p| all_children_are_blank?(p) }.each do |p|
+            p.remove
+        end
+        doc.css('svg').each do |el|
+            el.remove
+        end
+        doc.css('button').each do |el|
+            el.remove
+        end
+        doc.css('a').each do |el|
+            el.remove
+        end
+        doc.at('h1').remove
+        doc.at('h2').remove
+        return doc
+    end
+
+    def is_blank?(node)
+        (node.text? && node.content.strip == '') || (node.element? && node.name == 'br')
+    end
+
+    def all_children_are_blank?(node)
+        node.children.all?{|child| is_blank?(child) } 
+        # Here you see the convenience of monkeypatching... sometimes.
+    end
+
     # Domain specific scrapers
     def pg_scraper(doc)
         content = doc.at('font')
@@ -76,11 +103,15 @@ class Scraper
         # content.wrap("<div class='article-content'></div>")
         # doc.at('.article-content').to_html
         ####
-        doc.search('p').to_html
+        # doc.search('p').to_html
         ####
-        # content = doc.at_css('div.ai.aj.ak.al.am.fr.ao.v')
-        # content.xpath('//@*').remove
-        # content.wrap("<div class='article-content'></div>")
-        # doc.at('.article-content').to_html
+        content = doc.at_css('article')
+        content.xpath('//@*').remove
+        content.wrap("<div class='article-content'></div>")
+        article_content = doc.at('.article-content')
+        scrubbed = scrub(article_content)
+        html = scrubbed.to_html
+        return html
     end
+
 end
