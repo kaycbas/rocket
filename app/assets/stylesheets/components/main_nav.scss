@@ -53,6 +53,7 @@
 
 .nav-utils {
     display: flex;
+    justify-content: flex-end;
 }
 
 .nav-util {
@@ -61,7 +62,7 @@
     font-size: 14px;
     height: 100%;
     box-sizing: border-box;
-    padding: 0 18px;
+    padding: 0 8px 0 18px;
     cursor: pointer;
 }
 
@@ -178,3 +179,4 @@
         }
     }
 }
+

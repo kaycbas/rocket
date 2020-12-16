@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { BsSearch } from 'react-icons/bs';
 import { GrAdd } from 'react-icons/gr';
 import { CgProfile } from 'react-icons/cg';
-import { $CombinedState } from 'redux';
+import { FaMap } from 'react-icons/fa'
+import { TiHome } from 'react-icons/ti'
+import { BsArchiveFill } from 'react-icons/bs'
+import { AiFillStar } from 'react-icons/ai'
+import { GiHamburgerMenu } from 'react-icons/gi'
 
 export default class MainNav extends Component {
     constructor(props) {
         super(props);
-        this.state = { addUrl: false }
+        this.state = { addUrl: false, mode: 'default-mode' }
         this.resetHides = this.resetHides.bind(this);
         this.signOut = this.signOut.bind(this);
         this.renderDefaultNav = this.renderDefaultNav.bind(this);
         this.handleUrlSubmit = this.handleUrlSubmit.bind(this);
         this.toggleAddUrl = this.toggleAddUrl.bind(this);
+        this.toggleMode = this.toggleMode.bind(this);
     }
 
     resetHides() {
@@ -27,6 +31,15 @@ export default class MainNav extends Component {
 
     toggleAddUrl() {
         this.setState({ addUrl: !this.state.addUrl })
+    }   
+
+    toggleMode() {
+        debugger;
+        if (this.state.mode === 'default-mode') {
+            this.setState({ mode: 'mobile-mode' })
+        } else {
+            this.setState({ mode: 'default-mode' })
+        }
     }   
 
     handleUrlSubmit() {
@@ -53,9 +66,6 @@ export default class MainNav extends Component {
                     </div>
                 </ul>
                 <ul className="nav-utils">
-                    <div className="nav-util">
-                        <BsSearch size={22} />
-                    </div>
                     <div onClick={this.toggleAddUrl} className="nav-util">
                         <GrAdd size={22} />
                     </div>
@@ -101,13 +111,44 @@ export default class MainNav extends Component {
         )
     }
 
+    renderMobileSidebar() {
+        return (
+            <div className={`mobile-sidebar ${this.state.mode}`}>
+                <ul className="mobile-tabs">
+                    <NavLink exact activeClassName="active-mobile" className="mobile-tab" to='/discover'>
+                        <FaMap size={20} />
+                        Discover
+                    </NavLink>
+                    <NavLink exact activeClassName="active-mobile" className="mobile-tab" to='/'>
+                        <TiHome size={20} />
+                        Home
+                    </NavLink>
+                    <NavLink exact activeClassName="active-mobile" className="mobile-tab" to='/archive'>
+                        <BsArchiveFill size={20} />
+                        Archive
+                    </NavLink>
+                    <NavLink exact activeClassName="active-mobile" className="mobile-tab" to='/favorites'>
+                        <AiFillStar size={21} />
+                        Favorites
+                    </NavLink>
+                </ul>
+            </div>
+        )
+    }
+
     render() {
         return (
             <header className="nav-container">
+                {this.renderMobileSidebar()}
                 <nav className="nav-content">
-                    <Link to='/' className="nav-logo">
-                        <img className="nav-logo" src={window.rocketLogo} alt="Rocket logo" />
-                    </Link>
+                    <div className="hamburger-wrapper">
+                        <div className="mobile-hamburger" onClick={this.toggelMode}>
+                            <GiHamburgerMenu size={20}/>
+                        </div>
+                        <Link to='/' className="nav-logo">
+                            <img className="nav-logo" src={window.rocketLogo} alt="Rocket logo" />
+                        </Link>
+                    </div>
                     {this.renderDefaultNav()}
                     {this.renderAddField()}
                 </nav>

@@ -19,7 +19,7 @@ export default class Main extends Component {
         return (
             <React.Fragment>
                 <MainNavContainer />
-                <main className="main-container">
+                <main className="main-container" id="main">
                     <SidebarContainer />
                     <Switch>
                         <Route exact path='/' component={MyListIndexContainer} />
