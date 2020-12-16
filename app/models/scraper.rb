@@ -40,7 +40,6 @@ class Scraper
     end
 
     def get_content(doc, host)
-        debugger
         if (host == 'paulgraham.com')
             return pg_scraper(doc)
         elsif (host.last(10) == 'medium.com')
@@ -54,8 +53,6 @@ class Scraper
         end
     end
 
-    
-    
     def calculate_reading_time(length)
         "#{(length / 1500) + 1} min"
     end
@@ -69,12 +66,21 @@ class Scraper
     end
 
     def medium_scraper(doc)
-        content = doc.at('.meteredContent')
-        p = doc.at('p')
-        parent = p.parent
-        parent.xpath('//@*').remove
-        parent.wrap("<div class='article-content'></div>")
+        # contentAt = doc.at('.n')
+        # # content = doc.at_css('div.n.p')
+        # content = doc.at_css('//div.n.p[3]')
         # debugger
-        doc.at('.article-content').to_html
+        # # p = doc.at('p')
+        # # parent = p.parent
+        # content.xpath('//@*').remove
+        # content.wrap("<div class='article-content'></div>")
+        # doc.at('.article-content').to_html
+        ####
+        doc.search('p').to_html
+        ####
+        # content = doc.at_css('div.ai.aj.ak.al.am.fr.ao.v')
+        # content.xpath('//@*').remove
+        # content.wrap("<div class='article-content'></div>")
+        # doc.at('.article-content').to_html
     end
 end
