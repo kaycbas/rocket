@@ -48,9 +48,12 @@ class Scraper
     end
 
     def scrub_universal(doc)
-        doc.xpath('//@*').remove
-        doc.css('p').find_all{|p| all_children_are_blank?(p) }.each do |p|
-            p.remove
+        # doc.xpath('//@*').remove
+        doc.css('nav').each do |el|
+            el.children.each do |child|
+                child.remove
+            end
+            el.remove
         end
         doc.css('header').each do |el|
             el.remove
@@ -69,13 +72,13 @@ class Scraper
         end
         doc.at('h1').remove if doc.at('h1')
         doc.at('h2').remove if doc.at('h2')
+        doc.css('p').find_all{|p| all_children_are_blank?(p) }.each do |p|
+            p.remove
+        end
         doc
     end
 
     def scrub_medium(doc)
-        doc.css('p').find_all{|p| all_children_are_blank?(p) }.each do |p|
-            p.remove
-        end
         doc.css('svg').each do |el|
             el.remove
         end
@@ -90,6 +93,10 @@ class Scraper
         end
         doc.at('h1').remove if doc.at('h1')
         doc.at('h2').remove if doc.at('h2')
+        # remove empty elements
+        doc.css('p').find_all{|p| all_children_are_blank?(p) }.each do |p|
+            p.remove
+        end
         doc
     end
 
@@ -109,8 +116,18 @@ class Scraper
         elsif doc.at_css('main')
             content = doc.at_css('main')
         else
-            content = doc.at_css('main')
+            content = doc.at('body').children
+            content.xpath('//@*').remove
+            content.wrap("<div class='article-content'></div>")
+            wrapped = doc.at('body').children
+            scrubbed = scrub_universal(wrapped)
+            return scrubbed.to_html
+            # content = doc.at_css('body')
+            # children.wrap("<div class='article-content'></div>")
+            # article_content = doc.at('.article-content')
+            # debugger
         end
+        content.xpath('//@*').remove
         content.wrap("<div class='article-content'></div>")
         article_content = doc.at('.article-content')
         scrubbed = scrub_universal(article_content)
