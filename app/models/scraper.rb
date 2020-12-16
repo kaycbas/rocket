@@ -5,6 +5,8 @@ require_relative 'article'
 
 class Scraper
     def get_article_info(full_url)
+        puts "SCRAPER:"
+
         article = {}
         html = open(full_url)
         doc = Nokogiri::HTML(html)
@@ -19,6 +21,9 @@ class Scraper
         article[:img_name] = 'placeholder.png'
         article[:description] = "This is placeholder text. This is placeholder text. 
         This is placeholder text. This is placeholder text. This is placeholder text."
+
+        puts "TITLE: #{article[:title]}"
+        puts "CUSTOM_IMG_URL: #{article[:custom_img_url]}"
 
         article
     end
