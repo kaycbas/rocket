@@ -111,7 +111,14 @@ class Scraper
         article_content = doc.at('.article-content')
         scrubbed = scrub(article_content)
         html = scrubbed.to_html
+        # html.slice!('min read')
+        # i = html.index('min read')
+        # html = html[0...(i-5)] + html[(i+8)..-1]
+        # * 10 min read
+        # html.slice!(/· (\d)+ min read/)
         return html
     end
 
 end
+
+# · (\d)+ min read
