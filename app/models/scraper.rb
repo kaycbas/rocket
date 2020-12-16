@@ -13,12 +13,11 @@ class Scraper
         article[:full_url] = full_url
         article[:custom_img_url] = get_img_url(doc)
         article[:url] = get_host_without_www(full_url)
-        article[:content] = get_content(doc, article[:url])
-        article[:reading_time] = calculate_reading_time(article[:content].length)
         article[:featured] = true
         article[:img_name] = 'placeholder.png'
-        article[:description] = "This is placeholder text. This is placeholder text. 
-        This is placeholder text. This is placeholder text. This is placeholder text."
+        article[:description] = get_description(doc)
+        article[:content] = get_content(doc, article[:url])
+        article[:reading_time] = calculate_reading_time(article[:content].length)
 
         article
     end
@@ -28,6 +27,20 @@ class Scraper
         text = text.split('|').first
         text = text.split('.').first
         text
+    end
+
+    def get_description(doc)
+        description = ''
+        if (doc.at('h2'))
+            description = doc.at('h2').text
+        elsif (doc.at('h3'))
+            description = doc.at('h3').text
+        elsif (doc.at('h4'))
+            description = doc.at('h4').text
+        else
+            description = doc.at('p').text
+        end
+        description[0..100]
     end
 
     # removed image type checks... so far so good
