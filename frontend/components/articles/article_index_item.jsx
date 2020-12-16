@@ -17,6 +17,7 @@ export default class ArticleIndexItem extends Component {
         this.toggleFavorite = this.toggleFavorite.bind(this);
         this.renderCtrls = this.renderCtrls.bind(this);
         this.hideArticle = this.hideArticle.bind(this);
+        this.renderArticleImg = this.renderArticleImg.bind(this);
     }
 
     toggleSave() {
@@ -180,6 +181,14 @@ export default class ArticleIndexItem extends Component {
         }
     }
 
+    renderArticleImg() {
+        if (this.props.article.custom_img_url) {
+            return (<img className="article-item-img" src={this.props.article.custom_img_url} alt="cover img" />)
+        } else {
+            return (<img className="article-item-img" src={this.props.article.cover_img} alt="cover img" />)
+        }
+    }
+
     render() {
         if (!this.props.article) return null;
         const { 
@@ -189,7 +198,8 @@ export default class ArticleIndexItem extends Component {
             <article className="article-grid-item">
                 <Link to={`/read/${id}`}>
                     <div className="article-item-img-container">
-                        <img className="article-item-img" src={cover_img} alt="cover img" />
+                        {this.renderArticleImg()}
+                        {/* <img className="article-item-img" src={cover_img} alt="cover img" /> */}
                     </div>
                 </Link>
                 <div className="article-item-info">
