@@ -9,7 +9,7 @@ class Scraper
         html = open(full_url)
         doc = Nokogiri::HTML(html)
         
-        article[:title] = doc.css('title').text.split('|').first
+        article[:title] = get_title(doc)
         article[:full_url] = full_url
         article[:custom_img_url] = get_img_url(doc)
         article[:url] = get_host_without_www(full_url)
@@ -21,6 +21,13 @@ class Scraper
         This is placeholder text. This is placeholder text. This is placeholder text."
 
         article
+    end
+
+    def get_title(doc)
+        text = doc.css('title').text
+        text = text.split('|').first
+        text = text.split('.').first
+        text
     end
 
     # removed image type checks... so far so good
@@ -44,13 +51,13 @@ class Scraper
                     end
                     size = src[idx1...idx2]
                     size = size.to_i
-                    if size > 500
+                    if size > 601
                         img_url = src
                         break
                     end
                 elsif (img.attr('width'))
                     width = img.attr('width').to_i
-                    if width > 500
+                    if width > 601
                         img_url = img.attr('src') 
                         break
                     end

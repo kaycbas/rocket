@@ -17,7 +17,6 @@
 #
 class Article < ApplicationRecord
     validates :title, :content, :full_url, presence: true
-    validates :full_url, uniqueness: true
 
     has_one_attached :cover_img
 
