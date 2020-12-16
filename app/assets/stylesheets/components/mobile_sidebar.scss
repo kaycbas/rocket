@@ -54,9 +54,11 @@
     display: none;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1140px) {
     #main {
         grid-template-columns: 1fr;
+        display: flex;
+        justify-content: center;
     }
 
     .hamburger-wrapper {
