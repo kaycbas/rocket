@@ -38,13 +38,18 @@ class Scraper
         host = URI.parse(full_url).host.downcase
         host.start_with?('www.') ? host[4..-1] : host
     end
-    
+
     def get_content(doc, host)
-        children = doc.at('body').children
-        children.remove_attr('class')
-        children.xpath('//@*').remove
-        children.wrap("<div class='article-content'></div>")
-        body = doc.at('body').children.to_html
+        # debugger
+        if (host == 'paulgraham.com')
+            return pg_scraper(doc)
+        else
+            children = doc.at('body').children
+            children.remove_attr('class')
+            children.xpath('//@*').remove
+            children.wrap("<div class='article-content'></div>")
+            return doc.at('body').children.to_html
+        end
     end
 
     
@@ -54,8 +59,11 @@ class Scraper
     end
 
     # Domain specific scrapers
-    def pg_scraper
-        
+    def pg_scraper(doc)
+        font = doc.at('font')
+        font.xpath('//@*').remove
+        font.wrap("<div class='article-content'></div>")
+        doc.at('.article-content').to_html
     end
 
     def medium_scraper
