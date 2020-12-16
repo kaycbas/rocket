@@ -9,6 +9,9 @@ class Scraper
         html = open(full_url)
         doc = Nokogiri::HTML(html)
 
+        img_url = get_img_url(doc)
+        # debugger
+
         article[:title] = doc.css('title').text.split('|').first
         article[:full_url] = full_url
         article[:url] = get_host_without_www(full_url)
@@ -20,6 +23,45 @@ class Scraper
         This is placeholder text. This is placeholder text. This is placeholder text."
 
         article
+    end
+
+    def get_img_url(doc)
+        # debugger
+        imgs = doc.css('img')
+        img_url = nil;
+        imgs.each do |img|
+            if (img.attr('src') && 
+                img.attr('src').include?('https') &&
+                (img.attr('src').include?('jpg') ||
+                img.attr('src').include?('jpeg') ||
+                img.attr('src').include?('png')))
+                src = img.attr('src')
+                if (src.include?('/max/'))
+                    idx1 = src.index('max')
+                    idx1 += 4
+                    idx2 = idx1
+                    while (src[idx2] != '/')
+                        idx2 += 1
+                    end
+                    size = src[idx1...idx2]
+                    size = size.to_i
+                    if size > 300
+                        img_url = src
+                        break
+                    end
+                elsif (img.attr('width'))
+                    width = img.attr('width').to_i
+                    if width > 300
+                        img_url = img.attr('src') 
+                        break
+                    end
+                else
+                    img_url = img.attr('src')
+                    break
+                end
+            end
+        end
+        img_url
     end
 
     def get_host_without_www(full_url)
@@ -34,11 +76,6 @@ class Scraper
         elsif (host.last(10) == 'medium.com')
             return medium_scraper(doc)
         else
-            # children = doc.at('body').children
-            # children.remove_attr('class')
-            # children.xpath('//@*').remove
-            # children.wrap("<div class='article-content'></div>")
-            # return doc.at('body').children.to_html
             return universal_scraper(doc)
         end
     end
@@ -108,24 +145,19 @@ class Scraper
         node.children.all?{|child| is_blank?(child) } 
     end
 
-    # Domain specific scrapers
     def universal_scraper(doc)
         content = nil
         if doc.at_css('article')
             content = doc.at_css('article')
         elsif doc.at_css('main')
             content = doc.at_css('main')
-        else
+        else # this code is dedicated to sites with bad css
             content = doc.at('body').children
             content.xpath('//@*').remove
             content.wrap("<div class='article-content'></div>")
             wrapped = doc.at('body').children
             scrubbed = scrub_universal(wrapped)
             return scrubbed.to_html
-            # content = doc.at_css('body')
-            # children.wrap("<div class='article-content'></div>")
-            # article_content = doc.at('.article-content')
-            # debugger
         end
         content.xpath('//@*').remove
         content.wrap("<div class='article-content'></div>")
