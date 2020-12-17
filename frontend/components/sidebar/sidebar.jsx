@@ -10,6 +10,10 @@ export default class Sidebar extends Component {
         super(props);
     }
 
+    renderTags() {
+        
+    }
+
     render() {
         return (
             <div className="sidebar-nav-container">

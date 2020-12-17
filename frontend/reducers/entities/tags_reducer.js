@@ -12,13 +12,13 @@ const tagsReducer = (state = {}, action) => {
     let newTag;
     switch (action.type) {
         case RECEIVE_ARTICLES:
-            // return action.payload.saves;
+            return action.payload.tags;
             return state;
         case RECEIVE_ARTICLE:
-            // if (action.payload.save.id) {
-            //     newSave = { [action.payload.save.id]: action.payload.save };
-            //     return Object.assign({}, state, newSave);
-            // } 
+            if (action.payload.tag.id) {
+                newTag = { [action.payload.tag.id]: action.payload.tag };
+                return Object.assign({}, state, newTag);
+            } 
             return state;
         case RECEIVE_TAG:
             newTag = { [action.tag.id]: action.tag };

@@ -13,3 +13,11 @@ if @save
 else
     json.save ({})
 end
+
+if @tag
+    json.tag do
+        json.extract! @tag, :id, :user_id, :article_id, :label
+    end
+else
+    json.tag ({})
+end

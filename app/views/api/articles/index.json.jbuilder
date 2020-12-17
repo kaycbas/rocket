@@ -35,3 +35,15 @@ if @saves.length > 0
 else
   json.saves ({})
 end
+
+if @tags.length > 0
+  json.tags do 
+    @tags.each do |tag|
+      json.set! tag.id do
+        json.extract! tag, :id, :user_id, :article_id, :label
+      end
+    end
+  end
+else
+  json.tags ({})
+end

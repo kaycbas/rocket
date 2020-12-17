@@ -23,11 +23,16 @@ class Api::ArticlesController < ApplicationController
 
     def show
         @article = Article.find_by(id: params[:id])
+
         @save = @article.saves.find_by(user_id: current_user.id)
         @fav = @article.favorites.find_by(user_id: current_user.id)
+        @tag = @article.tags.find_by(user_id: current_user.id)
+
         @save_id = @save ? @save.id : nil
         @favorite_id = @fav ? @fav.id : nil
+
         @custom_img_url = @article.custom_img_url ? @article.custom_img_url : nil
+        
         render :show
     end
 
@@ -43,7 +48,7 @@ class Api::ArticlesController < ApplicationController
         @save = nil
         @save_id = nil
         @favorite_id = nil
-        
+
         if (!params[:chrm_ext])
             new_save = {}
             new_save[:user_id] = current_user.id
