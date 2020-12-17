@@ -159,7 +159,8 @@ export default class ArticleIndexItem extends Component {
                     </div>
                 </div>
             )
-        } else if (this.props.article.filter === 'favorites') {
+        // } else if (this.props.article.filter === 'favorites') {
+        } else {
             return (
                 <div className="article-item-ctrls">
                     <div className="ctrls-btn">
