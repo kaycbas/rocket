@@ -59,13 +59,13 @@ class Scraper
                     end
                     size = src[idx1...idx2]
                     size = size.to_i
-                    if size > 601
+                    if size > 800
                         img_url = src
                         break
                     end
                 elsif (img.attr('width'))
                     width = img.attr('width').to_i
-                    if width > 601
+                    if width > 800
                         img_url = img.attr('src') 
                         break
                     end
