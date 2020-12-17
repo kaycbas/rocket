@@ -11,7 +11,7 @@ export default class Sidebar extends Component {
     }
 
     renderTags() {
-        
+
     }
 
     render() {
@@ -30,6 +30,7 @@ export default class Sidebar extends Component {
                             Archive
                         </div>
                     </NavLink>
+                    <div className="filter-label">Filters</div>
                     <NavLink exact activeClassName="active-sidebar" to='/favorites'>
                         <div className="sidebar-btn favorite-btn">
                             <AiFillStar size={21} />
