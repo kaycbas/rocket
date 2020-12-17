@@ -4,7 +4,7 @@ class Api::TagsController < ApplicationController
         # new_tag[:user_id] = current_user.id
         # new_tag[:article_id] = params[:article_id]
         # @tag = Tag.create!(new_tag)
-        debugger
+        # debugger
         puts params
         @tag = Tag.create!(tag_params)
         render json: @tag

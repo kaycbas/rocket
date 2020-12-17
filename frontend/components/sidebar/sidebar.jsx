@@ -4,6 +4,7 @@ import { TiHome } from 'react-icons/ti';
 import { BsArchiveFill } from 'react-icons/bs';
 import { AiFillStar } from 'react-icons/ai'
 import { AiFillTag } from 'react-icons/ai'
+import { IoIosArrowBack } from 'react-icons/io'
 
 
 export default class Sidebar extends Component {
@@ -22,7 +23,26 @@ export default class Sidebar extends Component {
     }  
 
     renderTags() {
-
+        if (this.state.mode === 'default-mode') return null;
+        let labels = this.props.labels.map(label => {
+            return (
+                <NavLink exact activeClassName="active-sidebar" to={`/tags/${label}`}>
+                    <div className="sidebar-btn tag-sub-btn">
+                        <AiFillTag size={20} />
+                        {label}
+                    </div>
+                </NavLink>
+            )
+        })
+        return (
+            <div className="sidebar-tags">
+                <div className="sidebar-btn back-btn" onClick={this.toggleMode}>
+                    <IoIosArrowBack size={26} />
+                    Tags
+                </div>
+                {labels}
+            </div>
+        )
     }
 
     render() {
@@ -48,11 +68,12 @@ export default class Sidebar extends Component {
                             Favorites
                         </div>
                     </NavLink>
-                    <div className="sidebar-btn tag-btn">
+                    <div onClick={this.toggleMode} className="sidebar-btn tag-btn">
                         <AiFillTag size={21} />
                         Tags
                     </div>
                 </div>
+                {this.renderTags()}
             </div>
         )
     }

@@ -8,12 +8,13 @@
     align-content: center;
     width: 100%;
     font-size: 16px;
-    font-weight:400;
+    font-weight: 400;
     line-height: 16px;
     height: 40px;
     border-radius: 4px;
     padding: 0px 20px;
     color: rgb(79, 79, 79);
+    cursor: pointer;
 }
 
 .active-sidebar > div{
@@ -30,6 +31,14 @@
 .archive-btn > * {
     margin-right: 10px;
 }
+.filter-label {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 4px;
+    padding: 30px 0px 10px 20px;
+    color: rgb(189, 189, 189);
+}
 .favorite-btn > * {
     margin-right: 6px;
 }
@@ -37,11 +46,15 @@
     margin-right: 6px;
 }
 
-.filter-label {
-    width: 100%;
-    font-size: 16px;
-    font-weight:500;
-    border-radius: 4px;
-    padding: 30px 0px 10px 20px;
-    color: rgb(189, 189, 189);
+.tag-mode {
+    display: none;
+}
+
+.back-btn {
+    padding-left: 0px;
+    font-weight: 500;
+}
+
+.tag-sub-btn > * {
+    margin-right: 6px;
 }

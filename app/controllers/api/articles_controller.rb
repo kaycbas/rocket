@@ -10,8 +10,16 @@ class Api::ArticlesController < ApplicationController
             @articles = current_user.archived_articles
         elsif @filter == 'list'
             @articles = current_user.listed_articles
-        elsif @filter== 'favorites'
+        elsif @filter == 'favorites'
             @articles = current_user.favorite_articles
+        elsif @filter.include?('tag:')
+            label = @filter.split(':').last
+            @articles = current_user.tagged_articles
+            @articles = @articles.select do |art| 
+                art.tags.any? do |tag| 
+                    tag.label == label && tag.user_id == current_user.id
+                end
+            end
         end
         @articles = @articles - current_user.hidden_articles
 
