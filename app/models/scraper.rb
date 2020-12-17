@@ -125,6 +125,9 @@ class Scraper
         doc.css('a').each do |el|
             el.remove
         end
+        doc.css('iframe').each do |el|
+            el.remove
+        end
         doc.at('h1').remove if doc.at('h1')
         doc.at('h2').remove if doc.at('h2')
         doc.css('p').find_all{|p| all_children_are_blank?(p) }.each do |p|
