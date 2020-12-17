@@ -43,11 +43,6 @@ class Scraper
         description[0..100]
     end
 
-    # removed image type checks... so far so good
-    # (img.attr('src').include?('jpg') ||
-    # img.attr('src').include?('jpeg') ||
-    # img.attr('src').include?('png'))
-
     def get_img_url(doc)
         imgs = doc.css('img')
         img_url = nil;
