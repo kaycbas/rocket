@@ -41,7 +41,7 @@ class Api::ArticlesController < ApplicationController
         @save = nil
         @save_id = nil
         @favorite_id = nil
-        debugger
+        # debugger
         if (!params[:chrm_ext])
             new_save = {}
             new_save[:user_id] = current_user.id

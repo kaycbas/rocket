@@ -214,7 +214,7 @@ class Scraper
         content.wrap("<div class='article-content'></div>")
         article_content = doc.at('.article-content')
         scrubbed = scrub_universal(article_content)
-        debugger
+        # debugger
         html = scrubbed.to_html
         return html
     end
