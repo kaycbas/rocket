@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import { TiHome } from 'react-icons/ti';
 import { BsArchiveFill } from 'react-icons/bs';
 import { AiFillStar } from 'react-icons/ai'
@@ -7,10 +7,11 @@ import { AiFillTag } from 'react-icons/ai'
 import { IoIosArrowBack } from 'react-icons/io'
 
 
-export default class Sidebar extends Component {
+class Sidebar extends Component {
     constructor(props) {
         super(props);
         this.state = { mode: 'default-mode' }
+        this.goBack = this.goBack.bind(this);
         this.toggleMode = this.toggleMode.bind(this);
     }
 
@@ -78,3 +79,5 @@ export default class Sidebar extends Component {
         )
     }
 }
+
+export default withRouter(Sidebar);
