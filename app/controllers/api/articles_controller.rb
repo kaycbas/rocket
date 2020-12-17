@@ -1,4 +1,6 @@
 class Api::ArticlesController < ApplicationController
+    skip_before_action :verify_authenticity_token
+
     def index
         @saves = current_user.saves
         @filter = params[:filter]
@@ -27,6 +29,7 @@ class Api::ArticlesController < ApplicationController
     end
 
     def create
+        # debugger
         scraper = Scraper.new
         article_info = scraper.get_article_info(params[:url])
 
