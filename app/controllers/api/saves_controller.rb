@@ -17,7 +17,6 @@ class Api::SavesController < ApplicationController
         @save = Save.find_by(id: params[:id])
         
         if @save.user == current_user && @save.update(save_params)
-            # debugger;
             render json: @save
         else
             render json: @save.errors.full_messages

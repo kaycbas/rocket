@@ -7,7 +7,6 @@ import {
 } from '../../actions/save_actions';
 
 const mSTP = (state, ownProps) => {
-    // debugger;
     const articleId = ownProps.match.params.article_id;
     const article = state.entities.articles[articleId];
     let save = null;

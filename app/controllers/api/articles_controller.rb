@@ -29,7 +29,6 @@ class Api::ArticlesController < ApplicationController
     end
 
     def create
-        # debugger
         scraper = Scraper.new
         article_info = scraper.get_article_info(params[:url])
 
@@ -41,7 +40,6 @@ class Api::ArticlesController < ApplicationController
         @save = nil
         @save_id = nil
         @favorite_id = nil
-        # debugger
         if (!params[:chrm_ext])
             new_save = {}
             new_save[:user_id] = current_user.id
