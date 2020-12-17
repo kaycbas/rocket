@@ -1,18 +1,18 @@
 # == Schema Information
 #
-# Table name: hides
+# Table name: tags
 #
 #  id         :bigint           not null, primary key
 #  user_id    :integer          not null
 #  article_id :integer          not null
+#  label      :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
+require 'test_helper'
 
-one:
-  user_id: 1
-  article_id: 1
-
-two:
-  user_id: 1
-  article_id: 1
+class TagTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
+end

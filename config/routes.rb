@@ -7,10 +7,12 @@ Rails.application.routes.draw do
       resources :saves, only: [:create]
       resources :favorites, only: [:create]
       resources :hides, only: [:create]
+      # resources :tags, only: [:create]
     end
     resources :saves, only: [:index, :update, :destroy]
     resources :favorites, only: [:destroy]
     resources :hides, only: [:destroy]
+    resources :tags, only: [:destroy, :create]
   end
 
   root "static_pages#root"

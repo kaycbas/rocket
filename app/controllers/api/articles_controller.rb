@@ -2,7 +2,6 @@ class Api::ArticlesController < ApplicationController
     skip_before_action :verify_authenticity_token
 
     def index
-        @saves = current_user.saves
         @filter = params[:filter]
         if @filter == 'featured'
             @articles = Article.where(featured: true)
@@ -15,6 +14,10 @@ class Api::ArticlesController < ApplicationController
             @articles = current_user.favorite_articles
         end
         @articles = @articles - current_user.hidden_articles
+
+        @saves = current_user.saves
+        @tags = current_user.tags
+
         render :index
     end
 
@@ -40,6 +43,7 @@ class Api::ArticlesController < ApplicationController
         @save = nil
         @save_id = nil
         @favorite_id = nil
+        
         if (!params[:chrm_ext])
             new_save = {}
             new_save[:user_id] = current_user.id

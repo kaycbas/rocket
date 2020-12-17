@@ -9,6 +9,7 @@ import * as ArticleApiUtil from './util/article_api_util';
 import * as SaveApiUtil from './util/save_api_util';
 import * as ArticleActions from './actions/article_actions';
 import * as SaveActions from './actions/save_actions';
+import * as TagActions from './actions/tag_actions';
 import configureStore from './store/store';
 //
 
@@ -33,6 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
     window.fetchArticles = ArticleActions.fetchArticles;
     window.fetchArticle = ArticleActions.fetchArticle;
     window.createSave = SaveActions.createSave;
+    window.createTag = TagActions.createTag;
+    window.deleteTag = TagActions.deleteTag;
     window.updateSave = SaveApiUtil.updateSave;
     window.fetchSaves = SaveActions.fetchSaves;
     window.signUp = SessionActions.signUp;

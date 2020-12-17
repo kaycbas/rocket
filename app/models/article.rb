@@ -2,18 +2,19 @@
 #
 # Table name: articles
 #
-#  id           :bigint           not null, primary key
-#  title        :string           not null
-#  content      :text             not null
-#  featured     :boolean          not null
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
-#  author       :string
-#  url          :string
-#  full_url     :string           not null
-#  reading_time :string
-#  img_name     :string
-#  description  :string
+#  id             :bigint           not null, primary key
+#  title          :string           not null
+#  content        :text             not null
+#  featured       :boolean          not null
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  author         :string
+#  url            :string
+#  full_url       :string           not null
+#  reading_time   :string
+#  img_name       :string
+#  description    :string
+#  custom_img_url :string
 #
 class Article < ApplicationRecord
     validates :title, :content, :full_url, presence: true
@@ -42,5 +43,13 @@ class Article < ApplicationRecord
 
     has_many :hiders,
         through: :hides,
+        source: :user
+
+    has_many :tags,
+        foreign_key: :article_id,
+        class_name: :Tag
+
+    has_many :taggers,
+        through: :tags,
         source: :user
 end
