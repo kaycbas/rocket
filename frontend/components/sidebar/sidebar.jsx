@@ -11,7 +11,6 @@ class Sidebar extends Component {
     constructor(props) {
         super(props);
         this.state = { mode: 'default-mode' }
-        this.goBack = this.goBack.bind(this);
         this.toggleMode = this.toggleMode.bind(this);
     }
 

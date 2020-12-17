@@ -12,6 +12,12 @@ export default class ArticleIndex extends Component {
         this.props.fetchArticles();
     }
 
+    componentDidUpdate(prevProps) {
+        if (this.props.label && (this.props.label !== prevProps.label)) {
+            this.props.fetchArticles();
+        }
+    }
+
     renderArticles() {
         let { articles, indexType } = this.props;
         if (articles === []) return null;
