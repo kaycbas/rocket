@@ -89,6 +89,8 @@ class Scraper
             return pg_scraper(doc)
         elsif (host.last(10) == 'medium.com')
             return medium_scraper(doc)
+        elsif (host == 'espn.com')
+            return espn_scraper(doc)
         else
             return universal_scraper(doc)
         end
@@ -119,6 +121,11 @@ class Scraper
         end
         doc.css('a').each do |el|
             el.remove
+        end
+        doc.css('li').each do |el|
+            if el.content.strip == ""
+                el.remove
+            end
         end
         doc.css('iframe').each do |el|
             el.remove
@@ -198,6 +205,17 @@ class Scraper
         scrubbed = scrub_medium(article_content)
         html = scrubbed.to_html
         html = remove_medium_read_time(html)
+        return html
+    end
+
+    def espn_scraper(doc)
+        content = doc.at_css('article.article')
+        content.xpath('//@*').remove
+        content.wrap("<div class='article-content'></div>")
+        article_content = doc.at('.article-content')
+        scrubbed = scrub_universal(article_content)
+        debugger
+        html = scrubbed.to_html
         return html
     end
 
