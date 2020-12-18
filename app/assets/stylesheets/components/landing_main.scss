@@ -332,6 +332,15 @@
 
 // Media Queries
 @media only screen and (max-width : 900px) {
+    .landing-main-container {
+        display: block;
+        height: 600px;
+        background-color: $sky-blue;
+        background-image: brightness(80%);
+        background: image-url('dancer.jpg') center no-repeat;
+        background-size: cover;
+    }
+
     .landing-panel {
         justify-content: center;
     }
@@ -351,6 +360,10 @@
         * {
             margin: 10px;
         }
+    }
+
+    .ipad, .mac {
+        width: 80%;
     }
 
     .landing-main-container-3 {
