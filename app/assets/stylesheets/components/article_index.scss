@@ -240,6 +240,95 @@
     align-items: flex-start;
 }
 
+.tag-edit-overlay {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width:100%;
+    height:100%;
+    text-align:center;
+    z-index: 1000;
+    background-color: black;
+    opacity: 0.2;
+}
+
+.tag-edit-modal {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    margin-left: -250px;
+    // right: auto;
+    display: flex;
+    width: 500px;
+    flex-direction: column;
+
+    background-color: rgb(255, 255, 255);
+    color: rgb(51, 51, 51);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 10px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 20px;
+    z-index: 10000;
+    box-sizing: border-box;
+
+    h2 {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 16px;
+        color: rgb(51, 51, 51);
+        padding-bottom: 15px;
+    }
+
+    .close-icon {
+        cursor: pointer;
+        padding-bottom: 15px;
+    }
+
+    input {
+        line-height: 16px;
+        border-radius: 4px;
+        display: block;
+        border: 1px solid rgb(224, 224, 224);
+        width: 100%;
+        padding: 12px;
+
+        // display: flex;
+        // align-items: center;
+    }
+
+    button {
+        padding-left: 15px;
+        padding-right: 20px;
+
+        background: rgb(30, 171, 249);
+        cursor: pointer;
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: 500;
+        padding: 6px 18px;
+        border-radius: 4px;
+        white-space: nowrap;
+        margin: 0px 0px 0px 10px;
+        width: initial;
+        color: rgb(255, 255, 255);
+        border: 1px solid rgb(30, 171, 249);
+
+        &:hover {
+            background: rgb(17, 136, 199);
+        }
+    }
+}
+
+.tag-input-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tag-input-bottom {
+    display: flex;
+}
+
 @media only screen and (max-width: 1260px) {
     .article-grid {
         grid-template-columns: repeat(3, 303px);
@@ -347,6 +436,10 @@
 
     .article-item-ctrls {
         width: 325px;
+    }
+
+    .tag-edit-modal {
+        width: 400px;
     }
 }
 

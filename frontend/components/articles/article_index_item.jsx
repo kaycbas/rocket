@@ -6,10 +6,13 @@ import { AiOutlineStar, AiFillStar } from 'react-icons/ai'
 import { FiArchive } from 'react-icons/fi'
 import { FiTrash } from 'react-icons/fi'
 import { BiHide } from 'react-icons/bi'
+import { AiOutlineClose } from 'react-icons/ai'
 
 export default class ArticleIndexItem extends Component {
     constructor(props) {
         super(props);
+        this.state = { edit: false }
+
         this.toggleSave = this.toggleSave.bind(this);
         this.unsaveArticle = this.unsaveArticle.bind(this);
         this.archiveArticle = this.archiveArticle.bind(this);
@@ -18,6 +21,9 @@ export default class ArticleIndexItem extends Component {
         this.renderCtrls = this.renderCtrls.bind(this);
         this.hideArticle = this.hideArticle.bind(this);
         this.renderArticleImg = this.renderArticleImg.bind(this);
+        this.toggleEdit = this.toggleEdit.bind(this);
+        this.handleSaveTag = this.handleSaveTag.bind(this);
+        this.renderEditTagsModal = this.renderEditTagsModal.bind(this);
     }
 
     toggleSave() {
@@ -26,6 +32,48 @@ export default class ArticleIndexItem extends Component {
         } else {
             this.props.createSave(this.props.article.id);
         }
+    }
+
+    toggleEdit() {
+        this.setState({ edit: !this.state.edit })
+    }
+
+    handleSaveTag() {
+        const input = document.getElementById('tag-input');
+        const label = input.value;
+        console.log(label)
+        let newTag = {
+            user_id: this.props.user_id,
+            article_id: this.props.article.id,
+            label: label
+        }
+        this.props.createTag(newTag);
+        this.toggleEdit();
+    }
+
+    renderEditTagsModal() {
+        if (!this.state.edit) return null;
+        return (
+            <React.Fragment>
+                <div className="tag-edit-overlay"></div>
+                <div className="tag-edit-modal">
+                    <div className="tag-input-top">
+                        <h2>Edit tag</h2>
+                        <div onClick={this.toggleEdit} className="close-icon">
+                            <AiOutlineClose size={18} />
+                        </div>
+                    </div>
+                    <div className="tag-input-bottom">
+                        <input
+                            id="tag-input"
+                            type="text"
+                            required
+                        />
+                        <button onClick={this.handleSaveTag}>Save</button>
+                    </div>
+                </div>
+            </React.Fragment>
+        )
     }
 
     unsaveArticle() {
@@ -92,6 +140,8 @@ export default class ArticleIndexItem extends Component {
         }
     }
 
+
+
     renderCtrls() {
         const isFavorited = !!this.props.article.favorite_id;
         if (this.props.article.filter === 'list') {
@@ -108,10 +158,10 @@ export default class ArticleIndexItem extends Component {
                                 <FiArchive size={18} />
                                 <p>Archive</p>
                             </div>
-                            {/* <div className="ctrl-line">
+                            <div onClick={this.toggleEdit} className="ctrl-line">
                                 <AiOutlineTag size={18} />
                                 <p>Tag</p>
-                            </div> */}
+                            </div>
                             <div onClick={this.unsaveArticle} className="ctrl-line">
                                 <FiTrash size={18} />
                                 <p>Delete</p>
@@ -218,6 +268,7 @@ export default class ArticleIndexItem extends Component {
                 </div>
                 {this.renderSave()}
                 {this.renderCtrls()}
+                {this.renderEditTagsModal()}
             </article>
         )
     }

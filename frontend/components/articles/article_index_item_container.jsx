@@ -10,11 +10,13 @@ import {
     deleteFavorite 
 } from '../../actions/favorite_actions'
 import { createHide } from '../../actions/hide_actions'
+import { createTag } from '../../actions/tag_actions'
 import ArticleIndexItem from './article_index_item'
 
 const mSTP = (state, ownProps) => {
     return {
-        save: state.entities.saves[ownProps.article.save_id]
+        save: state.entities.saves[ownProps.article.save_id],
+        user_id: state.session.currentUser.id
     }
 }
 
@@ -26,7 +28,8 @@ const mDTP = dispatch => {
         unArchiveSave: save => dispatch(unArchiveSave(save)),
         createFavorite: articleId => dispatch(createFavorite(articleId)),
         deleteFavorite: favId => dispatch(deleteFavorite(favId)),
-        createHide: articleId => dispatch(createHide(articleId))
+        createHide: articleId => dispatch(createHide(articleId)),
+        createTag: tag => dispatch(createTag(tag))
     }
 }
 
