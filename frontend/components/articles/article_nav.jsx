@@ -151,9 +151,6 @@ class ArticleNav extends Component {
                         <BiArrowBack size={26} />
                     </div>
                     {this.renderNavUtils()}
-                    <div className="read-nav-btn">
-                        <BiFontFamily size={26} />
-                    </div>
                 </nav>
             </header>
         )
