@@ -38,6 +38,7 @@ class Api::ArticlesController < ApplicationController
 
         @save_id = @save ? @save.id : nil
         @favorite_id = @fav ? @fav.id : nil
+        @tag_id = @tag ? @tag.id : nil
 
         @custom_img_url = @article.custom_img_url ? @article.custom_img_url : nil
         

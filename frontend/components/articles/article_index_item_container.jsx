@@ -16,7 +16,8 @@ import ArticleIndexItem from './article_index_item'
 const mSTP = (state, ownProps) => {
     return {
         save: state.entities.saves[ownProps.article.save_id],
-        user_id: state.session.currentUser.id
+        user_id: state.session.currentUser.id,
+        tag: state.entities.tags[ownProps.article.tag_id]
     }
 }
 

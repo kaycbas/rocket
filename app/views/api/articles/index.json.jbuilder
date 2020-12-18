@@ -5,6 +5,7 @@ if @articles.length > 0
         json.extract! article, :id, :title, :author, :reading_time, :url, :full_url, :featured, :description
         json.save_id article.saves.where(user_id: current_user.id).ids.first
         json.favorite_id article.favorites.where(user_id: current_user.id).ids.first
+        json.tag_id article.tags.where(user_id: current_user.id).ids.first
         json.cover_img url_for(article.cover_img)
         if (current_user.saved_articles.include?(article)) 
           json.updated_at article.saves.where(user_id: current_user.id).first.updated_at

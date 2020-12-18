@@ -24,6 +24,7 @@ export default class ArticleIndexItem extends Component {
         this.toggleEdit = this.toggleEdit.bind(this);
         this.handleSaveTag = this.handleSaveTag.bind(this);
         this.renderEditTagsModal = this.renderEditTagsModal.bind(this);
+        this.renderTagBadge = this.renderTagBadge.bind(this);
     }
 
     toggleSave() {
@@ -140,7 +141,15 @@ export default class ArticleIndexItem extends Component {
         }
     }
 
-
+    renderTagBadge() {
+        if (!this.props.tag) return null;
+        // debugger
+        return (
+            <div className="tag-badge">
+                {this.props.tag.label}
+            </div>
+        )
+    }
 
     renderCtrls() {
         const isFavorited = !!this.props.article.favorite_id;
@@ -266,7 +275,10 @@ export default class ArticleIndexItem extends Component {
                         {description}
                     </div>
                 </div>
-                {this.renderSave()}
+                <div className="badges-container">
+                    {this.renderSave()}
+                    {this.renderTagBadge()}
+                </div>
                 {this.renderCtrls()}
                 {this.renderEditTagsModal()}
             </article>

@@ -151,11 +151,18 @@
     }
 }
 
-.favorite-badge-container {
+.badges-container {
     position: absolute;
     bottom: 34px;
     left: 20px;
+    display: flex;
 }
+
+// .favorite-badge-container {
+//     position: absolute;
+//     bottom: 34px;
+//     left: 20px;
+// }
 
 .favorite-badge {
     display: block;
@@ -163,6 +170,18 @@
     width: 25px;
     background-image: image-url('favorite_badge.png');
     background-size: cover;
+}
+
+.tag-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(239, 64, 86);
+    border-radius: 4px;
+    background: rgb(253, 236, 238);
+    height: 24px;
+    padding: 0px 0.5em;
+    margin: 0px 6px;
 }
 
 .article-item-ctrls {
