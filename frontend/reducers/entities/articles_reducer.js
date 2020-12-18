@@ -46,8 +46,7 @@ const articlesReducer = (state = {}, action) => {
             filter = nextState[articleId].filter;
 
             nextState[articleId].save_id = saveId;
-            if (archived && filter !== 'archived' 
-            || !archived && filter == 'archived') {
+            if (filter === 'list' && archived || filter == 'archived' && !archived) {
                 delete nextState[articleId];
             }
             return nextState;

@@ -28,6 +28,7 @@ export default class ArticleIndexItem extends Component {
         this.renderTagBadge = this.renderTagBadge.bind(this);
         this.renderTagCtrl = this.renderTagCtrl.bind(this);
         this.handleUntag = this.handleUntag.bind(this);
+        this.renderArchiveCtrl = this.renderArchiveCtrl.bind(this);
     }
 
     toggleSave() {
@@ -99,11 +100,15 @@ export default class ArticleIndexItem extends Component {
     }
 
     archiveArticle() {
-        this.props.archiveSave(this.props.save);
+        if (!this.props.save.archived) {
+            this.props.archiveSave(this.props.save);
+        }
     }
 
     unArchiveArticle() {
-        this.props.unArchiveSave(this.props.save);
+        if (this.props.save.archived) {
+            this.props.unArchiveSave(this.props.save);
+        }
     }
 
     toggleFavorite() {
@@ -256,6 +261,7 @@ export default class ArticleIndexItem extends Component {
                                 { isFavorited ? <AiFillStar size={20} color="#fcb643" /> : <AiOutlineStar size={20} /> }
                                 <p className="fav-icon-label">Favorite</p>
                             </div>
+                            {this.renderArchiveCtrl()}
                             {this.renderTagCtrl()}
                             <div onClick={this.unsaveArticle} className="ctrl-line">
                                 <FiTrash size={18} />
@@ -264,6 +270,24 @@ export default class ArticleIndexItem extends Component {
                             <span className="hover-soln"></span>
                         </div>
                     </div>
+                </div>
+            )
+        }
+    }
+
+    renderArchiveCtrl() {
+        if (this.props.save && this.props.save.archived) {
+            return (
+                <div onClick={this.unArchiveArticle} className="ctrl-line">
+                    <div className="save-ctrl-icon"></div>
+                    <p>Re-add</p>
+                </div>
+            )
+        } else {
+            return (
+                <div onClick={this.archiveArticle} className="ctrl-line">
+                    <FiArchive size={18} />
+                    <p>Archive</p>
                 </div>
             )
         }
