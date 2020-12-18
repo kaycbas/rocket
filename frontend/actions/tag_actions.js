@@ -31,6 +31,6 @@ export const createTag = tag => dispatch => (
 
 export const deleteTag = tagId => dispatch => {
     return ApiUtil.deleteTag(tagId).then(tag => (
-        dispatch(removeTag(save))
+        dispatch(removeTag(tag))
     ))
 }

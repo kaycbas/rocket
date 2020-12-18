@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { FiMoreHorizontal } from 'react-icons/fi'
 import { AiOutlineTag } from 'react-icons/ai'
+import { FiDelete } from 'react-icons/fi'
 import { AiOutlineStar, AiFillStar } from 'react-icons/ai'
 import { FiArchive } from 'react-icons/fi'
 import { FiTrash } from 'react-icons/fi'
@@ -25,6 +26,8 @@ export default class ArticleIndexItem extends Component {
         this.handleSaveTag = this.handleSaveTag.bind(this);
         this.renderEditTagsModal = this.renderEditTagsModal.bind(this);
         this.renderTagBadge = this.renderTagBadge.bind(this);
+        this.renderTagCtrl = this.renderTagCtrl.bind(this);
+        this.handleUntag = this.handleUntag.bind(this);
     }
 
     toggleSave() {
@@ -52,11 +55,11 @@ export default class ArticleIndexItem extends Component {
         this.toggleEdit();
     }
 
-    // componentDidUpdate(prevProps) {
-    //     if (this.props.tag && (this.props.tag !== prevProps.tag)) {
-    //         this.props.fetchArticle();
-    //     }
-    // }
+    handleUntag() {
+        if (this.props.tag) {
+            this.props.deleteTag(this.props.tag.id)
+        }
+    }
 
     renderEditTagsModal() {
         if (!this.state.edit) return null;
@@ -90,6 +93,7 @@ export default class ArticleIndexItem extends Component {
         if (!!this.props.article.favorite_id) {
             this.props.deleteFavorite(this.props.article.favorite_id)
         }
+        // untag too !!!
     }
 
     archiveArticle() {
@@ -149,12 +153,29 @@ export default class ArticleIndexItem extends Component {
 
     renderTagBadge() {
         if (!this.props.tag) return null;
-        // debugger
         return (
             <div className="tag-badge">
                 {this.props.tag.label}
             </div>
         )
+    }
+
+    renderTagCtrl() {
+        if (!this.props.tag) {
+            return (
+                <div onClick={this.toggleEdit} className="ctrl-line">
+                    <AiOutlineTag size={18} />
+                    <p>Tag</p>
+                </div>
+            )
+        } else {
+            return (
+                <div onClick={this.handleUntag} className="ctrl-line">
+                    <FiDelete size={18} />
+                    <p>Untag</p>
+                </div>
+            )
+        }
     }
 
     renderCtrls() {
@@ -173,10 +194,7 @@ export default class ArticleIndexItem extends Component {
                                 <FiArchive size={18} />
                                 <p>Archive</p>
                             </div>
-                            <div onClick={this.toggleEdit} className="ctrl-line">
-                                <AiOutlineTag size={18} />
-                                <p>Tag</p>
-                            </div>
+                            {this.renderTagCtrl()}
                             <div onClick={this.unsaveArticle} className="ctrl-line">
                                 <FiTrash size={18} />
                                 <p>Delete</p>
