@@ -58,7 +58,7 @@ class Api::ArticlesController < ApplicationController
         @save_id = nil
         @favorite_id = nil
 
-        if (!params[:chrm_ext])
+        # if (!params[:chrm_ext])
             new_save = {}
             new_save[:user_id] = current_user.id
             new_save[:article_id] = @article.id
@@ -66,7 +66,7 @@ class Api::ArticlesController < ApplicationController
             @save = Save.create!(new_save)
             @save_id = @save.id
             @favorite_id = nil
-        end
+        # end
 
         render :show
     end
