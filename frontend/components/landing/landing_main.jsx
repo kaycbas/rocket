@@ -14,14 +14,14 @@ export default class LandingMain extends Component {
                                 <h2>Knowledge is rocket fuel.</h2>
                                 <Link to='/home/signup'>
                                     <button className="btn google">
-                                        <img src={window.googleIcon} alt="logo" />
+                                        {/* <img src={window.googleIcon} alt="logo" /> */}
                                         <span>
-                                            Sign up with Google
+                                            Sign up with Email
                                         </span>
                                     </button>
                                 </Link>
                                 <Link to='/home/signup'>
-                                    <button className="btn email">Sign up with Email</button>
+                                    <button className="btn email">Sign in with Email</button>
                                 </Link>
                                 <span className="signin">
                                     <p>Already have an account?</p>
