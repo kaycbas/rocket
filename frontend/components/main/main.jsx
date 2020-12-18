@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
-import {
-    Route,
-    Redirect,
-    Switch,
-    Link
-} from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import MainNavContainer from './main_nav_container';
 import SidebarContainer from '../sidebar/sidebar_container';
 import MyListIndexContainer from '../articles/my_list_index_container';

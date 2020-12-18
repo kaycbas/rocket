@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
-
 import SignUpFormContainer from '../session/signup_form_container';
 import SignInFormContainer from '../session/signin_form_container';
 import LandingNav from './landing_nav';

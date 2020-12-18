@@ -4,8 +4,7 @@ import {
 } from '../../actions/article_actions';
 
 const initialState = {
-//   indexLoading: false,
-  articlesLoading: false
+    articlesLoading: false
 };
 
 const loadingReducer = (state = initialState, action) => {

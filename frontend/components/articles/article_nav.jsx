@@ -1,13 +1,9 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom';
-
 import { BiArrowBack } from 'react-icons/bi'
-import { AiOutlineHighlight } from 'react-icons/ai'
-import { AiOutlineTag } from 'react-icons/ai'
 import { AiOutlineStar, AiFillStar } from 'react-icons/ai'
 import { FiArchive } from 'react-icons/fi'
 import { FiTrash } from 'react-icons/fi'
-import { BiFontFamily } from 'react-icons/bi'
 import { BiHide } from 'react-icons/bi'
 
 

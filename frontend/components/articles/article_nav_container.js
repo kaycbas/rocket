@@ -12,11 +12,6 @@ import {
 } from '../../actions/favorite_actions';
 import { createHide } from '../../actions/hide_actions';
 
-const mSTP = (state, ownProps) => {
-    return {
-    }
-}
-
 const mDTP = dispatch => {
     return {
         createSave: articleId => dispatch(createSave(articleId)),
@@ -29,4 +24,4 @@ const mDTP = dispatch => {
     }
 }
 
-export default connect(mSTP, mDTP)(ArticleNav);
+export default connect(null, mDTP)(ArticleNav);

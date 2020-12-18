@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-// import { IconContext } from "react-icons";
 import { FaTwitter } from 'react-icons/fa';
 
 export default class LandingMain extends Component {
@@ -14,7 +13,6 @@ export default class LandingMain extends Component {
                                 <h2>Knowledge is rocket fuel.</h2>
                                 <Link to='/home/signup'>
                                     <button className="btn google">
-                                        {/* <img src={window.googleIcon} alt="logo" /> */}
                                         <span>
                                             Sign up with Email
                                         </span>

@@ -46,7 +46,6 @@ export default class ArticleIndexItem extends Component {
     handleSaveTag() {
         const input = document.getElementById('tag-input');
         const label = input.value;
-        console.log(label)
         let newTag = {
             user_id: this.props.user_id,
             article_id: this.props.article.id,
@@ -311,7 +310,6 @@ export default class ArticleIndexItem extends Component {
                 <Link to={`/read/${id}`}>
                     <div className="article-item-img-container">
                         {this.renderArticleImg()}
-                        {/* <img className="article-item-img" src={cover_img} alt="cover img" /> */}
                     </div>
                 </Link>
                 <div className="article-item-info">

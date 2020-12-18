@@ -67,7 +67,6 @@ const articlesReducer = (state = {}, action) => {
             if (filter === 'favorites') {
                 delete nextState[action.favorite.article_id];
             } else {
-                // TODO: I think this is wrong.... (fixed)
                 nextState[action.favorite.article_id].favorite_id = null;
             }
             return nextState;

@@ -5,6 +5,7 @@ import {
     archiveSave,
     deleteSave 
 } from '../../actions/save_actions';
+import { fetchArticle } from "../../actions/article_actions";
 
 const mSTP = (state, ownProps) => {
     const articleId = ownProps.match.params.article_id;
