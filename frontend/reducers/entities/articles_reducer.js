@@ -15,7 +15,8 @@ import {
     REMOVE_HIDE 
 } from '../../actions/hide_actions';
 import { 
-    RECEIVE_TAG
+    RECEIVE_TAG,
+    REMOVE_TAG
 } from '../../actions/tag_actions';
 
 const articlesReducer = (state = {}, action) => {
@@ -67,7 +68,8 @@ const articlesReducer = (state = {}, action) => {
             if (filter === 'favorites') {
                 delete nextState[action.favorite.article_id];
             } else {
-                state[action.favorite.article_id].favorite_id = null;
+                // TODO: I think this is wrong.... (fixed)
+                nextState[action.favorite.article_id].favorite_id = null;
             }
             return nextState;
         case RECEIVE_HIDE:
@@ -76,6 +78,15 @@ const articlesReducer = (state = {}, action) => {
         case RECEIVE_TAG:
             articleId = action.tag.article_id;
             nextState[articleId].tag_id = action.tag.id;
+            return nextState;
+        case REMOVE_TAG:
+            filter = state[action.tag.article_id].filter;
+            let tagPath = 'tag:'.concat(action.tag.label)
+            if (filter === tagPath) {
+                delete nextState[action.tag.article_id];
+            } else {
+                nextState[action.tag.article_id].tag_id = null;
+            }
             return nextState;
         default:
             return state;

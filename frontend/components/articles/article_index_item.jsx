@@ -93,7 +93,9 @@ export default class ArticleIndexItem extends Component {
         if (!!this.props.article.favorite_id) {
             this.props.deleteFavorite(this.props.article.favorite_id)
         }
-        // untag too !!!
+        if (!!this.props.article.tag_id) {
+            this.props.deleteTag(this.props.article.tag_id)
+        }
     }
 
     archiveArticle() {
@@ -210,14 +212,15 @@ export default class ArticleIndexItem extends Component {
                     <div className="ctrls-btn">
                         <FiMoreHorizontal size={20} />
                         <div className="article-ctrls-modal">
-                            <div onClick={this.unArchiveArticle} className="ctrl-line">
-                                <div className="save-ctrl-icon"></div>
-                                <p>Re-add</p>
-                            </div>
                             <div onClick={this.toggleFavorite} className="ctrl-line">
                                 { isFavorited ? <AiFillStar size={20} color="#fcb643" /> : <AiOutlineStar size={20} /> }
                                 <p className="fav-icon-label">Favorite</p>
                             </div>
+                            <div onClick={this.unArchiveArticle} className="ctrl-line">
+                                <div className="save-ctrl-icon"></div>
+                                <p>Re-add</p>
+                            </div>
+                            {this.renderTagCtrl()}
                             <div onClick={this.unsaveArticle} className="ctrl-line">
                                 <FiTrash size={18} />
                                 <p>Delete</p>
@@ -253,6 +256,7 @@ export default class ArticleIndexItem extends Component {
                                 { isFavorited ? <AiFillStar size={20} color="#fcb643" /> : <AiOutlineStar size={20} /> }
                                 <p className="fav-icon-label">Favorite</p>
                             </div>
+                            {this.renderTagCtrl()}
                             <div onClick={this.unsaveArticle} className="ctrl-line">
                                 <FiTrash size={18} />
                                 <p>Delete</p>
