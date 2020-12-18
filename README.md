@@ -29,7 +29,7 @@ There are three ways users can save articles:
 2. Users can paste the URL of an article into the 'Add Bar' and click 'Save'. This will fetch the article data from the 3rd party website (including metadata, imgage, and content) and save it to the User's 'My List' tab.
 ![Saving Articles via Add Bar](https://github.com/kaycbas/rocket/blob/main/app/assets/images/readme/article_save.gif)
 3. Users can click the Rocket Chrome Extension while browsing the web and the current active page will be fetched by Rocket and saved to the user's List.
-![Saving Articles via Add Bar](https://github.com/kaycbas/rocket/blob/main/app/assets/images/readme/article_save_chrm.gif
+![Saving Articles via Add Bar](https://github.com/kaycbas/rocket/blob/main/app/assets/images/readme/article_save_chrm.gif)
 
 ### Reading Mode
 
