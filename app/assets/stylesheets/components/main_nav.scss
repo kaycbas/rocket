@@ -39,6 +39,10 @@
     position: relative;
 }
 
+.active-tab {
+    font-weight: bold;
+}
+
 .active-tab::after {
     content: "";
     display: block;

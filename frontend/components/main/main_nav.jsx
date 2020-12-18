@@ -50,6 +50,7 @@ export default class MainNav extends Component {
 
     renderDefaultNav() {
         if (this.state.addUrl) return null;
+        // let loc = '/archive'
         return (
             <React.Fragment>
                 <ul className="nav-tabs">
