@@ -10,10 +10,13 @@ import {
     RECEIVE_FAVORITE,
     REMOVE_FAVORITE 
 } from '../../actions/favorite_actions';
- import { 
+import { 
     RECEIVE_HIDE,
     REMOVE_HIDE 
 } from '../../actions/hide_actions';
+import { 
+    RECEIVE_TAG
+} from '../../actions/tag_actions';
 
 const articlesReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -69,6 +72,10 @@ const articlesReducer = (state = {}, action) => {
             return nextState;
         case RECEIVE_HIDE:
             delete nextState[action.hide.article_id];
+            return nextState;
+        case RECEIVE_TAG:
+            articleId = action.tag.article_id;
+            nextState[articleId].tag_id = action.tag.id;
             return nextState;
         default:
             return state;

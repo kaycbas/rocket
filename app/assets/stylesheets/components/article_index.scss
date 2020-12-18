@@ -112,11 +112,12 @@
 
 
 .pocket-save {
-    position: absolute;
-    bottom: 36px;
-    left: 20px;
+    // position: absolute;
+    // bottom: 36px;
+    // left: 20px;
     display: flex;
     color: rgb(51, 51, 51);
+    padding-bottom: 2px;
     z-index: 10;
     cursor: pointer;
     

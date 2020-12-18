@@ -52,6 +52,12 @@ export default class ArticleIndexItem extends Component {
         this.toggleEdit();
     }
 
+    // componentDidUpdate(prevProps) {
+    //     if (this.props.tag && (this.props.tag !== prevProps.tag)) {
+    //         this.props.fetchArticle();
+    //     }
+    // }
+
     renderEditTagsModal() {
         if (!this.state.edit) return null;
         return (
