@@ -1,7 +1,6 @@
 # Rocket
 ### [Live App](https://rocket-kb.herokuapp.com/#/)
-<img src="https://github.com/kaycbas/rocket/blob/main/app/assets/images/rocket_logo_2.png" width="200">
-<br>
+![Logo](https://github.com/kaycbas/rocket/blob/main/app/assets/images/rocket_logo_2.png)
 Rocket, a clone of [Pocket](https://getpocket.com/), is a single page app, plus a supplementary chrome extension, for capturing, organizing, and reading fascnating content from around the web. It utilizes Ruby on Rails with a PostgreSQL database in the back-end, and React.js and Redux in the front-end.
 
 
