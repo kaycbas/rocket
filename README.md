@@ -4,7 +4,7 @@
 
 Rocket, a clone of [Pocket](https://getpocket.com/), is a single page app, plus a supplementary chrome extension, for capturing, organizing, and reading fascnating content from around the web. It utilizes Ruby on Rails with a PostgreSQL database in the back-end, and React.js and Redux in the front-end.
 <br>
-<img src="https://github.com/kaycbas/rocket/blob/main/app/assets/images/readme/landing_screenshot.jpg" width="1000">
+<img src="https://github.com/kaycbas/rocket/blob/main/app/assets/images/readme/landing_screenshot.jpg" width="800">
 ![Home Page](https://github.com/kaycbas/rocket/blob/main/app/assets/images/readme/home_screenshot.jpg)
 
 ## Technologies
