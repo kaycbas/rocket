@@ -28,13 +28,17 @@ Rocket, a clone of [Pocket](https://getpocket.com/), is a single page app, plus 
 ## Key Features
 ### Saving Articles
 There are three ways users can save articles for later reading:
+
 1. Users can browse and save articles from the Discover tab. These are great articles that Rocket has chosen to feature:
+
 ![Saving Articles Method 1](https://github.com/kaycbas/rocket/blob/main/app/assets/images/readme/save_1.gif)
 
 2. Users can click the + icon in the navbar, paste in an article URL, and click Save. This will trigger a webscraper to fetch relevant information about the article, save it to the database, and add it to the user's saved articles.
+
 ![Saving Articles Method 2](https://github.com/kaycbas/rocket/blob/main/app/assets/images/readme/save_2.gif)
 
 3. Users can click the Rocket Chrome Extension while browsing the web and the current active page will be fetched and saved to the user's articles.
+
 ![Saving Articles Method 3](https://github.com/kaycbas/rocket/blob/main/app/assets/images/readme/save_3.gif)
 
 The web scraping involved in saving 3rd party articles was the most challenging aspect of this feature. The basic implementation was:
@@ -52,20 +56,20 @@ class ArticleScraper
         html = open(url)
         doc = Nokogiri::HTML(html)
         
-				article = {}
-				article[:full_url] = url
+	article = {}
+	article[:full_url] = url
         article[:title] = parse_title(doc)
         article[:cover_img_url] = parse_img_url(doc)
         article[:content] = parse_content(doc)
         article[:reading_time] = calculate_reading_time(doc)
-				# ...
+	# ...
 
         article
     end
 	
-		# ...
+    # ...
 	
-		def parse_content(doc)
+    def parse_content(doc)
         content = nil
         if doc.at_css('article')
             content = doc.at_css('article')
@@ -74,19 +78,19 @@ class ArticleScraper
         else
             content = doc.at('body')
         end
-				# remove all html attributes
+	# remove all html attributes
         content.xpath('//@*').remove 
-				# wrap content in a class for custom styling
+	# wrap content in a class for custom styling
         content.wrap("<div class='article-content'></div>")
-				# grab wrapped content
+	# grab wrapped content
         article_content = doc.at('.article-content')
-				# clean html of navbars, empty divs, and other unwanted elements
+	# clean html of navbars, empty divs, and other unwanted elements
         scrubbed = scrub(article_content)
-				# return prepared html
+	# return prepared html
         scrubbed.to_html
     end
 		
-		# ...
+    # ...
 end
 ```
 
@@ -94,7 +98,7 @@ Because different articles can have extremely different html structures, the abo
 
 Consequently, certain domains that are saved frequently (i.e. Medium, TechCrunch, etc) have domain specific optimizations for improved content parsing. 
 
-These domain-specific optimizations are relatively easy to add once the html structure of a domain is known and can be implemented over time based on popular save domains.
+These domain-specific optimizations are relatively easy to add once the html structure of a domain is known and can be implemented over time based on the most popular article domains.
 
 ### Reading Mode
 Articles can be opened in a reader friendly mode that eliminates distracting ads, fancy layouts, and other extraneous items.
