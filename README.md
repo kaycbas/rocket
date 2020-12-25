@@ -102,7 +102,8 @@ These domain-specific optimizations are relatively easy to add once the html str
 
 ### Reading Mode
 Articles can be opened in a reader friendly mode that eliminates distracting ads, fancy layouts, and other extraneous items.
->>>READMING MODE GIF<<<
+
+![Reading Mode](https://github.com/kaycbas/rocket/blob/main/app/assets/images/readme/read.gif)
 
 In order to accomplish this, article content is stored as a string of HTML in the Article database table. When an article is displayed, this HTML is parsed and added to the DOM.
 
