@@ -119,6 +119,10 @@ Users have a number of options to manage articles. Specifically, they can perfor
 
 ![Managing Articless](https://github.com/kaycbas/rocket/blob/main/app/assets/images/readme/manage.gif)
 
+### Mobile Responsive
+All screens of Rocket look great on mobile.
+(Insert mobile layout screenshots here)
+
 ### Future Feeatures
 - Highlighting
 - Improved web scraping
