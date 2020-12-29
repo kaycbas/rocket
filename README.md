@@ -11,6 +11,9 @@ Rocket, a clone of [Pocket](https://getpocket.com/), is a single page app, plus 
 ## Table of Contents
 - Stuff
 
+## Setup
+- Instructions on setting up the app and the Chrome Extension
+
 ## Technologies
 ### Backend
 - Ruby On Rails
