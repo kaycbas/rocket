@@ -105,4 +105,12 @@
     .url-add {
         display: none;
     }
+
+    .nav-content {
+        grid-template-columns: 50% 50%;
+    }
+
+    .nav-utils {
+        grid-column-start: 2;
+    }
 }
