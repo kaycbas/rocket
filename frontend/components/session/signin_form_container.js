@@ -8,7 +8,7 @@ const DEMO_USER = {username: 'demo', password: 'apple123'};
 const mapStateToProps = ({ errors }) => {
     return {
         errors: errors.session,
-        formType: 'Sign In',
+        formType: 'Log In',
         navLink: <Link className="switch-link" to="/home/signup">Sign up now &gt;</Link>,
     };
 };

@@ -41,7 +41,7 @@ class SessionForm extends Component {
     }
 
     renderFormHeader() {
-        if (this.props.formType === 'Sign In') {
+        if (this.props.formType === 'Log In') {
             return (
                 <h3 className='signin-h3'>Log In</h3>
             )
@@ -53,7 +53,7 @@ class SessionForm extends Component {
     }
 
     renderEmailField() {
-        if (this.props.formType === 'Sign In') return null;
+        if (this.props.formType === 'Log In') return null;
         return (
             <React.Fragment>
                 <input type="email"
@@ -66,7 +66,7 @@ class SessionForm extends Component {
     }
 
     renderMktgContent() {
-        if (this.props.formType === 'Sign In') {
+        if (this.props.formType === 'Log In') {
             return (
                 <div className="mac-img"></div>
             )
