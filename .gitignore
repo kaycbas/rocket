@@ -34,3 +34,4 @@ bundle.js.map
 .DS_Store
 npm-debug.log
 dummy.*
+scratch.rb
