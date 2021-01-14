@@ -11,6 +11,9 @@ Rocket, a clone of [Pocket](https://getpocket.com/), is a single page app, plus 
 ## Table of Contents
 - Stuff
 
+## Setup
+- Instructions on setting up the app and the Chrome Extension
+
 ## Technologies
 ### Backend
 - Ruby On Rails
@@ -102,7 +105,8 @@ These domain-specific optimizations are relatively easy to add once the html str
 
 ### Reading Mode
 Articles can be opened in a reader friendly mode that eliminates distracting ads, fancy layouts, and other extraneous items.
->>>READMING MODE GIF<<<
+
+![Reading Mode](https://github.com/kaycbas/rocket/blob/main/app/assets/images/readme/read.gif)
 
 In order to accomplish this, article content is stored as a string of HTML in the Article database table. When an article is displayed, this HTML is parsed and added to the DOM.
 
@@ -117,6 +121,10 @@ Users have a number of options to manage articles. Specifically, they can perfor
 - **Tag** - add customizable tags to articles for filtering and organization purposes
 
 ![Managing Articless](https://github.com/kaycbas/rocket/blob/main/app/assets/images/readme/manage.gif)
+
+### Mobile Responsive
+All screens of Rocket look great on mobile.
+(Insert mobile layout screenshots here)
 
 ### Future Feeatures
 - Highlighting
