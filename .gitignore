@@ -35,4 +35,4 @@ bundle.js.map
 npm-debug.log
 dummy.*
 scratch.rb
-/app/assets/images/readme/
+# /app/assets/images/readme/
