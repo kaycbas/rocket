@@ -9,10 +9,12 @@
     <%= javascript_include_tag 'application' %>
     <%= favicon_link_tag asset_path('favicon.ico') %>
 
-    <meta property='og:title' content='Rocket'/>
-    <meta property='og:image' content='banner.png'/>
-    <meta property='og:description' content='Rocket, a clone of Pocket, is a single page app, plus chrome extension, I built for capturing, organizing, and reading fascinating content from around the web.'/>
+    <meta name="title" property='og:title' content='Rocket'/>
+    <meta name="image" property='og:image' content="<%= image_url('banner.png') %>"/>
+    <meta name="description" property='og:description' 
+      content='Rocket, a clone of Pocket, is a single page app, plus chrome extension, I built for capturing, organizing, and reading fascinating content from around the web.'/>
     <meta property='og:url' content='https://rocket-kb.herokuapp.com/'/>
+    <meta name="author" content="Kevin Bastoul"/>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://use.fontawesome.com/eeed1fa07d.js"></script>
