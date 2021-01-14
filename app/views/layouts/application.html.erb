@@ -3,19 +3,19 @@
   <head>
     <title>Rocket</title>
     <meta name="title" property="og:title" content="Rocket" />
-     <meta name="image" property='og:image' content="<%= image_url('banner.png') %>"/>
-     <meta name="description" property="og:description"
+    <meta name="image" property='og:image' content="<%= image_url('banner.png') %>"/>
+    <meta name="description" property="og:description"
        content="Rocket, a clone of Pocket, is a single page app, plus chrome extension, for capturing, organizing, and reading fascinating content from around the web."
-     />
-     <meta property="og:url" content="https://rocket-kb.herokuapp.com/"/>
-     <meta name="author" content="Kevin Bastoul"/>
+    />
+    <meta property="og:url" content="https://rocket-kb.herokuapp.com/"/>
+    <meta name="author" content="Kevin Bastoul"/>
+    <%= favicon_link_tag asset_path('favicon.ico') %>
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-    <%= favicon_link_tag asset_path('favicon.ico') %>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://use.fontawesome.com/eeed1fa07d.js"></script>
@@ -24,13 +24,13 @@
       window.googleIcon = "<%= image_url('icons/google.svg') %>";
     </script>
     <% if logged_in? %>
-    <script type="text/javascript">
-      window.currentUser = <%= render(
-          "api/users/user.json.jbuilder",
-        user: current_user
-      ).html_safe %>
-    </script>
-<% end %>
+      <script type="text/javascript">
+        window.currentUser = <%= render(
+            "api/users/user.json.jbuilder",
+          user: current_user
+        ).html_safe %>
+      </script>
+    <% end %>
   </head>
 
   <body>
