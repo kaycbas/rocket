@@ -7,13 +7,6 @@ Rocket, a clone of [Pocket](https://getpocket.com/), is a single page app, plus 
 ![Landing](https://github.com/kaycbas/rocket/blob/main/app/assets/images/readme/landing.png)
 ![List](https://github.com/kaycbas/rocket/blob/main/app/assets/images/readme/list.png)
 
-
-## Table of Contents
-- Stuff
-
-## Setup
-- Instructions on setting up the app and the Chrome Extension
-
 ## Technologies
 ### Backend
 - Ruby On Rails
@@ -27,6 +20,14 @@ Rocket, a clone of [Pocket](https://getpocket.com/), is a single page app, plus 
 - npm
 ### Storage
 - AWS S3
+
+## Chrome Extension Setup
+Currently the Chrome extension is only available via local installation on your Chrome browser (i.e. it's not available in the Chrome Web Store yet). To install the Chrome extension locally and begin using it to save articles, do the following:
+1. Clone this repo to your local.
+2. In Chrome, select the Extension Manager in the navbar (it should look like a puzzle piece) and click 'Manage Extensions'.
+3. In the Extension Manager, click 'Load Unpacked' near the top-left.
+4. In the Finder, navigate to and select the 'chrm_ext' directory in the Rocket repo you've cloned. This should upload the extension to your browser.
+5. Pin the Rocket extension to your browser. Now, when you find an interesting article, simply click the Rocket icon in tge browser and the article will be saved to the Rocket app's 'Discover' section for later viewing.
 
 ## Key Features
 ### Saving Articles
@@ -110,7 +111,7 @@ Articles can be opened in a reader friendly mode that eliminates distracting ads
 
 In order to accomplish this, article content is stored as a string of HTML in the Article database table. When an article is displayed, this HTML is parsed and added to the DOM.
 
-The article content html is wrapped in a div with a class of 'article-content' (see code parsing snippet above). This allows article content to be automatically be styled in a reader friendly format when added to the DOM.
+The article content html is wrapped in a div with a class of 'article-content' (see code parsing snippet above). This allows article content to be automatically styled in a reader friendly format when added to the DOM.
 
 ### Managing Articles
 Users have a number of options to manage articles. Specifically, they can perform the following:
@@ -126,6 +127,6 @@ Users have a number of options to manage articles. Specifically, they can perfor
 All screens of Rocket look great on mobile.
 (Insert mobile layout screenshots here)
 
-### Future Feeatures
+## Future Feeatures
 - Highlighting
 - Improved web scraping
