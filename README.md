@@ -111,7 +111,7 @@ Articles can be opened in a reader friendly mode that eliminates distracting ads
 
 In order to accomplish this, article content is stored as a string of HTML in the Article database table. When an article is displayed, this HTML is parsed and added to the DOM.
 
-The article content html is wrapped in a div with a class of 'article-content' (see code parsing snippet above). This allows article content to be automatically be styled in a reader friendly format when added to the DOM.
+The article content html is wrapped in a div with a class of 'article-content' (see code parsing snippet above). This allows article content to be automatically styled in a reader friendly format when added to the DOM.
 
 ### Managing Articles
 Users have a number of options to manage articles. Specifically, they can perform the following:
