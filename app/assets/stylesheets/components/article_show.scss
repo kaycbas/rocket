@@ -166,3 +166,11 @@
         color: rgb(130, 130, 130);
     }
 }
+
+@media only screen and (max-width: 500px) {
+    .read-header {
+        .meta {
+            display: none;
+        }
+    }
+}
