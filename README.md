@@ -21,6 +21,14 @@ Rocket, a clone of [Pocket](https://getpocket.com/), is a single page app, plus 
 ### Storage
 - AWS S3
 
+## Chrome Extension Setup
+Currently the Chrome extension is only available via local installation on your Chrome browser (i.e. it's not available in the Chrome Web Store yet). To install the Chrome extension locally and begin using it to save articles, do the following:
+1. Clone this repo to your local.
+2. In Chrome, select the Extension Manager in the navbar (it should look like a puzzle piece) and click 'Manage Extensions'.
+3. In the Extension Manager, click 'Load Unpacked' near the top-left.
+4. In the Finder, navigate to and select the 'chrm_ext' directory in the Rocket repo you've cloned. This should upload the extension to your browser.
+5. Pin the Rocket extension to your browser. Now, when you find an interesting article, simply click the Rocket icon in browser and the article will be saved to the Rocket app's 'Discover' section.
+
 ## Key Features
 ### Saving Articles
 There are three ways users can save articles for later reading:
