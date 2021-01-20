@@ -125,6 +125,7 @@ Users have a number of options to manage articles. Specifically, they can perfor
 
 ### Mobile Responsive
 All screens of Rocket look great on mobile.
+
 ![Mobile Mode](https://github.com/kaycbas/rocket/blob/main/app/assets/images/readme/mobile.gif)
 
 ## Future Feeatures
