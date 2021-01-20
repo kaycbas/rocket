@@ -27,7 +27,7 @@ Currently the Chrome extension is only available via local installation on your 
 2. In Chrome, select the Extension Manager in the navbar (it should look like a puzzle piece) and click 'Manage Extensions'.
 3. In the Extension Manager, click 'Load Unpacked' near the top-left.
 4. In the Finder, navigate to and select the 'chrm_ext' directory in the Rocket repo you've cloned. This should upload the extension to your browser.
-5. Pin the Rocket extension to your browser. Now, when you find an interesting article, simply click the Rocket icon in browser and the article will be saved to the Rocket app's 'Discover' section.
+5. Pin the Rocket extension to your browser. Now, when you find an interesting article, simply click the Rocket icon in tge browser and the article will be saved to the Rocket app's 'Discover' section for later viewing.
 
 ## Key Features
 ### Saving Articles
@@ -127,6 +127,6 @@ Users have a number of options to manage articles. Specifically, they can perfor
 All screens of Rocket look great on mobile.
 (Insert mobile layout screenshots here)
 
-### Future Feeatures
+## Future Feeatures
 - Highlighting
 - Improved web scraping
