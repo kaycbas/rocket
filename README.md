@@ -124,7 +124,7 @@ Users have a number of options to manage articles. Specifically, they can perfor
 ![Managing Articless](https://github.com/kaycbas/rocket/blob/main/app/assets/images/readme/manage.gif)
 
 ### Mobile Responsive
-All screens of Rocket look great on mobile.
+All screens of Rocket look great on mobile. I accomplished this by designing separate CSS grid layouts for each viewport size and then switching between them via CSS media queries. On mobile, there's an unobstrusive hamburger menu for easy navigation.
 
 ![Mobile Mode](https://github.com/kaycbas/rocket/blob/main/app/assets/images/readme/mobile.gif)
 
