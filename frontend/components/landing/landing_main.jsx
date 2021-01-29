@@ -26,7 +26,7 @@ export default class LandingMain extends Component {
                                     <Link className="link" to='/home/signin'>Log In</Link> &gt;
                                 </span>
                                 <p className="terms">
-                                    By signing up, you agree to Pocket’s Terms of Service and Privacy Policy.
+                                    By signing up, you agree to Rocket’s Terms of Service and Privacy Policy.
                                 </p>
                             </div>
                         </section>
@@ -63,8 +63,12 @@ export default class LandingMain extends Component {
                 <div className='landing-main-container-5'>
                     <section className="landing-panel-grid">
                         <div className="app-store">
-                            <span className="apple-store"></span>
-                            <span className="google-store"></span>
+                            <a href="https://apps.apple.com/us/app/pocket-save-read-grow/id309601447">
+                                <span className="apple-store"></span>
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=com.ideashower.readitlater.pro&hl=en_US&gl=US">
+                                <span className="google-store"></span>
+                            </a>
                         </div>
                         <div className="testimony">
                             <h2 className="twitter-quote">“It’s revolutionised the way I read industry news on the go. I'm in love”</h2>
