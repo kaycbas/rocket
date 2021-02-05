@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import WelcomeModal from '../welcome/welcome_modal';
 import MainNavContainer from './main_nav_container';
 import SidebarContainer from '../sidebar/sidebar_container';
 import MyListIndexContainer from '../articles/my_list_index_container';
@@ -11,10 +12,17 @@ import Error from '../error/error';
 
 
 export default class Main extends Component {
+    renderWelcomeModal() {
+        return (
+            <WelcomeModal />
+        )
+    }
+
     render() {
         return (
             <React.Fragment>
                 <MainNavContainer />
+                {this.renderWelcomeModal()}
                 <main className="main-container" id="main">
                     <SidebarContainer />
                     <Switch>

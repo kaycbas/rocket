@@ -137,21 +137,23 @@ export default class MainNav extends Component {
 
     render() {
         return (
-            <header className="nav-container">
-                {this.renderMobileSidebar()}
-                <nav className="nav-content">
-                    <div className="hamburger-wrapper">
-                        <div onClick={this.toggleMode} className="mobile-hamburger">
-                            <GiHamburgerMenu size={20}/>
+            <React.Fragment>
+                <header className="nav-container">
+                    {this.renderMobileSidebar()}
+                    <nav className="nav-content">
+                        <div className="hamburger-wrapper">
+                            <div onClick={this.toggleMode} className="mobile-hamburger">
+                                <GiHamburgerMenu size={20}/>
+                            </div>
+                            <Link to='/' className="nav-logo">
+                                <img className="nav-logo" src={window.rocketLogo} alt="Rocket logo" />
+                            </Link>
                         </div>
-                        <Link to='/' className="nav-logo">
-                            <img className="nav-logo" src={window.rocketLogo} alt="Rocket logo" />
-                        </Link>
-                    </div>
-                    {this.renderDefaultNav()}
-                    {this.renderAddField()}
-                </nav>
-            </header>
+                        {this.renderDefaultNav()}
+                        {this.renderAddField()}
+                    </nav>
+                </header>
+            </React.Fragment>
         )
     }
 }
