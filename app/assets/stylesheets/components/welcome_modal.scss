@@ -72,3 +72,35 @@
     color: grey;
     cursor: pointer;
 }
+
+welcome-border-top {
+    // background: image-url('border-top.svg') center no-repeat;
+    position: relative;
+    top: 0;
+    background: red;
+    height: 20px;
+    width: 550px;
+    z-index: 200000;
+}
+
+.welcome-modal::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: image-url('border-top.svg') center no-repeat;
+    width: 100%;
+    height: 10px;
+    top: 0px;
+    left: 0px;
+}
+
+.welcome-modal::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: image-url('border-bottom.svg');
+    width: 100%;
+    height: 10px;
+    bottom: 0px;
+    left: 0px;
+}
