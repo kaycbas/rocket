@@ -3,7 +3,7 @@ import {
     CLOSE_MODAL
 } from '../../actions/welcome_actions';
 
-const welcomeReducer = (state = false, action) => {
+const welcomeReducer = (state = true, action) => {
     Object.freeze(state);
     switch (action.type) {
         case OPEN_MODAL:

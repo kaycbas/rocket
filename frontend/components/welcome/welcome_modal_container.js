@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import { openModal, closeModal } from '../../actions/welcome_actions';
-import Main from './main';
+import WelcomeModal from './welcome_modal';
 
 const mSTP = state => {
     return {
-        modal: state.ui.welcome
+        
     }
 }
 
@@ -15,4 +15,4 @@ const mDTP = dispatch => {
     }
 }
 
-export default connect(mSTP, mDTP)(Main);
+export default connect(mSTP, mDTP)(WelcomeModal);

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import WelcomeModal from '../welcome/welcome_modal';
+import WelcomeModalContainer from '../welcome/welcome_modal_container';
+// import WelcomeModal from '../welcome/welcome_modal';
 import MainNavContainer from './main_nav_container';
 import SidebarContainer from '../sidebar/sidebar_container';
 import MyListIndexContainer from '../articles/my_list_index_container';
@@ -12,10 +13,14 @@ import Error from '../error/error';
 
 
 export default class Main extends Component {
+    constructor(props) {
+        super(props);
+    }
+
     renderWelcomeModal() {
-        return (
-            <WelcomeModal />
-        )
+        if (!this.props.modal) return null;
+        return (<WelcomeModalContainer />)
+        // return (<WelcomeModal />)
     }
 
     render() {

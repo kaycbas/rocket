@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
 
-function WelcomeModal() {
-
-    const closeModal = () => {
-
-    }
+function WelcomeModal({ openModal, closeModal }) {
 
     return (
         <div className="welcome-background">
             <div className="welcome-modal">
                 {/* <div className="welcome-border-top"></div> */}
-                <span onClick={} className="close-modal-btn">&#x2715;</span>
+                <span onClick={() => closeModal()} className="close-modal-btn">&#x2715;</span>
                 <h1>Welcome to Rocket!</h1>
                 <p>Simply, Rocket lets you save articles for later reading.</p>
                 <p>But it's also a powerful tool to organize and track your consumption of content from around the internet.</p>
