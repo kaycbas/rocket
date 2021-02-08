@@ -71,8 +71,11 @@ export default class MainNav extends Component {
                     <div className="nav-util" >
                         <CgProfile size={22} />
                         <div className='profile-modal'>
-                            <div onClick={this.resetHides} className="modal-line profile-hide-reset">
+                            {/* <div onClick={this.resetHides} className="modal-line profile-hide-reset">
                                 <p>Reset Hides</p>
+                            </div> */}
+                            <div onClick={() => this.props.openModal()} className="modal-line profile-help">
+                                <p>Help</p>
                             </div>
                             <div onClick={this.signOut} className="modal-line profile-signout">
                                 <p>Sign Out</p>

@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { signOut } from '../../actions/session_actions';
 import { deleteHides } from '../../actions/hide_actions';
 import { fetchArticles, createArticle } from '../../actions/article_actions';
+import { openModal } from '../../actions/welcome_actions';
 import { articlesArray } from '../../reducers/selectors';
 import MainNav from './main_nav';
 
@@ -17,6 +18,7 @@ const mDTP = dispatch => {
         deleteHides: () => dispatch(deleteHides()),
         fetchArticles: filter => dispatch(fetchArticles(filter)),
         createArticle: url => dispatch(createArticle(url)),
+        openModal: () => dispatch(openModal()),
     }
 }
 
