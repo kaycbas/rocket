@@ -43,6 +43,17 @@
 .welcome-modal {
     h1 {
          box-sizing: border-box;
+         font-size: 22px;
+         line-height: 1.4em;
+         max-height: 3.5em;
+         font-weight: 600;
+         padding-bottom: 0.5em;
+         overflow: hidden;
+         word-break: break-word;
+    }
+
+    h2 {
+         box-sizing: border-box;
          font-size: 18px;
          line-height: 1.2em;
          max-height: 3.5em;
@@ -57,9 +68,26 @@
     }
 
     span {
-        color: rgb(17, 106, 101);
         font-weight: bold;
     }
+
+    .highlight-1 {
+        font-weight: bold;
+        background-color: #94dad6;
+        padding: 2px;
+    }
+    .highlight-2 {
+        font-weight: bold;
+        background-color: #f7a5af;
+        padding: 2px;
+    }
+    .highlight-3 {
+        font-weight: bold;
+        background-color: #fedda7;
+        padding: 2px;
+    }
+
+    
 }
 
 .close-modal-btn {
