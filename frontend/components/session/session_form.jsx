@@ -24,7 +24,14 @@ class SessionForm extends Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
+        if (this.props.formType === 'Sign Up') this.props.welcomeModal();
         this.props.processForm(user);
+    }
+
+    handleDemo() {
+        console.log('check');
+        this.props.welcomeModal();
+        this.props.demoUser();
     }
 
     renderErrors() {
@@ -101,7 +108,7 @@ class SessionForm extends Component {
                         <span className="submit-btn">
                             <input type="submit" value={this.props.formType} />
                         </span>
-                        <span onClick={() => this.props.demoUser()} className="demo-btn">Demo User</span>
+                        <span onClick={() => this.handleDemo()} className="demo-btn">Demo User</span>
                         {this.props.navLink}
                     </form>
                 </div>
