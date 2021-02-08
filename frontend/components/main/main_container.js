@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import { openModal, closeModal } from '../../actions/welcome_actions';
 import Main from './main';
 
 const mSTP = state => {
@@ -10,8 +9,6 @@ const mSTP = state => {
 
 const mDTP = dispatch => {
     return {
-        openModal: () => dispatch(openModal()),
-        closeModal: () => dispatch(closeModal())
     }
 }
 
