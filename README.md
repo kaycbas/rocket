@@ -130,4 +130,4 @@ All screens of Rocket look great on mobile. I accomplished this by designing sep
 
 ## Future Feeatures
 - Highlighting
-- Improved web scraping
+- ML trained model for article scraping
