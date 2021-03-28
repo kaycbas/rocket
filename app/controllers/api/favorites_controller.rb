@@ -1,4 +1,6 @@
 class Api::FavoritesController < ApplicationController
+    # before_action :require_logged_in
+    
     def create
         new_fav = {}
         new_fav[:user_id] = current_user.id

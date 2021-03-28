@@ -1,4 +1,6 @@
 class Api::HidesController < ApplicationController
+    # before_action :require_logged_in
+    
     def create
         new_hide = {}
         new_hide[:user_id] = current_user.id

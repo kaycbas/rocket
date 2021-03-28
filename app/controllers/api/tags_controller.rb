@@ -1,4 +1,6 @@
 class Api::TagsController < ApplicationController
+    # before_action :require_logged_in
+
     def create
         @tag = Tag.create!(tag_params)
         render json: @tag

@@ -1,4 +1,6 @@
 class Api::SavesController < ApplicationController
+    # before_action :require_logged_in
+    
     def index
         @saves = Save.where(user_id: current_user.id)
         render :index

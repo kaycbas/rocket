@@ -1,5 +1,6 @@
 class Api::ArticlesController < ApplicationController
     skip_before_action :verify_authenticity_token
+    # before_action :require_logged_in
 
     def index
         @filter = params[:filter]
