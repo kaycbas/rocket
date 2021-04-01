@@ -32,7 +32,7 @@ class Api::ArticlesController < ApplicationController
 
     def show
         @article = Article.find_by(id: params[:id])
-
+            
         @save = @article.saves.find_by(user_id: current_user.id)
         @fav = @article.favorites.find_by(user_id: current_user.id)
         @tag = @article.tags.find_by(user_id: current_user.id)
@@ -47,26 +47,37 @@ class Api::ArticlesController < ApplicationController
     end
 
     def create
-        scraper = Scraper.new
-        article_info = scraper.get_article_info(params[:url])
+        # Check if article already exists
+        @article = Article.find_by(full_url: params[:url])
+        puts '~~~~~~~Finding...'
 
-        @article = Article.create!(article_info)
+        # If not, fetch and parse article
+        if !@article
+            puts '~~~~~~~Scraping...'
+
+            scraper = Scraper.new
+            article_info = scraper.get_article_info(params[:url])
+
+            @article = Article.create!(article_info)
+        end
+        
         img = open("https://rocket--kb-dev.s3-us-west-1.amazonaws.com/#{@article.img_name}")
         @article.cover_img.attach(io: img, filename: @article.img_name)
         @custom_img_url = @article.custom_img_url ? @article.custom_img_url : nil
+        puts '~~~~~~~~Done.'
 
         @save = nil
         @save_id = nil
         @favorite_id = nil
 
         # if (!params[:chrm_ext])
-            new_save = {}
-            new_save[:user_id] = current_user.id
-            new_save[:article_id] = @article.id
-            new_save[:archived] = false
-            @save = Save.create!(new_save)
-            @save_id = @save.id
-            @favorite_id = nil
+        new_save = {}
+        new_save[:user_id] = current_user.id
+        new_save[:article_id] = @article.id
+        new_save[:archived] = false
+        @save = Save.create!(new_save)
+        @save_id = @save.id
+        @favorite_id = nil
         # end
 
         render :show
